@@ -129,8 +129,8 @@ data structure as below:
   	$ find . -type d 
 	.─ sampleID
 	      ├ normal
-	      │ 	└ YYMMDD_sequencer-ID 
-	      │ 	       ├ target_N_split2M_[0-9][0-9][0-9].sam.gz
+	      │ └ YYMMDD_sequencer-ID 
+	      │        ├ target_N_split2M_[0-9][0-9][0-9].sam.gz
 	      └ tumor
 		└ YYMMDD_sequencer-ID
 	       	       ├ target_T_split2M_[0-9][0-9][0-9].sam.gz

@@ -1,0 +1,58 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -m ea
+#$ -cwd 
+
+if [ $# -lt 2 ]; then
+  echo "usage: com.rearrangement.2.tr.pbs [max insert length] [file.conf] (Log_file)" 1>&2
+  exit 1
+fi
+
+MAX_INSERT=$1
+. $2
+LOG=$3
+JID=void
+
+WDIR=`pwd | rev | cut -d '/' -f1 | rev`
+
+if [ ! -s "./all.sam.cla.tr" ];then
+  cat ./*.sam*.cla.tr > .tr && rm ./*.sam*.cla.tr; mv .tr all.sam.cla.tr
+fi
+
+$RSC/extractMultiHit2_mem.pl 	all.sam.cla.tr 1> all.sam.cla.tr.rmMulti2 2> all.sam.cla.tr.rmMulti2.err
+ls -l all.sam.cla.tr.rmMulti2 | awk -v wd=${WDIR}"_stp2tr-1/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractHighMapSco_bwa.pl 	all.sam.cla.tr.rmMulti2 $MAPQ 1> all.sam.cla.tr.rmMulti2.sco37 2> all.sam.cla.tr.rmMulti2.sco37.err
+ls -l all.sam.cla.tr.rmMulti2.sco37 | awk -v wd=${WDIR}"_stp2tr-2/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractHighQualityAlignment.pl all.sam.cla.tr.rmMulti2.sco37 4 1> all.sam.cla.tr.rmMulti2.sco37.mis2 2> all.sam.cla.tr.rmMulti2.sco37.mis2.err
+ls -l all.sam.cla.tr.rmMulti2.sco37.mis2 | awk -v wd=${WDIR}"_stp2tr-3/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/split4_chrPair.pl all.sam.cla.tr.rmMulti2.sco37.mis2
+$RSC/rmPCRDupFrSam_tr_new.pl 	all.sam.cla.tr.rmMulti2.sco37.mis2.p1 1> all.sam.cla.tr.rmMulti2.sco37.mis2.p1.rmDup 2> all.sam.cla.tr.rmMulti2.sco37.mis2.p1.rmDup.err
+$RSC/rmPCRDupFrSam_tr_new.pl 	all.sam.cla.tr.rmMulti2.sco37.mis2.p2 1> all.sam.cla.tr.rmMulti2.sco37.mis2.p2.rmDup 2> all.sam.cla.tr.rmMulti2.sco37.mis2.p2.rmDup.err
+$RSC/rmPCRDupFrSam_tr_new.pl 	all.sam.cla.tr.rmMulti2.sco37.mis2.p3 1> all.sam.cla.tr.rmMulti2.sco37.mis2.p3.rmDup 2> all.sam.cla.tr.rmMulti2.sco37.mis2.p3.rmDup.err
+$RSC/rmPCRDupFrSam_tr_new.pl 	all.sam.cla.tr.rmMulti2.sco37.mis2.p4 1> all.sam.cla.tr.rmMulti2.sco37.mis2.p4.rmDup 2> all.sam.cla.tr.rmMulti2.sco37.mis2.p4.rmDup.err
+cat all.sam.cla.tr.rmMulti2.sco37.mis2.p?.rmDup > all.sam.cla.tr.rmMulti2.sco37.mis2.rmDup;  rm all.sam.cla.tr.rmMulti2.sco37.mis2.p?  all.sam.cla.tr.rmMulti2.sco37.mis2.p?.rmDup
+ls -l all.sam.cla.tr.rmMulti2.sco37.mis2.rmDup | awk -v wd=${WDIR}"_stp2tr-4/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+
+#---patch.for${REF_FAI}_221227---
+
+awk -F"\t" '{gsub("chr","",$3); gsub("chr","",$7); for(i=1;i<NF;i++)printf $i"\t"; print $NF}' all.sam.cla.tr.rmMulti2.sco37.mis2.rmDup > all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2
+
+$SAMTOOLS_DIR/samtools view -bt $REF_FAI -o all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 2> all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam.err
+ls -l all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam | awk -v wd=${WDIR}"_stp2tr-5/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$SAMTOOLS_DIR/samtools sort all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam  -o all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam.sort.bam 2> all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam.sort.err
+ls -l all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam.sort.bam | awk -v wd=${WDIR}"_stp2tr-6/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$SAMTOOLS_DIR/samtools view -o all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.bam.sort.bam 2> all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.err
+ls -l all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort | awk -v wd=${WDIR}"_stp2tr-7/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+awk -F"\t" '{$3="chr"$3; if($7!="=")$7="chr"$7; for(i=1;i<NF;i++)printf $i"\t"; print $NF}' all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort > .all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort && mv .all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort
+
+#---
+
+$RSC/classifyFR_2.pl all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort 2> all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.cla.err
+ls -l all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff | awk -v wd=${WDIR}"_stp2tr-9/28" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG

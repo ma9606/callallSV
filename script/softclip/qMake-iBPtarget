@@ -1,0 +1,47 @@
+#$ -S /bin/sh
+#$ -cwd 
+#$ -l s_vmem=2G -l mem_req=2G -l mem_free=2G
+
+SPLIT_LN=$1
+
+CUR=`pwd`	# require currentry directory as $XX/intraBP
+cd ./Filtered/allNout;  cd ./HH
+for dir in HH  HT  TT  trHH  trHT  trTT
+do
+cd ../$dir
+   for tarCh in `ls chr*.BP_list_0`
+   do
+       split -l $SPLIT_LN $tarCh -d ${tarCh}_
+   done
+done
+
+
+mkdir -p $CUR/Filtered/allTiB
+FIL=$CUR/Filtered/allTiB
+cd $CUR/
+mkdir -p  $FIL/HH  $FIL/HT  $FIL/TT  $FIL/trHH  $FIL/trHT  $FIL/trTT
+grep "inversion_ff" 	[A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}'  > $FIL/HH/.tmp.iBlist
+grep "deletion"     	[A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}'  > $FIL/HT/.tmp.iBlist
+grep "tandem_dup"   	[A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}' >> $FIL/HT/.tmp.iBlist
+grep "inversion_rr"	[A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}'  > $FIL/TT/.tmp.iBlist
+grep "translocation_ff" [A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}'  > $FIL/trHH/.tmp.iBlist
+grep "translocation_fr" [A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}'  > $FIL/trHT/.tmp.iBlist
+grep "translocation_rr" [A-Z][A-Z][0-9][0-9][0-9]/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M | sed -e "s|/tumor/intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M:|@|" | awk -F"@" '{print $2"\t"$1}'  > $FIL/trTT/.tmp.iBlist
+
+cd $FIL/HH
+for dir in HH  HT  TT  trHH  trHT  trTT
+do
+cd ../$dir
+
+   for tarNP in `ls ../../allNout/${dir}/*.BP_list_0_[0-9][0-9]`
+   do
+      outfile=`echo $tarNP | rev | cut -d"/" -f1 | rev`
+      cid=`echo $outfile | cut -d"." -f1`
+      st=`head -n1 $tarNP | cut -f3 | sed -e "s/ //g"`
+      en=`tail -n1 $tarNP | cut -f3 | sed -e "s/ //g"`
+      awk -F"\t" -v chr=$cid -v st=$st -v en=$en '$1==chr && st<=$3 && $3<=en{print}' ./.tmp.iBlist | sort -k4,4n -k6,6n > ./${outfile}
+   done
+
+   echo "FINISH_prepNormalPanel "${dir} > .chkStat_NP.out
+#  rm ./.tmp.iBlist  
+done

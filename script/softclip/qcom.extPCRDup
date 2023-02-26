@@ -1,0 +1,65 @@
+#!/bin/sh
+#$ -l s_vmem=8G
+#$ -l mem_req=8G
+#$ -l mem_free=8G
+#$ -r n
+#$ -cwd
+#$ -o .extPCRDup.out -e .extPCRDup.err
+
+RLEN=$1
+MXINS=$2
+. ../../../callallsv.cfg
+
+mkdir -p ./rmPCRDup_${RLEN}bp
+for file in `ls */*.SA.sam`; do
+    $RSC/classifyFlag4_new3_mem_allcat.pl $file ${RLEN} ${RLEN} ${MXINS}
+    cat ${file}.cla.fr_? >> ./rmPCRDup_${RLEN}bp/all.SA.sam.cla.fr; rm ${file}.cla.fr_?
+    cat ${file}.cla.rf   >> ./rmPCRDup_${RLEN}bp/all.SA.sam.cla.rf; rm ${file}.cla.rf
+    cat ${file}.cla.ff   >> ./rmPCRDup_${RLEN}bp/all.SA.sam.cla.ff; rm ${file}.cla.ff
+    cat ${file}.cla.rr   >> ./rmPCRDup_${RLEN}bp/all.SA.sam.cla.rr; rm ${file}.cla.rr
+    awk '$2==81||$2==161||$2==97||$2==145{print}' ${file}.cla.tr >>./rmPCRDup_${RLEN}bp/all.SA.sam.cla.tr_fr
+    awk '$2==65||$2==129{print}'  ${file}.cla.tr		>> ./rmPCRDup_${RLEN}bp/all.SA.sam.cla.tr_ff
+    awk '$2==113||$2==177{print}' ${file}.cla.tr		>> ./rmPCRDup_${RLEN}bp/all.SA.sam.cla.tr_rr
+    rm ${file}.cla.tr  ${file}.cla.se  ${file}.cla.um
+done
+
+### extract duplicated reads:
+## Forward-Reverse pair
+cd rmPCRDup_${RLEN}bp/
+ln -s $SCR/softclip/qArray.rmDup_fr .
+jID=`pwd | rev | cut -f1-3 -d"/" | rev | sed -e "s/^/j/" -e "s|/|_|g"`
+qsub -N ${jID} ./qArray.rmDup_fr
+
+## Forward-Forward pair
+$RSC/rmPCRDupFrSam_new_2_sc.pl  all.SA.sam.cla.ff | cut -f1 | uniq > all.SA.sam.cla.ff.rmDup.id;
+cut -f1 all.SA.sam.cla.ff | uniq > all.SA.sam.cla.ff.id
+diff all.SA.sam.cla.ff.*id | grep ^"<" | awk 'NR%2==1{print $2}'  > rmDup_id.list
+
+## Reverse-Reverse pair
+$RSC/rmPCRDupFrSam_new_2_sc.pl  all.SA.sam.cla.rr | cut -f1 | uniq > all.SA.sam.cla.rr.rmDup.id;
+cut -f1 all.SA.sam.cla.rr | uniq > all.SA.sam.cla.rr.id
+diff all.SA.sam.cla.rr.*id | grep ^"<" | awk 'NR%2==1{print $2}' >> rmDup_id.list
+
+## Reverse-Forward pair
+$RSC/rmPCRDupFrSam_new_2_sc.pl  all.SA.sam.cla.rf | cut -f1 | uniq > all.SA.sam.cla.rf.rmDup.id;
+cut -f1 all.SA.sam.cla.rf | uniq > all.SA.sam.cla.rf.id
+diff all.SA.sam.cla.rf.*id | grep ^"<" | awk 'NR%2==1{print $2}' >> rmDup_id.list
+
+## Two end-reads mapped on different chromosomes
+for tarfile in all.SA.sam.cla.tr_fr all.SA.sam.cla.tr_ff all.SA.sam.cla.tr_rr
+do 
+  $RSC/split4_chrPair.pl  ${tarfile}
+
+  $RSC/rmPCRDupFrSam_tr_new_sc.pl ${tarfile}.p1 | cut -f1 | uniq > ${tarfile}.p1.rmDup.id;
+    cut -f1 ${tarfile}.p1 | uniq > ${tarfile}.p1.id
+    diff ${tarfile}.p1.id  ${tarfile}.p1.rmDup.id | grep ^"<" | awk 'NR%2==1{print $2}' >> rmDup_id.list
+  $RSC/rmPCRDupFrSam_tr_new_sc.pl ${tarfile}.p2 | cut -f1 | uniq > ${tarfile}.p2.rmDup.id;
+    cut -f1 ${tarfile}.p2 | uniq > ${tarfile}.p2.id
+    diff ${tarfile}.p2.id  ${tarfile}.p2.rmDup.id | grep ^"<" | awk 'NR%2==1{print $2}' >> rmDup_id.list
+  $RSC/rmPCRDupFrSam_tr_new_sc.pl ${tarfile}.p3 | cut -f1 | uniq > ${tarfile}.p3.rmDup.id;
+    cut -f1 ${tarfile}.p3 | uniq > ${tarfile}.p3.id
+    diff ${tarfile}.p3.id  ${tarfile}.p3.rmDup.id | grep ^"<" | awk 'NR%2==1{print $2}' >> rmDup_id.list
+  $RSC/rmPCRDupFrSam_tr_new_sc.pl ${tarfile}.p4 | cut -f1 | uniq > ${tarfile}.p4.rmDup.id;
+    cut -f1 ${tarfile}.p4 | uniq > ${tarfile}.p4.id
+    diff ${tarfile}.p4.id  ${tarfile}.p4.rmDup.id | grep ^"<" | awk 'NR%2==1{print $2}' >> rmDup_id.list
+done

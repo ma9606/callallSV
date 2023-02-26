@@ -1,0 +1,110 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -m ea
+#$ -cwd
+
+if [ $# -lt 2 ]; then
+  echo "usage: com.rearrangement.2.rf.pbs [max insert length(bp)] [file.conf] (Log_file)" 1>&2
+  exit 1
+fi
+
+MAX_INSERT=$1
+. $2
+LOG=$3
+JID=void
+
+WDIR=`pwd | rev | cut -d '/' -f1 | rev`
+
+if [ ! -s "./all.sam.cla.rf" ];then
+# cat ./*.sam*.cla.rf > .rf; mv .rf all.sam.cla.rf
+  cat ./*.sam*.cla.rf > .rf;  rm ./*.sam*.cla.rf;  mv .rf all.sam.cla.rf
+fi
+
+$RSC/extractHighInsert_rf_bwa.pl all.sam.cla.rf 88 99 1> all.sam.cla.rf.ins 2> all.sam.cla.rf.ins.err
+ls -l all.sam.cla.rf.ins | awk -v wd=${WDIR}"_stp2rf-1/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractMultiHit2_mem.pl all.sam.cla.rf.ins 1> all.sam.cla.rf.ins.rmMulti2 2> all.sam.cla.rf.ins.rmMulti2.err
+ls -l all.sam.cla.rf.ins.rmMulti2 | awk -v wd=${WDIR}"_stp2rf-2/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractHighMapSco_bwa.pl all.sam.cla.rf.ins.rmMulti2 $MAPQ 1> all.sam.cla.rf.ins.rmMulti2.sco37 2> all.sam.cla.rf.ins.rmMulti2.sco37.err
+ls -l all.sam.cla.rf.ins.rmMulti2.sco37 | awk -v wd=${WDIR}"_stp2rf-3/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractHighQualityAlignment.pl all.sam.cla.rf.ins.rmMulti2.sco37 4 1> all.sam.cla.rf.ins.rmMulti2.sco37.mis2 2> all.sam.cla.rf.ins.rmMulti2.sco37.mis2.err
+ls -l all.sam.cla.rf.ins.rmMulti2.sco37.mis2 | awk -v wd=${WDIR}"_stp2rf-4/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmPCRDupFrSam_new_2.pl all.sam.cla.rf.ins.rmMulti2.sco37.mis2 1> all.sam.cla.rf.ins.rmMulti2.sco37.mis2.rmDup 2> all.sam.cla.rf.ins.rmMulti2.sco37.mis2.rmDup.err
+ls -l all.sam.cla.rf.ins.rmMulti2.sco37.mis2.rmDup | awk -v wd=${WDIR}"_stp2rf-5/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+
+#---patch.for${REF_FAI}_221227---
+
+awk -F"\t" '{gsub("chr","",$3); gsub("chr","",$7); for(i=1;i<NF;i++)printf $i"\t"; print $NF}' all.sam.cla.rf.ins.rmMulti2.sco37.mis2.rmDup > all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2
+
+$SAMTOOLS_DIR/samtools view -bt $REF_FAI -o all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam.stderr
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam | awk -v wd=${WDIR}"_stp2rf-6/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$SAMTOOLS_DIR/samtools sort all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam -o all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam.sort.bam  2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam.sort.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam.sort.bam | awk -v wd=${WDIR}"_stp2rf-7/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$SAMTOOLS_DIR/samtools view -o all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.bam.sort.bam 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort | awk -v wd=${WDIR}"_stp2rf-8/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+awk -F"\t" '{$3="chr"$3; if($7!="=")$7="chr"$7; for(i=1;i<NF;i++)printf $i"\t"; print $NF}' all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort > .all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort && mv .all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort
+
+#---
+
+$RSC/classifyFR.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.cla.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+ | awk -v wd=${WDIR}"_stp2rf-9/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractCluster2_bwa_new2.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+ exCl_length 2 $MAPQ 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu | awk -v wd=${WDIR}"_stp2rf-10/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractCluster2_bwa_new2.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.- exCl_length 2 $MAPQ 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu | awk -v wd=${WDIR}"_stp2rf-11/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+
+$RSC/rmCluster_RF_plus.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu 2 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu.rm 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu.rm.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu.rm | awk -v wd=${WDIR}"_stp2rf-12/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmCluster_RF_minus.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu 2 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu.rm 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu.rm.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu.rm | awk -v wd=${WDIR}"_stp2rf-13/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+
+$RSC/extractBothCluster_3_bwa.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.-.clu.rm all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.+.clu.rm 4 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2 | awk -v wd=${WDIR}"_stp2rf-14/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractBothCluster2_bwa.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2 2 > all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2 | awk -v wd=${WDIR}"_stp2rf-15/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/chkCluster.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2 2 exCl_length 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.chk 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.chk.err
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.chk | awk -v wd=${WDIR}"_stp2rf-15.5/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+#RSC/rmLargeCluster2_bwa_new.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2 $MAX_INSERT 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.err
+#RSC/rmLargeCluster2_bwa_new.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.chk $MAX_INSERT 1> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size 2> all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.err
+cp  all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.chk  all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size
+ls -l all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size | awk -v wd=${WDIR}"_stp2rf-16/16" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+
+#---
+
+# flg=0
+# for err_file in `cat $DGR/list/.cr2_rf.err.list`
+# do
+#   if [ -s $err_file ]; then flg=1; fi
+# done
+# 
+# if [ $flg -eq 1 ]; then 
+#   echo "WARNING:  error message generated in com.rearrangement.2.rf, as follows:"
+#   for err_file in `cat $DGR/list/.cr2_rf.err.list`
+#   do 
+#     if [ -s $err_file ]; then 
+#       echo " -> "$err_file
+#       cat $err_file
+#     else
+#       rm $err_file
+#     fi
+#   done
+# #else 
+# #  awk '{print "rm "$1}' $DGR/list/.cr2_rf.err.list > ._rf; sh ._rf
+# #  rm ._rf 
+# fi

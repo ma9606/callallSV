@@ -1,0 +1,7 @@
+x<-read.table("./intraBP_addCnt.list", sep="\t", stringsAsFactors=F)
+for(i in 1:nrow(x)){
+   fisher.test(matrix(c(x[i, 13], x[i, 14], x[i, 16], x[i, 17]), ncol=2)) -> fout
+   x[i,19] <- signif(fout$p.value, 3)
+   x[i,20] <- signif((-1 * log(fout$p.value)),3)
+}
+write.table(x, "./intraBP_tested_0.list", quote=F, sep="\t", col.names=F, row.names=F)

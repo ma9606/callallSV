@@ -1,0 +1,32 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -cwd 
+#$ -l s_vmem=1G -l mem_req=1G -l mem_free=1G
+
+echo "" | sed -e '$d' > ./.merge_intraBP.list_0_filtR_tr.supPE
+
+for file in `cat .list.bamfile`
+do
+  cat  ${file}.supPE.list_0 >> ./.merge_intraBP.list_0_filtR_tr.supPE
+done
+
+sort ./.merge_intraBP.list_0_filtR_tr.supPE | uniq -c  > intraBP.list_0_filtR_tr.supPE_0
+cut --characters=9- intraBP.list_0_filtR_tr.supPE_0  > intraBP.list_0_filtR_tr.supPE
+
+# [1] sc-support read > 2 : all SV candidates are passed to realnSV process.
+awk '$10!=2{print}' intraBP.list_0_filtR           > intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M
+
+# [2a] sc-support read == 2 and intRA-chromosomal SV : required SVsize<1M && both sc fragment have moderate alignemnt score(>=30).
+awk '$10==2 && $0!~"translocation"{ \
+	size=$6-$4; if(size<0)size=-1*size; \
+	split($NF,as,","); \
+	if(size<1000000 && (as[2]>=30 && as[3]>=30))print}' \
+		    intraBP.list_0_filtR	  >> intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M
+
+# [2b] sc-support read == 2 and intER(=translocation)chromosomal SV : required at least one PE-support read.
+awk '$10==2{print}' intraBP.list_0_filtR_tr.supPE >> intraBP.list_0_filtR_filtPEtr_wo_SVsize_ov1M
+
+
+rm ./.merge_intraBP.list_0_filtR_tr.supPE
+pwd > .chkStat_c3.out
+echo "FINISH_com_3.mkBPlist_[1-2] and generate Filtered/all[Nout,TiB] successfully, proceed to intra-NoarmalPanel(=qArray.allNP)" >> .chkStat_c3.out

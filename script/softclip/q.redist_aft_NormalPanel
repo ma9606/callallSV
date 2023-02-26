@@ -1,0 +1,26 @@
+#$ -S /bin/sh
+#$ -o .redist_aftNP.out -e .redist_aftNP.err
+#$ -hold_jid aNP
+#$ -cwd 
+#$ -l s_vmem=1G -l mem_req=1G -l mem_free=1G
+
+CUR=`pwd`	
+FIL=$CUR/Filtered/allTiB
+list_smplID=$1
+
+for smpl in `cat $list_smplID`
+do
+    echo "make empty file" | sed -e'$d' > $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list
+
+    for dir in HH  HT  TT  trHH  trHT  trTT
+    do
+   	awk -v tarid=${smpl} '$NF==tarid{print}'  $FIL/$dir/chr[1-2].BP_list_0_[0-9][0-9]_np  | sed -e "s/\t${smpl}$//"  >> $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list
+   	awk -v tarid=${smpl} '$NF==tarid{print}'  $FIL/$dir/chr[3-9].BP_list_0_[0-9][0-9]_np  | sed -e "s/\t${smpl}$//"  >> $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list
+   	awk -v tarid=${smpl} '$NF==tarid{print}'  $FIL/$dir/chr1[0-9].BP_list_0_[0-9][0-9]_np | sed -e "s/\t${smpl}$//"  >> $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list
+	awk -v tarid=${smpl} '$NF==tarid{print}'  $FIL/$dir/chr2[0-2].BP_list_0_[0-9][0-9]_np $FIL/$dir/chr[X-Y].BP_list_0_[0-9][0-9]_np  | sed -e "s/\t${smpl}$//" >> $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list
+    done
+
+    sed -e "s/^chrX/chr23/" -e "s/^chrY/chr24/" -e "s/^chr//" $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list | sort -k10,10nr -k1,1n -k4,4n | sed -e "s/^/chr/" -e "s/^chr23/chrX/" -e "s/^chr24/chrY/" > $CUR/${smpl}/tumor/intraBP.list_0_filtR_filt2_aNP.list
+    rm $CUR/${smpl}/tumor/.intraBP.list_0_filtR_filt2_aNP.list
+    cp -p $CUR/${smpl}/tumor/intraBP.list_0_filtR_filt2_aNP.list $CUR/${smpl}/tumor/intraBP.list.filtNP
+done

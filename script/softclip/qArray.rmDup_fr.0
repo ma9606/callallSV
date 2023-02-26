@@ -1,0 +1,49 @@
+#!/bin/sh
+#$ -l s_vmem=2G
+#$ -l mem_req=2G
+#$ -l mem_free=2G
+#$ -r n
+#$ -cwd
+#$ -b y
+#$ -t 1-24:1
+#$ -o .rmDup_fr.out -e .rmDup_fr.err
+
+ctg=(
+[1]=1
+[2]=2
+[3]=3
+[4]=4
+[5]=5
+[6]=6
+[7]=7
+[8]=8
+[9]=9
+[10]=10
+[11]=11
+[12]=12
+[13]=13
+[14]=14
+[15]=15
+[16]=16
+[17]=17
+[18]=18
+[19]=19
+[20]=20
+[21]=21
+[22]=22
+[23]=X
+[24]=Y
+)  
+
+. ../../../../callallsv.cfg
+cat $RSC/.sam.header  > all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}
+awk -v chID=${ctg[$SGE_TASK_ID]} '$3==chID{print}' all.SA.sam.cla.fr >> all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}
+
+${SAMTOOLS_DIR}/samtools view -bt ${REF}  -o all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.bam  all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}
+${SAMTOOLS_DIR}/samtools sort all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.bam  -o all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.srt.bam  &&  mv all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.srt.bam all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.bam
+${SAMTOOLS_DIR}/samtools rmdup all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.bam  all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.rmdup.bam
+${SAMTOOLS_DIR}/samtools view -h all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.rmdup.bam -o all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.rmdup.sam
+
+grep -v ^@ all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.rmdup.sam | cut -f1 | sort -u > all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.rmDup.id
+grep -v ^@ all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}           | cut -f1 | sort -u > all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.id
+join -1 1 -2 1 -v 1  all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.id  all.SA.sam.cla.fr_chr${ctg[$SGE_TASK_ID]}.rmDup.id > rmDup_id_chr${ctg[$SGE_TASK_ID]}.list

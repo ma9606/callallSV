@@ -1,0 +1,14 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -cwd 
+#$ -o .Ftest.out -e .Ftest.err
+#$ -l s_vmem=2G -l mem_req=2G -l mem_free=2G
+
+source ./.rearrangement.conf
+
+cat intraBP.list_p[0-9][0-9][0-9][0-9]_0 | awk -F"\t" '$14!=0{print}' > intraBP_addCnt.list  &&  rm intraBP.list_p[0-9][0-9][0-9][0-9]  intraBP.list_p[0-9][0-9][0-9][0-9]_0
+
+${SCR}/patch/_softclip_exclude-rdBP.sh  intraBP_addCnt.list
+
+${R_DIR}/R --vanilla --slave < $RSC/fisher_R.scr
+awk -F"\t" '{printf "%s\t%s\t%9d\t|\t%9d\t",$1,$2,$3,$5; for(i=6;i<NF;i++)printf "%s\t",$i; print $NF}' ./intraBP_tested_0.list > ./intraBP_tested.list

@@ -1,0 +1,32 @@
+#$ -S /bin/sh
+#$ -cwd 
+#$ -l s_vmem=8G -l mem_req=8G -l mem_free=8G
+
+if [ $# -ne 2 ]; then
+  echo "Usage:  ./q.mklist_pChr [status(tumor/normal)] [insertSize_Max]"; exit 1;
+fi
+
+stat=$1
+mxis=$2
+RLN=`pwd | sed -e "s/\/${stat}//"`
+source $RLN/.rearrangement.conf
+
+while read tardir
+do
+   cat $RLN/REF/${stat}/${tardir}/*.extlist >> .merged_refsup.extlist 
+done < $HDR/SoftClip/${SID}/${stat}/.list.seqdir
+
+
+mkdir -p  ./pChr_REFsupp/
+echo -n "" > pChr_REFsupp/REFsupp_SE.bplist;	echo -n "" > pChr_REFsupp/REFsupp_PE.bplist
+
+
+for cID in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X Y
+do
+   awk -v N=${cID} '$1==N{print}' .merged_refsup.extlist | sort -t$'\t' -k6 -u > pChr_REFsupp/chr${cID}.extlist
+   sort -k6,6 -u pChr_REFsupp/chr${cID}.extlist > .extlist
+   awk -v buf=$mxis '$NF~"SE"{print $1, $2+buf, $4}' .extlist | sort -k2,2n | uniq -c >> pChr_REFsupp/REFsupp_SE.bplist
+   awk -v buf=$mxis '$NF~"PE"{print $1, $2+buf, $4}' .extlist | sort -k2,2n | uniq -c >> pChr_REFsupp/REFsupp_PE.bplist
+done
+
+rm .merged_refsup.extlist .extlist

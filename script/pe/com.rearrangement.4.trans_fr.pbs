@@ -1,0 +1,105 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -m ea
+#$ -cwd 
+
+if [ $# -lt 2 ]; then
+  echo "usage: com.rearrangement.4.trans_fr.pbs [max insert length(bp)] [file.conf] (Log_file)" 1>&2
+  exit 1
+fi
+
+MAX_INSERT=$1
+. $2
+LOG=$3
+JID=void
+
+WDIR=`pwd | rev | cut -d '/' -f1 | rev`
+
+
+$RSC/chkOverlapCluster_new.pl ../normal/translocation2_sco37.full_fr.r2.txt translocation2_sco37.full_fr.r2.txt $READ_LEN_N $READ_LEN > translocation2_sco37.full_fr.r2.txt.2
+ls -l translocation2_sco37.full_fr.r2.txt.2 | awk -v wd=${WDIR}"_stp4trans_fr-1/10" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/viewClusterRegion.pl translocation2_sco37.full_fr.r2.txt.2 > translocation2_sco37.full_fr.r2.txt.3
+$RSC/viewClusterRegion2.pl translocation2_sco37.full_fr.r2.txt.3 $READ_LEN > translocation2_sco37.full_fr.r2.txt.4
+$RSC/viewClusterRegion.pl translocation2_sco37.full_fr.r2.txt > translocation2_sco37.full_fr.r2.txt.5
+$RSC/viewClusterRegion2.pl translocation2_sco37.full_fr.r2.txt.5 $READ_LEN > translocation2_sco37.full_fr.r2.txt.6
+$RSC/extractNoL_fr_trans.pl ../normal/all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 translocation2_sco37.full_fr.r2.txt.4 $READ_LEN > translocation2_sco37.full_fr.r2_r1.txt.4
+CNT=`wc -l translocation2_sco37.full_fr.r2_r1.txt.4 | cut -d" " -f1`
+ls -l translocation2_sco37.full_fr.r2_r1.txt.4 | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-2/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractCluster4.pl translocation2_sco37.full_fr.r2_r1.txt.4 all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size $READ_LEN > translocation2_fr_sco37.full.r2.all.noL.cluster.txt
+CNT=`grep -c "^#####" translocation2_fr_sco37.full.r2.all.noL.cluster.txt`
+ls -l translocation2_fr_sco37.full.r2.all.noL.cluster.txt | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-3/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/chFormat6_bwa.pl translocation2_fr_sco37.full.r2.all.noL.cluster.txt $READ_LEN > translocation2_fr_sco37.full.r2.all.noL.cluster.txt.1
+sort -k 1,1nr translocation2_fr_sco37.full.r2.all.noL.cluster.txt.1 > translocation2_fr_sco37.full.r2.all.noL.cluster.txt.1.sort1
+$RSC/extract2.pl translocation2_fr_sco37.full.r2.all.noL.cluster.txt.1.sort1 0 4 > translocation2_fr_sco37.full.r2.all.noL.cluster.read4up.txt
+CNT=`wc -l translocation2_fr_sco37.full.r2.all.noL.cluster.read4up.txt | cut -d" " -f1`
+ls -l translocation2_fr_sco37.full.r2.all.noL.cluster.read4up.txt | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-4/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractCluster5.pl translocation2_fr_sco37.full.r2.all.noL.cluster.read4up.txt all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size $READ_LEN > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt
+CNT=`grep -c "^#####" translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt`
+ls -l translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-5/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/extractCluster3_1.pl translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt 4 > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4
+CNT=`grep -c "^#####" translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4`
+ls -l translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4 | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-6/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+#  realigment to reference genome with BLAST, to check pseudo rearrangement
+#  << fr >>
+# mkdir -p "tmp_trans-fr"; cd tmp_trans-fr
+# if [ -e "translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8.pair-end.fr.new3" ]; then
+#   rm translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8.pair-end.fr.new3
+# fi
+# $RSC/extractCluster3_bwa_chrPair.pl ../translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt 4 fr 
+# ls -l .frchr*.fa | awk "\$5!=0{print \$NF}" > .tmplist_fr
+# 
+# for fasta in `cat .tmplist_fr` 
+# do 
+#   if [ -s $fasta ]; then
+#     tmpdb=`echo $fasta | cut -c 4-`
+#     $BLST/blastall -p blastn -d $REF/pchromFa/$tmpdb -e 1e-10 -m 8 -F F < $fasta > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8_0
+#     awk -v len=$READ_LEN '$4>=(len*0.95){print}' translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8_0 > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8
+#     $RSC/extractPairEnd_fr_new3_bwa.pl translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8 $READ_LEN $MAX_INSERT 1e-1 $READ_LEN >> translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8.pair-end.fr.new3
+# 
+#     mv ./$fasta ./$tmpdb"-fr.fa"
+#     mv translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8 ./$tmpdb"-fr.blout"
+#   fi
+#   sh $RSC/check_memout.sh $JID 
+# 
+# done
+# rm .fr*.fa
+# mv translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8.pair-end.fr.new3 ../
+# cd ../
+
+# $RSC/rmPairEnd2_bwa.pl translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.seq4.blastn.e-1.ff.m8.pair-end.fr.new3 translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4 > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1
+cp translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4 translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1
+
+CNT=`grep -c "^#####" translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1`
+ls -l translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1 | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-7/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/chFormat6_bwa.pl translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1 $READ_LEN > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1.1
+sort -k 10,10n translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1.1 > translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1.1.sort10
+$RSC/extractCluster5.pl translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1.1 translocation_fr.6 $READ_LEN > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.cluster.txt
+CNT=`grep -c "^#####" translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.cluster.txt`
+ls -l translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.cluster.txt | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-8/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/chFormat6_bwa.pl translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.cluster.txt $READ_LEN > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.txt
+sort -k 1,1nr translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.txt > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.txt.sort1
+sort -k 10,10nr translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.txt > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.txt.sort10
+  $RSC/rmNoPrefectMatch_mem_new.pl translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1 1 > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt
+# for SKIP rmNoPrefectMatch 
+  cp translocation2_fr_sco37.full.r2.all.noL.read4up.cluster.txt.read4.rm_pair-end.fr.e-1 translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt
+
+CNT=`grep -c "^#####" translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt`
+ls -l translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt | awk -v c=$CNT -v wd=${WDIR}"_stp4trans_fr-9/10" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/chFormat6_bwa.pl translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt $READ_LEN > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt
+sort -k 1,1nr translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.sort1
+sort -k 10,10nr translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.sort10
+$RSC/chFormat3_bwa.pl translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt > translocation2new_fr_sco37.r3.noL.e+3.rmMulti.rmNoPrefect.txt
+$RSC/chkFusionGene2_FR_translocation.pl $RSQ translocation2new_fr_sco37.r3.noL.e+3.rmMulti.rmNoPrefect.txt $READ_LEN > translocation3new_sco37_fr.txt
+ls -l translocation3new_sco37_fr.txt | awk -v wd=${WDIR}"_stp4trans_fr-10/10" '{print "log: "wd"\t"$10" [ filesize =\t"$5" ] generated"}' >> $LOG
+
+cp translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt.new
+$RSC/chFormat6_bwa.pl translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.cluster.txt.new $READ_LEN > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new

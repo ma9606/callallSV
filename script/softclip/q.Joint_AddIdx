@@ -1,0 +1,20 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -cwd 
+#$ -l s_vmem=12G -l mem_req=12G -l mem_free=12G
+
+if [ $# -ne 2 ]; then 
+   echo "USAGE: qJoint_AddIdx  [intraBP.list]  [outfile]"
+   echo "   ex: qJoint_AddIdx  ../intraBP.list  SVseq_multiFa"
+   exit
+fi
+
+source ../.rearrangement.conf
+
+list=$1  # intraBP.list
+outFa=$2 # outfile(fasta format)
+
+ln -s $RSC/invert_nucSq.pl ./.invert_nucSq.pl
+$RSC/joint_BPend.pl $list 1>${outFa}.fa 2>${outFa}.err
+
+${BWA_DIR}/bwa index -a is ${outFa}.fa

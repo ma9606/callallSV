@@ -1,0 +1,150 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -m ea
+#$ -cwd
+
+if [ $# -lt 1 ]; then
+  echo "usage: com.rearrangement.5.output.pbs [file.conf] (Log_file)" 1>&2
+  exit 1
+fi
+
+. $1
+LOG=$2
+
+WDIR=`pwd | rev | cut -d '/' -f1 | rev`
+
+cat translocation2_sco37.full_??.r2.txt.6 > translocation2_sco37.full.r2.all.txt
+cat translocation2_sco37.full_??.r2.txt.4 > translocation2_sco37.full.r2.all.noL.txt
+
+sort -k 1,1nr deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 10,10nr deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+sort -k 1,1nr inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 1,1nr inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 10,10nr inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+sort -k 10,10nr inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+sort -k 1,1nr tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 10,10nr tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+sort -k 1,1nr translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 1,1nr translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 1,1nr translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1
+sort -k 10,10nr translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+sort -k 10,10nr translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+sort -k 10,10nr translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10
+
+$RSC/chFormat25.pl deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam deletion > deletion_new_sort1.txt
+$RSC/chFormat25.pl deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam deletion > deletion_new_sort10.txt
+$RSC/chFormat25.pl inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam inversion > inversion-ff_new_sort1.txt
+$RSC/chFormat25.pl inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam inversion > inversion-rr_new_sort1.txt
+$RSC/chFormat25.pl inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam inversion > inversion-ff_new_sort10.txt
+$RSC/chFormat25.pl inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam inversion > inversion-rr_new_sort10.txt
+$RSC/chFormat25.pl tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam tandem_duplication > tandem_duplication_new_sort1.txt
+$RSC/chFormat25.pl tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam tandem_duplication > tandem_duplication_new_sort10.txt
+$RSC/chFormat25.pl translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam translocation > translocation-fr_new_sort1.txt
+$RSC/chFormat25.pl translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam translocation > translocation-ff_new_sort1.txt
+$RSC/chFormat25.pl translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 all.sam translocation > translocation-rr_new_sort1.txt
+$RSC/chFormat25.pl translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam translocation > translocation-fr_new_sort10.txt
+$RSC/chFormat25.pl translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam translocation > translocation-ff_new_sort10.txt
+$RSC/chFormat25.pl translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 all.sam translocation > translocation-rr_new_sort10.txt
+
+$RSC/chkDistance.pl deletion_new_sort1.txt 1000 > deletion_new_dis1000_sort1.txt
+$RSC/chkDistance.pl deletion_new_sort10.txt 1000 > deletion_new_dis1000_sort10.txt
+$RSC/append_word_1.pl deletion_new_dis1000_sort1.txt FR > deletion_new.txt
+$RSC/append_word_1.pl inversion-ff_new_sort1.txt FF > inversion-ff_new_sort1.txt.1
+$RSC/append_word_1.pl inversion-rr_new_sort1.txt RR > inversion-rr_new_sort1.txt.1
+cat inversion-ff_new_sort1.txt.1 inversion-rr_new_sort1.txt.1 | sort -k 4,4nr > inversion_new.txt
+$RSC/append_word_1.pl tandem_duplication_new_sort1.txt RF > tandem_new.txt
+$RSC/append_word_1.pl translocation-fr_new_sort1.txt FR > translocation-fr_new_sort1.txt.1
+$RSC/append_word_1.pl translocation-ff_new_sort1.txt FF > translocation-ff_new_sort1.txt.1
+$RSC/append_word_1.pl translocation-rr_new_sort1.txt RR > translocation-rr_new_sort1.txt.1
+cat translocation-fr_new_sort1.txt.1 translocation-ff_new_sort1.txt.1 translocation-rr_new_sort1.txt.1 | sort -k 4,4nr > translocation_new.txt
+
+cat deletion_new.txt inversion_new.txt tandem_new.txt translocation_new.txt > rearrangement_new.txt
+
+$RSC/chFormatSV_2.pl rearrangement_new.txt > rearrangement_new.txt.2
+
+###
+$RSC/chkSV_gene.pl $RSQ deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > deletion_new_fr_gene_all.txt
+$RSC/chkSV_gene.pl $RSQ deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > deletion_new_fr_gene_all.txt.sort1
+$RSC/chkSV_gene.pl $RSQ deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > deletion_new_fr_gene_all.txt.sort10
+
+$RSC/chkSV_gene_3_fr.pl $RSQ deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > deletion_new_fr_gene4.txt
+$RSC/chkSV_gene_3_fr.pl $RSQ deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > deletion_new_fr_gene4.txt.sort1
+$RSC/chkSV_gene_3_fr.pl $RSQ deletion2new_sco37.r2.noL.insMax.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > deletion_new_fr_gene4.txt.sort10
+
+$RSC/chkSV_gene_3_rf.pl $RSQ tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > tandem_new_rf_gene4.txt
+$RSC/chkSV_gene_3_rf.pl $RSQ tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > tandem_new_rf_gene4.txt.sort1
+$RSC/chkSV_gene_3_rf.pl $RSQ tandem_duplication2new_sco37.r2.noL.ins100up.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > tandem_new_rf_gene4.txt.sort10
+
+$RSC/chkSV_gene_3_ff.pl $RSQ inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > inversion_new_ff_gene4.txt
+$RSC/chkSV_gene_3_ff.pl $RSQ inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > inversion_new_ff_gene4.txt.sort1
+$RSC/chkSV_gene_3_ff.pl $RSQ inversion2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > inversion_new_ff_gene4.txt.sort10
+
+$RSC/chkSV_gene_3_rr.pl $RSQ inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > inversion_new_rr_gene4.txt
+$RSC/chkSV_gene_3_rr.pl $RSQ inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > inversion_new_rr_gene4.txt.sort1
+$RSC/chkSV_gene_3_rr.pl $RSQ inversion2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > inversion_new_rr_gene4.txt.sort10
+
+$RSC/chkSV_gene_trans_3_fr.pl $RSQ translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation_new_fr_gene4.txt
+$RSC/chkSV_gene_trans_3_fr.pl $RSQ translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > translocation_new_fr_gene4.txt.sort1
+$RSC/chkSV_gene_trans_3_fr.pl $RSQ translocation2new_fr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > translocation_new_fr_gene4.txt.sort10
+
+$RSC/chkSV_gene_trans_3_ff.pl $RSQ translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation_new_ff_gene4.txt
+$RSC/chkSV_gene_trans_3_ff.pl $RSQ translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > translocation_new_ff_gene4.txt.sort1
+$RSC/chkSV_gene_trans_3_ff.pl $RSQ translocation2new_ff_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > translocation_new_ff_gene4.txt.sort10
+
+$RSC/chkSV_gene_trans_3_rr.pl $RSQ translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new > translocation_new_rr_gene4.txt
+$RSC/chkSV_gene_trans_3_rr.pl $RSQ translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort1 > translocation_new_rr_gene4.txt.sort1
+$RSC/chkSV_gene_trans_3_rr.pl $RSQ translocation2new_rr_sco37.r2.noL.read4up.e+3.rmMulti.rmNoPrefectMatch.txt.new.sort10 > translocation_new_rr_gene4.txt.sort10
+
+###
+$RSC/append.pl all.sam deletion      deletion_new_fr_gene4.txt.sort1 > deletion_new_fr_gene5.txt.sort1
+$RSC/append.pl all.sam tandem_dup    tandem_new_rf_gene4.txt.sort1 > tandem_new_rf_gene5.txt.sort1
+$RSC/append.pl all.sam inversion     inversion_new_ff_gene4.txt.sort1 > inversion_new_ff_gene5.txt.sort1
+$RSC/append.pl all.sam inversion     inversion_new_rr_gene4.txt.sort1 > inversion_new_rr_gene5.txt.sort1
+$RSC/append.pl all.sam translocation translocation_new_fr_gene4.txt.sort1 > translocation_new_fr_gene5.txt.sort1
+$RSC/append.pl all.sam translocation translocation_new_ff_gene4.txt.sort1 > translocation_new_ff_gene5.txt.sort1
+$RSC/append.pl all.sam translocation translocation_new_rr_gene4.txt.sort1 > translocation_new_rr_gene5.txt.sort1
+cat deletion_new_fr_gene5.txt.sort1 tandem_new_rf_gene5.txt.sort1 inversion_new_ff_gene5.txt.sort1 inversion_new_rr_gene5.txt.sort1 translocation_new_fr_gene5.txt.sort1 translocation_new_ff_gene5.txt.sort1 translocation_new_rr_gene5.txt.sort1 > rearrangement5new.txt
+CNT=`grep -v sample -c rearrangement5new.txt`
+ls -l rearrangement5new.txt | awk -v c=$CNT -v wd=${WDIR}"_stp5-1/5" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+grep NM_ rearrangement5new.txt > rearrangement5new_gene.txt
+grep "3'" rearrangement5new_gene.txt | grep "5'" > fusion5new_gene.txt
+
+###
+$RSC/append2.pl FR deletion_new_fr_gene5.txt.sort1 > deletion_new_fr_gene6.txt.sort1
+$RSC/append2.pl RF tandem_new_rf_gene5.txt.sort1 > tandem_new_rf_gene6.txt.sort1
+$RSC/append2.pl FF inversion_new_ff_gene5.txt.sort1 > inversion_new_ff_gene6.txt.sort1
+$RSC/append2.pl RR inversion_new_rr_gene5.txt.sort1 > inversion_new_rr_gene6.txt.sort1
+$RSC/append2.pl FR translocation_new_fr_gene5.txt.sort1 > translocation_new_fr_gene6.txt.sort1
+$RSC/append2.pl FF translocation_new_ff_gene5.txt.sort1 > translocation_new_ff_gene6.txt.sort1
+$RSC/append2.pl RR translocation_new_rr_gene5.txt.sort1 > translocation_new_rr_gene6.txt.sort1
+cat deletion_new_fr_gene6.txt.sort1 tandem_new_rf_gene6.txt.sort1 inversion_new_ff_gene6.txt.sort1 inversion_new_rr_gene6.txt.sort1 translocation_new_fr_gene6.txt.sort1 translocation_new_ff_gene6.txt.sort1 translocation_new_rr_gene6.txt.sort1 > rearrangement6new.txt
+CNT=`grep -v sample -c rearrangement6new.txt`
+ls -l rearrangement6new.txt | awk -v c=$CNT -v wd=${WDIR}"_stp5-2/5" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+grep NM_ rearrangement6new.txt > rearrangement6new_gene.txt
+grep "3'" rearrangement6new_gene.txt | grep "5'" > fusion6new_gene.txt
+
+###
+cat deletion_new_fr_gene6.txt.sort1 tandem_new_rf_gene6.txt.sort1 inversion_new_ff_gene6.txt.sort1 inversion_new_rr_gene6.txt.sort1 translocation_new_fr_gene6.txt.sort1 translocation_new_ff_gene6.txt.sort1 translocation_new_rr_gene6.txt.sort1 > rearrangement7new.txt
+CNT=`grep -v sample -c rearrangement7new.txt`
+ls -l rearrangement7new.txt | awk -v c=$CNT -v wd=${WDIR}"_stp5-3/5" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+grep NM_ rearrangement7new.txt > rearrangement7new_gene.txt
+grep "3'" rearrangement7new_gene.txt | grep "5'" > fusion7new_gene.txt
+
+###
+$RSC/add_first_line.pl rearrangement7new.txt > rearrangement7new.txt.1
+$RSC/chFormat20.pl rearrangement7new.txt.1 > rearrangement8new.txt
+$RSC/chFormat20_2.pl rearrangement8new.txt > rearrangement9new.txt
+CNT=`grep -v sample -c rearrangement8new.txt`
+ls -l rearrangement8new.txt | awk -v c=$CNT -v wd=${WDIR}"_stp5-4/5" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+$RSC/chFormat20_1.pl rearrangement9new.txt > rearrangement9new_gene.txt
+$RSC/chFormat22.pl rearrangement9new_gene.txt > fusion9new_gene.txt
+$RSC/chFormat21_1.pl fusion9new_gene.txt > fusion9new_gene_inframe.txt
+
+$RSC/chFormat27.pl rearrangement9new.txt > rearrangement10new.txt
+CNT=`grep -v sample -c rearrangement10new.txt`
+ls -l rearrangement10new.txt | awk -v c=$CNT -v wd=${WDIR}"_stp5-5/5" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+$RSC/chFormat27.pl rearrangement9new_gene.txt > rearrangement10new_gene.txt
+$RSC/chFormat27_fusion.pl fusion9new_gene.txt > fusion10new_gene.txt
+$RSC/chFormat27_fusion_1.pl fusion9new_gene_inframe.txt > fusion10new_gene_inframe.txt
+
+$RSC/chFormat23_1.pl fusion10new_gene_inframe.txt > fusion10new_gene_inframe.txt.2

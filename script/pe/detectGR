@@ -1,0 +1,230 @@
+#!/bin/sh
+
+ECLEN=400   # cr2.??.pbs: extractCluster2_bwa_new2.pl $1[length between paired cluster]
+VMEM=0
+if [ $# -eq 9 ]; then 
+   VMEM=$9
+   VMEM_H=`expr $VMEM / 2`
+   VMEM_Q=`expr $VMEM / 4`
+   VMEM_X=`expr $VMEM / 6`
+fi
+
+CONF=../../callallsv.cfg;  . $CONF
+
+CUR=`pwd`
+SID=`pwd | rev | cut -d '/' -f1 | rev`
+
+NID="n"$SID
+TID="t"$SID
+
+START=`date +%Y%m%d_%H-%M-%S`
+LOG=$CUR"/detectGR_"${START}.log
+echo -e "command:\t"$0 $@ 1> $LOG
+echo -e "Job start:\t"`date +%Y%m%d_%H-%M-%S`"\n" >> $LOG
+
+while [ "$1" != "" ]; do
+ if [ "$1" = "-i" ]; then shift;     INPUT_T=$(cd $(dirname $1)&&pwd)"/"`basename $1`
+  elif [ "$1" = "-l" ];  then shift; MXINS_T=$1;
+  elif [ "$1" = "-ni" ]; then shift; INPUT_N=$(cd $(dirname $1)&&pwd)"/"`basename $1`
+  elif [ "$1" = "-nl" ]; then shift; MXINS_N=$1;
+  else shift
+ fi
+done
+
+if [ ! -n "$INPUT_T" -o ! -n "$MXINS_T" -o ! -n "$INPUT_N" -o ! -n "$MXINS_N" ]; then
+  echo "usage: detectGR -i [list for tumor.sam] -l [max insert_length(bp)_tumor] -ni [list for normal.sam] -nl [max insert_length(bp)_normal] "
+  exit 1
+fi
+ 
+mkdir -p $CUR/tumor;  echo -e "\nSID=${SID}\n" | cat ../../callallsv.cfg - > $CUR/tumor/.rearrangement.conf
+mkdir -p $CUR/normal; echo -e "\nSID=${SID}\n" | cat ../../callallsv.cfg - > $CUR/normal/.rearrangement.conf
+
+
+for list in $INPUT_T $INPUT_N ; do
+  if [ ! -s "$list" ]; then echo "'$list' is not found, exit."; exit; fi
+  cnt=0;
+  for file in `cat $list`; do
+      if [ ! -s "$file" ]; then echo "'$file' is not found, exit."; exit; fi
+      if [   "$list" == "$INPUT_T" -a $cnt -eq 0 ]; then
+          READ_LEN=`zcat $file | head -10000 - | awk 'NF>=11&&$2<1000{print length($10)}' | sort -u`; 
+          echo 'READ_LEN='$READ_LEN >> $CUR/tumor/.rearrangement.conf;  echo 'MXINS_T='$MXINS_T >> $CUR/tumor/.rearrangement.conf
+          echo 'READ_LEN='$READ_LEN >> $CUR/normal/.rearrangement.conf;  echo 'MXINS_N='$MXINS_N >> $CUR/normal/.rearrangement.conf
+          cnt=1;
+      elif [ "$list" == "$INPUT_N" -a $cnt -eq 0 ]; then
+          READ_LEN_N=`zcat $file | head -10000 - | awk 'NF>=11&&$2<1000{print length($10)}' | sort -u`;
+	  echo 'READ_LEN_N='$READ_LEN_N >> $CUR/tumor/.rearrangement.conf;  echo 'MXINS_T='$MXINS_T >> $CUR/tumor/.rearrangement.conf
+          echo 'READ_LEN_N='$READ_LEN_N >> $CUR/normal/.rearrangement.conf;  echo 'MXINS_N='$MXINS_N >> $CUR/normal/.rearrangement.conf
+          cnt=1;
+      fi
+  done
+done
+if ! expr "$READ_LEN" : "[0-9]*$" >&/dev/null;then echo "Error: The tumor sequence data composed of multiple length reads, exit!"; exit; fi
+if ! expr "$READ_LEN_N" : "[0-9]*$" >&/dev/null;then echo "Error: The normal sequence data composed of multiple length reads, exit!"; exit; fi
+
+echo -e "  ---------------------"
+echo -e "  Now, detectGR Start!!\n\nAll process log of the program are stored in [$LOG] file."
+echo -e "It take 6-12 hours to output rearrangement list [./tumor/rearrangement10new.txt].\n\n"
+ 
+ 
+#===================
+#  NORMAL (Control)
+#===================
+cd $CUR/normal
+CONF=$CUR/normal/.rearrangement.conf
+. $CONF
+
+ls -l | grep "all.sam.cla." > .tmplist;  if [ -s ".tmplist" ]; then rm ./all.sam.cla.* ; fi
+#========
+# STEP_1 
+# extract fr_n, ff, rr, rf and tr reads from input.sam
+$RSC/create_qArray_cr1_categorize_zcat.pl $INPUT_N  $MXINS_N  $CONF > ./.com.rearrangement.1.categorize.pbs; chmod 770 ./.com.rearrangement.1.categorize.pbs
+qsub -l s_vmem=4G -l mem_req=4G  -N ${NID}_list -o .cr1_categorize.out -e .cr1_categorize.stderr ./.com.rearrangement.1.categorize.pbs  $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+
+ 
+#========
+# STEP_2 
+# extract clusters with respect to each class, in parallel
+
+# [ff]
+sed -e "s/void/${NID}_ff/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.ff.pbs > ./.com.rearrangement.2.ff.pbs; chmod 770 ./.com.rearrangement.2.ff.pbs
+# [rr]
+sed -e "s/void/${NID}_rr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.rr.pbs > ./.com.rearrangement.2.rr.pbs; chmod 770 ./.com.rearrangement.2.rr.pbs
+# [fr]
+sed -e "s/void/${NID}_fr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.fr.pbs > ./.com.rearrangement.2.fr.pbs; chmod 770 ./.com.rearrangement.2.fr.pbs
+# [rf]
+sed -e "s/void/${NID}_rf/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.rf.pbs > ./.com.rearrangement.2.rf.pbs; chmod 770 ./.com.rearrangement.2.rf.pbs
+# [tr]
+sed -e "s/void/${NID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_prep.pbs > ./.com.rearrangement.2.tr_prep.pbs; chmod 770 ./.com.rearrangement.2.tr_prep.pbs
+sed -e "s/void/${NID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_fr.pbs > ./.com.rearrangement.2.tr_fr.pbs; chmod 770 ./.com.rearrangement.2.tr_fr.pbs
+sed -e "s/void/${NID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_ff.pbs > ./.com.rearrangement.2.tr_ff.pbs; chmod 770 ./.com.rearrangement.2.tr_ff.pbs
+sed -e "s/void/${NID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_rr.pbs > ./.com.rearrangement.2.tr_rr.pbs; chmod 770 ./.com.rearrangement.2.tr_rr.pbs
+
+if [ $VMEM -ne 0 ]
+then 
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${NID}_list -N ${NID}_ff  -o .cr2_ff.out -e .cr2_ff.err ./.com.rearrangement.2.ff.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${NID}_list -N ${NID}_rr  -o .cr2_rr.out -e .cr2_rr.err ./.com.rearrangement.2.rr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${NID}_list -N ${NID}_fr  -o .cr2_fr.out -e .cr2_fr.err ./.com.rearrangement.2.fr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${NID}_list -N ${NID}_rf  -o .cr2_rf.out -e .cr2_rf.err ./.com.rearrangement.2.rf.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM}G   -l mem_req=${VMEM}G   -hold_jid ${NID}_list -N ${NID}_tr_p  -o .cr2_tr_p.out -e .cr2_tr_p.err ./.com.rearrangement.2.tr_prep.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${NID}_tr_p -N ${NID}_trfr  -o .cr2_tr_fr.out -e .cr2_tr_fr.err  ./.com.rearrangement.2.tr_fr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${NID}_tr_p -N ${NID}_trff  -o .cr2_tr_ff.out -e .cr2_tr_ff.err  ./.com.rearrangement.2.tr_ff.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${NID}_tr_p -N ${NID}_trrr  -o .cr2_tr_rr.out -e .cr2_tr_rr.err  ./.com.rearrangement.2.tr_rr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+else 
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${NID}_list -N ${NID}_ff  -o .cr2_ff.out -e .cr2_ff.err ./.com.rearrangement.2.ff.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${NID}_list -N ${NID}_rr  -o .cr2_rr.out -e .cr2_rr.err ./.com.rearrangement.2.rr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${NID}_list -N ${NID}_fr  -o .cr2_fr.out -e .cr2_fr.err ./.com.rearrangement.2.fr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${NID}_list -N ${NID}_rf  -o .cr2_rf.out -e .cr2_rf.err ./.com.rearrangement.2.rf.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=8G -l mem_req=8G -hold_jid ${NID}_list -N ${NID}_tr_p  -o .cr2_tr_p.out -e .cr2_tr_p.err  ./.com.rearrangement.2.tr_prep.pbs  $MXINS_N $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${NID}_tr_p -N ${NID}_trfr  -o .cr2_tr_fr.out -e .cr2_tr_fr.err  ./.com.rearrangement.2.tr_fr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${NID}_tr_p -N ${NID}_trff  -o .cr2_tr_ff.out -e .cr2_tr_ff.err  ./.com.rearrangement.2.tr_ff.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${NID}_tr_p -N ${NID}_trrr  -o .cr2_tr_rr.out -e .cr2_tr_rr.err  ./.com.rearrangement.2.tr_rr.pbs  $MXINS_N  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+fi
+
+# #========
+# # STEP_3 
+# # remove multiple linked clusteres
+qsub -l s_vmem=1G -l mem_req=1G -hold_jid ${NID}_fr,${NID}_rf,${NID}_ff,${NID}_rr,${NID}_tr_p,${NID}_trfr,${NID}_trff,${NID}_trrr -N ${NID}_clust -o .cr3_clust.out -e .cr3_clust.err  ${SCR}/pe/com.rearrangement.3.cluster.pbs  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+qsub -l s_vmem=1G -l mem_req=1G -hold_jid ${NID}_clust  -N ${NID}_rm -o .cr3_cleanup.out -e .cr3_cleanup.err -r n -m ea -cwd -b y 'rm all.sam.cla.ff all.sam.cla.fr_n all.sam.cla.rf all.sam.cla.rr all.sam.cla.tr'
+
+
+#=============
+#  TUMOR
+#=============
+cd $CUR/tumor
+CONF=$CUR/tumor/.rearrangement.conf
+. $CONF
+
+ls -l | grep "all.sam.cla." > .tmplist;  if [ -s ".tmplist" ]; then rm ./all.sam.cla.* ; fi
+#========
+# STEP_1 
+# extract fr_n, ff, rr, rf and tr reads from input.sam
+$RSC/create_qArray_cr1_categorize_zcat.pl $INPUT_T  $MXINS_T  $CONF > ./.com.rearrangement.1.categorize.pbs; chmod 770 ./.com.rearrangement.1.categorize.pbs
+qsub -l s_vmem=8G -l mem_req=8G -N ${TID}_list -o .cr1_categorize.out -e .cr1_categorize.stderr ./.com.rearrangement.1.categorize.pbs  $LOG 1> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+
+
+#========
+# STEP_2 
+# extract clusters with respect to each class, in parallel
+
+# [ff]
+sed -e "s/void/${TID}_ff/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.ff.pbs > ./.com.rearrangement.2.ff.pbs; chmod 770 ./.com.rearrangement.2.ff.pbs
+# [rr]
+sed -e "s/void/${TID}_rr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.rr.pbs > ./.com.rearrangement.2.rr.pbs; chmod 770 ./.com.rearrangement.2.rr.pbs
+# [fr_n]
+sed -e "s/void/${TID}_fr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.fr.pbs > ./.com.rearrangement.2.fr.pbs; chmod 770 ./.com.rearrangement.2.fr.pbs
+# [rf]
+sed -e "s/void/${TID}_rf/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.rf.pbs > ./.com.rearrangement.2.rf.pbs; chmod 770 ./.com.rearrangement.2.rf.pbs
+# [tr]
+sed -e "s/void/${TID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_prep.pbs > ./.com.rearrangement.2.tr_prep.pbs; chmod 770 ./.com.rearrangement.2.tr_prep.pbs
+sed -e "s/void/${TID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_fr.pbs > ./.com.rearrangement.2.tr_fr.pbs; chmod 770 ./.com.rearrangement.2.tr_fr.pbs
+sed -e "s/void/${TID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_ff.pbs > ./.com.rearrangement.2.tr_ff.pbs; chmod 770 ./.com.rearrangement.2.tr_ff.pbs
+sed -e "s/void/${TID}_tr/g" -e "s/exCl_length/${ECLEN}/g" ${SCR}/pe/com.rearrangement.2.tr_rr.pbs > ./.com.rearrangement.2.tr_rr.pbs; chmod 770 ./.com.rearrangement.2.tr_rr.pbs
+
+if [ $VMEM -ne 0 ]
+then 
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${TID}_list -N ${TID}_ff  -o .cr2_ff.out -e .cr2_ff.err  ./.com.rearrangement.2.ff.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${TID}_list -N ${TID}_rr  -o .cr2_rr.out -e .cr2_rr.err  ./.com.rearrangement.2.rr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${TID}_list -N ${TID}_fr  -o .cr2_fr.out -e .cr2_fr.err  ./.com.rearrangement.2.fr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_list -N ${TID}_rf  -o .cr2_rf.out -e .cr2_rf.err  ./.com.rearrangement.2.rf.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM}G   -l mem_req=${VMEM}G   -hold_jid ${TID}_list -N ${TID}_tr_p  -o .cr2_tr_p.out -e .cr2_tr_p.err  ./.com.rearrangement.2.tr_prep.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_tr_p -N ${TID}_trfr  -o .cr2_tr_fr.out -e .cr2_tr_fr.err  ./.com.rearrangement.2.tr_fr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_tr_p -N ${TID}_trff  -o .cr2_tr_ff.out -e .cr2_tr_ff.err  ./.com.rearrangement.2.tr_ff.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_tr_p -N ${TID}_trrr  -o .cr2_tr_rr.out -e .cr2_tr_rr.err  ./.com.rearrangement.2.tr_rr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+else 
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_list -N ${TID}_ff  -o .cr2_ff.out -e .cr2_ff.err  ./.com.rearrangement.2.ff.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_list -N ${TID}_rr  -o .cr2_rr.out -e .cr2_rr.err  ./.com.rearrangement.2.rr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_list -N ${TID}_fr  -o .cr2_fr.out -e .cr2_fr.err  ./.com.rearrangement.2.fr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_list -N ${TID}_rf  -o .cr2_rf.out -e .cr2_rf.err  ./.com.rearrangement.2.rf.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=8G -l mem_req=8G -hold_jid ${TID}_list -N ${TID}_tr_p  -o .cr2_tr_p.out -e .cr2_tr_p.err  ./.com.rearrangement.2.tr_prep.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${TID}_tr_p -N ${TID}_trfr  -o .cr2_tr_fr.out -e .cr2_tr_fr.err  ./.com.rearrangement.2.tr_fr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${TID}_tr_p -N ${TID}_trff  -o .cr2_tr_ff.out -e .cr2_tr_ff.err  ./.com.rearrangement.2.tr_ff.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${TID}_tr_p -N ${TID}_trrr  -o .cr2_tr_rr.out -e .cr2_tr_rr.err  ./.com.rearrangement.2.tr_rr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+fi
+ 
+
+
+#========
+# STEP_3 
+# remove multiple linked clusteres
+qsub -l s_vmem=1G -l mem_req=1G -hold_jid ${TID}_fr,${TID}_rf,${TID}_ff,${TID}_rr,${TID}_tr_p,${TID}_trfr,${TID}_trff,${TID}_trrr -N ${TID}_clust -o .cr3_clust.out -e .cr3_clust.err  ${SCR}/pe/com.rearrangement.3.cluster.pbs  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+qsub -l s_vmem=1G -l mem_req=1G -hold_jid ${TID}_clust  -N ${TID}_rm -o .cr3_cleanup.out -e .cr3_cleanup.err  -r n -m ea -cwd -b y 'rm all.sam.cla.ff all.sam.cla.fr_n all.sam.cla.rf all.sam.cla.rr all.sam.cla.tr'
+
+
+#========
+# STEP_4
+# check filesize of all required input
+# if [ ! -s "deletion2_sco37.full.r2.txt" -o  ! -s "inversion2_sco37.full_ff.r2.txt" -o  ! -s "tandem_duplication2_sco37.full_rf.r2.txt" -o  ! -s "translocation2_sco37.full_ff.r2.txt"  -o  ! -s "translocation2_sco37.full_fr.r2.txt" -o  ! -s "translocation2_sco37.full_rr.r2.txt" -o   ! -s "../normal/deletion2_sco37.full.r2.txt" -o  ! -s "../normal/inversion2_sco37.full_ff.r2.txt" -o  ! -s "../normal/tandem_duplication2_sco37.full_rf.r2.txt" -o  ! -s "../normal/translocation2_sco37.full_ff.r2.txt"  -o  ! -s "../normal/translocation2_sco37.full_fr.r2.txt" -o  ! -s "../normal/translocation2_sco37.full_rr.r2.txt" ]; then
+#  echo "can't found file required in STEP4, Exit!!"
+#  exit 1
+# fi
+
+# compare tumore and non-tumor samples
+sed -e "s/void/${TID}_del/g" ${SCR}/pe/com.rearrangement.4.deletion.pbs > ./.com.rearrangement.4.deletion.pbs; chmod 770 ./.com.rearrangement.4.deletion.pbs
+sed -e "s/void/${TID}_inv/g" ${SCR}/pe/com.rearrangement.4.inversion.pbs > ./.com.rearrangement.4.inversion.pbs; chmod 770 ./.com.rearrangement.4.inversion.pbs
+sed -e "s/void/${TID}_tdm/g" ${SCR}/pe/com.rearrangement.4.tandem.pbs > ./.com.rearrangement.4.tandem.pbs; chmod 770 ./.com.rearrangement.4.tandem.pbs
+sed -e "s/void/${TID}_trns_fr/g" ${SCR}/pe/com.rearrangement.4.trans_fr.pbs > ./.com.rearrangement.4.trans_fr.pbs; chmod 770 ./.com.rearrangement.4.trans_fr.pbs
+sed -e "s/void/${TID}_trns_ff/g" ${SCR}/pe/com.rearrangement.4.trans_ff.pbs > ./.com.rearrangement.4.trans_ff.pbs; chmod 770 ./.com.rearrangement.4.trans_ff.pbs
+sed -e "s/void/${TID}_trns_rr/g" ${SCR}/pe/com.rearrangement.4.trans_rr.pbs > ./.com.rearrangement.4.trans_rr.pbs; chmod 770 ./.com.rearrangement.4.trans_rr.pbs
+
+if [ $VMEM -ne 0 ]
+then 
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_del -o .cr4_del.out -e .cr4_del.err  ./.com.rearrangement.4.deletion.pbs   $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_inv -o .cr4_inv.out -e .cr4_inv.err  ./.com.rearrangement.4.inversion.pbs   $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_X}G -l mem_req=${VMEM_X}G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_tdm -o .cr4_tdm.out -e .cr4_tdm.err  ./.com.rearrangement.4.tandem.pbs   $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_trns_fr -o .cr4_trfr.out -e .cr4_trfr.err  ./.com.rearrangement.4.trans_fr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_trns_ff -o .cr4_trff.out -e .cr4_trff.err  ./.com.rearrangement.4.trans_ff.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=${VMEM_H}G -l mem_req=${VMEM_H}G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_trns_rr -o .cr4_trrr.out -e .cr4_trrr.err  ./.com.rearrangement.4.trans_rr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+else
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_del -o .cr4_del.out -e .cr4_del.err  ./.com.rearrangement.4.deletion.pbs   $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_inv -o .cr4_inv.out -e .cr4_inv.err  ./.com.rearrangement.4.inversion.pbs   $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_tdm -o .cr4_tdm.out -e .cr4_tdm.err  ./.com.rearrangement.4.tandem.pbs   $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=4G -l mem_req=4G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_trns_fr -o .cr4_trfr.out -e .cr4_trfr.err  ./.com.rearrangement.4.trans_fr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout 
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_trns_ff -o .cr4_trff.out -e .cr4_trff.err  ./.com.rearrangement.4.trans_ff.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout
+  qsub -l s_vmem=2G -l mem_req=2G -hold_jid ${TID}_clust,${NID}_clust -N ${TID}_trns_rr -o .cr4_trrr.out -e .cr4_trrr.err  ./.com.rearrangement.4.trans_rr.pbs  $MXINS_T  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout 
+fi
+
+
+#========
+# STEP_5
+# output the result
+qsub -l s_vmem=1G -l mem_req=1G -hold_jid ${TID}_del,${TID}_inv,${TID}_tdm,${TID}_trns_ff,${TID}_trns_rr,${TID}_trns_fr -N ${TID}_output -o .cr5_output.out -e .cr5_output.err  ${SCR}/pe/com.rearrangement.5.output.pbs  $CONF $LOG 1>> $CUR/.qsub.stdout; tail -n1 $CUR/.qsub.stdout

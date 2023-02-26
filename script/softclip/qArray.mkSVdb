@@ -1,0 +1,48 @@
+#!/bin/sh
+#$ -o .mkSVdb.out -e .mkSVdb.err
+#$ -l s_vmem=1G
+#$ -l mem_req=1G
+#$ -l mem_free=1G
+#$ -r n
+#$ -cwd
+#$ -b y
+#$ -t 1-24:1
+
+
+ctg=(
+[1]=chr1
+[2]=chr2
+[3]=chr3
+[4]=chr4
+[5]=chr5
+[6]=chr6
+[7]=chr7
+[8]=chr8
+[9]=chr9
+[10]=chr10
+[11]=chr11
+[12]=chr12
+[13]=chr13
+[14]=chr14
+[15]=chr15
+[16]=chr16
+[17]=chr17
+[18]=chr18
+[19]=chr19
+[20]=chr20
+[21]=chr21
+[22]=chr22
+[23]=chrX
+[24]=chrY
+)  
+
+source ../.rearrangement.conf
+
+mkdir -p ./${ctg[$SGE_TASK_ID]}/
+grep ${ctg[$SGE_TASK_ID]} ../intraBP.list | awk -v chID=${ctg[$SGE_TASK_ID]} -v mxis=${MXINS_T} -f $RSC/prep_extFasta_mklist.awk | sort -nu > .list_${ctg[$SGE_TASK_ID]}
+
+if [ -s ./.list_${ctg[$SGE_TASK_ID]} ]
+then
+#  $RSC/extFasta_BPend.pl $REF/chromFa/${ctg[$SGE_TASK_ID]}.fa  .list_${ctg[$SGE_TASK_ID]}  1>.list_${ctg[$SGE_TASK_ID]}.stdout 2>.list_${ctg[$SGE_TASK_ID]}.stderr
+   $RSC/extFasta_BPend.pl ${REF}_${ctg[$SGE_TASK_ID]}  .list_${ctg[$SGE_TASK_ID]}  2>.list_${ctg[$SGE_TASK_ID]}.err
+fi 

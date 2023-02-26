@@ -1,0 +1,23 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -m ea
+#$ -cwd 
+#$ -l s_vmem=24G -l mem_req=24G -l mem_free=24G
+
+CUR=`pwd`
+mkdir -p Filtered/allNout
+
+tmprep=`ls -d [A-Z][A-Z][0-9][0-9][0-9]* | head -n1`
+ls ${tmprep}/normal/tmpNout/HT/ > ./Filtered/allNout/.list
+
+cd ./Filtered/allNout/; mkdir -p HH HT TT  trHH trHT trTT 
+
+for dir in `ls -1d *`
+do
+   cd $CUR/Filtered/allNout/${dir}
+   for chrfile in `cat ../.list`
+   do
+       cat $CUR/[A-Z][A-Z][0-9][0-9][0-9]*/normal/tmpNout/${dir}/${chrfile} | sort -k4,4n -k6,6n -k10,10n > ._
+       awk -F"\t" 'BEGIN{flg=0}{if(c1==$3&&c2==$5){sum+=cnt; flg++;} else {if(flg!=0){n=split(line,tl,"\t"); for(i=1;i<n;i++){if(i==8)printf "%d\t",sum; else printf "%s\t",tl[i]} print tl[n];} else if(NR!=1)print line; sum=$8; flg=0;} c1=$3;c2=$5;cnt=$8;line=$0}END{if(flg!=0){n=split(line,tl,"\t"); for(i=1;i<n;i++){if(i==8)printf "%d\t",sum; else printf "%s\t",tl[i]} print tl[n];} else print line;}' ._ > ./${chrfile}
+   done
+done

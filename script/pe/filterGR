@@ -1,0 +1,261 @@
+#!/bin/sh
+
+## CONFIGURE
+CONF=../callallsv.cfg
+. $CONF
+
+TAR_SMPLID=$1 # list.smplID
+AL=10         # ALlow No.overlap
+
+CUR=`pwd`
+DIR=`pwd | rev | cut -d '/' -f1 | rev`
+
+START=`date +%Y%m%d_%H-%M-%S`
+LOG=$CUR"/filterGR_"${START}.log
+echo -e "command:\t"$0 $@ 1> $LOG
+echo -e "Job start:\t"`date +%Y%m%d_%H-%M-%S` >> $LOG
+FILT_ID=1
+
+echo "# Junction list detected from TUMOR samples" > .tar.list
+echo "# NORMAL sample (as filter)" > .tmp
+
+while read SID
+do
+  if [ -s "${SID}/tumor/rearrangement10new.txt" -a -s "${SID}/normal/all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2" -a -s "${SID}/normal/all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51" -a -s "${SID}/normal/all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51" -a -s "${SID}/normal/all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2" -a -s "${SID}/normal/all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2" ]; then
+     echo -e "TUMOR\t"$CUR/${SID}/"tumor/rearrangement10new.txt" >> .tar.list
+     echo -e "NORMAL\t"$CUR/${SID}/"normal/all.sam.cla.??" >> .tmp
+  fi
+done < ${TAR_SMPLID}
+cat .tmp >> .tar.list && rm .tmp
+
+mkdir -p $CUR/Filtered; cd $CUR/Filtered
+
+# 1.Prepare NORMAL [mapped reads].sam
+echo -e "\n-------\n1st Step : Prepare NORMAL [mapped reads].sam ..."
+echo "1st Step : Prepare NORMAL [mapped reads].sam ..." >> $LOG
+
+if [ $# -eq 0 -o $FILT_ID == "1" ]; then
+  cnt=0;
+  while read SID
+  do  
+    if [ $cnt -eq 0 ]; then  
+      cat $CUR/${SID}/normal/all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 > ./0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2
+      cat $CUR/${SID}/normal/all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 > ./0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $CUR/${SID}/normal/all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 > ./0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $CUR/${SID}/normal/all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 > ./0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2
+      cat $CUR/${SID}/normal/all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 > ./0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2
+      alltar=${SID}
+      cnt=1
+    else
+      cat $CUR/${SID}/normal/all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 >> ./0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2
+      cat $CUR/${SID}/normal/all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 >> ./0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $CUR/${SID}/normal/all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 >> ./0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $CUR/${SID}/normal/all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 >> ./0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2
+      cat $CUR/${SID}/normal/all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 >> ./0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2
+      alltar=$alltar","${SID}
+    fi
+  done < ${TAR_SMPLID}
+fi
+
+if [ $# -eq 1 -a $FILT_ID != "1" ]; then
+  sed -i "s/all.sam.cla.??//g" ../.tar.list
+  cnt=0;
+  for tar in `grep ^NORMAL ../.tar.list | cut -f2`; do
+    echo $tar
+    if [ $cnt -eq 0 ]; then
+      cat $tar/all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 > ./0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2
+      cat $tar/all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 > ./0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $tar/all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 > ./0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $tar/all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 > ./0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2
+      cat $tar/all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 > ./0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2
+      alltar=$tar
+      cnt=1
+    else 
+      cat $tar/all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 >> ./0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2
+      cat $tar/all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 >> ./0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $tar/all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 >> ./0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51
+      cat $tar/all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 >> ./0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2
+      cat $tar/all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 >> ./0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2
+      alltar=$alltar","$tar
+    fi
+  done 
+fi
+
+## switch comment-out in case existing processed file abalable, -(A) ## 
+# DATDIR=${CUR}/tumor
+# ln -s $DATDIR/0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 .
+# ln -s $DATDIR/0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 .
+# ln -s $DATDIR/0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 .
+# ln -s $DATDIR/0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 .
+# ln -s $DATDIR/0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 .
+
+ls -lh 0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 | awk -v dir=$CUR -v target=$alltar '{printf("log: stp1_ summarize %s/[%s]/all.sam.cla.fr_n, into:\t%s\tfile size: %s\n",dir,target,$NF,$5);}' >> $LOG
+ls -lh 0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 | awk -v dir=$CUR -v target=$alltar '{printf("log: stp1_ summarize %s/[%s]/all.sam.cla.ff, into:\t%s\tfile size: %s\n",dir,target,$NF,$5);}' >> $LOG
+ls -lh 0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 | awk -v dir=$CUR -v target=$alltar '{printf("log: stp1_ summarize %s/[%s]/all.sam.cla.rr, into:\t%s\tfile size: %s\n",dir,target,$NF,$5);}' >> $LOG
+ls -lh 0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 | awk -v dir=$CUR -v target=$alltar '{printf("log: stp1_ summarize %s/[%s]/all.sam.cla.rf, into:\t%s\tfile size: %s\n",dir,target,$NF,$5);}' >> $LOG
+ls -lh 0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 | awk -v dir=$CUR -v target=$alltar '{printf("log: stp1_ summarize %s/[%s]/all.sam.cla.tr, into:\t%s\tfile size: %s\n",dir,target,$NF,$5);}' >> $LOG
+
+echo "log: stp1_summarizing NORMAL [mapped_reads].sam successfully finished!" >> $LOG
+echo -e "\n\n" >> $LOG
+
+
+# 2.Prepare TUMOR [junction list].txt
+echo -e "\n-------\n2nd Step : Prepare TUMOR [junction list].txt ..."
+echo "2nd Step : Prepare TUMOR [junction list].txt ..." >> $LOG
+
+cnt=0
+while read SID
+do
+  if [ $cnt -eq 0 ]; then
+    sed -e "s/all.sam/${SID}/g" $CUR/${SID}/tumor/rearrangement10new.txt >  ./rearrangement10.txt
+    cnt=1
+  else 
+    sed -e "s/all.sam/${SID}/g" $CUR/${SID}/tumor/rearrangement10new.txt >> ./rearrangement10.txt
+  fi
+done < ${TAR_SMPLID}
+
+sort -k6 -n rearrangement10.txt > rearrangement10.txt.sort
+awk '$3=="deletion"{print}' rearrangement10.txt.sort > rearrangement10.txt.deletion
+awk '$3=="inversion"&&$1=="FF"{print}' rearrangement10.txt.sort > rearrangement10.txt.inversion_ff
+awk '$3=="inversion"&&$1=="RR"{print}' rearrangement10.txt.sort > rearrangement10.txt.inversion_rr
+awk '$3=="tandem_dup"{print}' rearrangement10.txt.sort > rearrangement10.txt.tandem_dup
+awk '$3=="translocation"&&$1=="FF"{print}' rearrangement10.txt.sort > rearrangement10.txt.translocation_ff
+awk '$3=="translocation"&&$1=="RR"{print}' rearrangement10.txt.sort > rearrangement10.txt.translocation_rr
+awk '$3=="translocation"&&$1=="FR"{print}' rearrangement10.txt.sort > rearrangement10.txt.translocation_fr
+
+ls -lh rearrangement10.txt.deletion | awk '{print "log: stp2_ "$9"\t\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.inversion_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.inversion_rr | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.tandem_dup | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.translocation_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.translocation_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.translocation_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+echo "log: stp2_summarizing TUMOR [junctions].list successfully finished!" >> $LOG
+echo -e "\n\n" >> $LOG
+
+# 3a Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr])
+echo -e "\n-------\n3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ..."
+echo "3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ..." >> $LOG
+
+GB=1073741828  # 1GB = 1,073,741,828
+
+FSIZE=`ls -lL 0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 | cut -d' ' -f 5` 
+if [ $FSIZE -gt $GB ]; then MEM=`awk -v m=$FSIZE -v g=$GB 'BEGIN{printf("%d",(m*1.5)/g+0.5)}' $0`; else MEM=2; fi
+qsub -l s_vmem=${MEM}G,mem_req=${MEM}G -cwd -b y -N jaFR -o rearrangement10.txt.deletion.extractNoL_all${FILT_ID} -e rearrangement10.txt.deletion.extractNoL_all${FILT_ID}.err $RSC/cnt_extractNoL_all_fr_2.pl 0${FILT_ID}_all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2 rearrangement10.txt.deletion $AL 1> ._ 2>> $LOG
+echo "extractNoL_all_fr"; cat ._
+awk 'NR==7{printf("log: stp3a_ extractNoL_all_fr is now processing as UGE_%sID:\t%s %s\n",$2,$3,$4);}' ._ >> $LOG  &&  rm ._
+tail -n2 $LOG; echo -e "\n"
+
+FSIZE=`ls -lL 0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 | cut -d' ' -f 5`  
+if [ $FSIZE -gt $GB ]; then MEM=`awk -v m=$FSIZE -v g=$GB 'BEGIN{printf("%d",(m*1.5)/g+0.5)}' $0`; else MEM=2; fi
+qsub -l s_vmem=${MEM}G,mem_req=${MEM}G -cwd -b y -N jaFF -o rearrangement10.txt.inversion_ff.extractNoL_all${FILT_ID} -e rearrangement10.txt.inversion_ff.extractNoL_all${FILT_ID}.err $RSC/cnt_extractNoL_all_ff_2.pl 0${FILT_ID}_all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51 rearrangement10.txt.inversion_ff $AL 1> ._ 2>> $LOG
+echo "extractNoL_all_ff"; cat ._
+awk 'NR==7{printf("log: stp3a_ extractNoL_all_ff is now processing as UGE_%sID:\t%s %s\n",$2,$3,$4);}' ._ >> $LOG  &&  rm ._
+tail -n2 $LOG; echo -e "\n"
+
+FSIZE=`ls -lL 0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 | cut -d' ' -f 5`
+if [ $FSIZE -gt $GB ]; then MEM=`awk -v m=$FSIZE -v g=$GB 'BEGIN{printf("%d",(m*1.5)/g+0.5)}' $0`; else MEM=2; fi
+qsub -l s_vmem=${MEM}G,mem_req=${MEM}G -cwd -b y -N jaRR -o rearrangement10.txt.inversion_rr.extractNoL_all${FILT_ID} -e rearrangement10.txt.inversion_rr.extractNoL_all${FILT_ID}.err $RSC/cnt_extractNoL_all_rr_2.pl 0${FILT_ID}_all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51 rearrangement10.txt.inversion_rr $AL 1> ._ 2>> $LOG
+echo "extractNoL_all_rr"; cat ._
+awk 'NR==7{printf("log: stp3a_ extractNoL_all_rr is now processing as UGE_%sID:\t%s %s\n",$2,$3,$4);}' ._ >> $LOG  &&  rm ._
+tail -n2 $LOG; echo -e "\n"
+
+FSIZE=`ls -lL 0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 | cut -d' ' -f 5`
+if [ $FSIZE -gt $GB ]; then MEM=`awk -v m=$FSIZE -v g=$GB 'BEGIN{printf("%d",(m*1.5)/g+0.5)}' $0`; else MEM=2; fi
+qsub -l s_vmem=${MEM}G,mem_req=${MEM}G -cwd -b y -N jaRF -o rearrangement10.txt.tandem_dup.extractNoL_all${FILT_ID} -e rearrangement10.txt.tandem_dup.extractNoL_all${FILT_ID}.err $RSC/cnt_extractNoL_all_rf_2.pl 0${FILT_ID}_all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2 rearrangement10.txt.tandem_dup $AL 1> ._ 2>> $LOG
+echo "extractNoL_all_ff"; cat ._
+awk 'NR==7{printf("log: stp3a_ extractNoL_all_rf is now processing as UGE_%sID:\t%s %s\n",$2,$3,$4);}' ._ >> $LOG  &&  rm ._
+tail -n2 $LOG; echo -e "\n"
+
+echo "log: stp3a_ filtering junctions [deletion/tandem_duplication/inversion] successfully finished!" >> $LOG
+echo -e "\n\n" >> $LOG
+
+
+# 3b Filter out junction which already exist in NORMAL (translocation[ff/rr/fr])
+echo -e "\n-------\n3rd Step(b) : Filter out junction which already exist in NORMAL(translocation[ff/rr/fr])..."
+echo "3rd Step(b) : Filter out junction which already exist in NORMAL(translocation[ff/rr/fr])..." >> $LOG
+
+#---patch_for$REF_221226---
+  cp -p 0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2  .0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 
+  awk -F"\t" '{$3="chr"$3; if($7!="=")$7="chr"$7; for(i=1;i<NF;i++)printf $i"\t"; print $NF}'  .0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 > 0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2
+#---
+
+mkdir -p 0${FILT_ID}_trans; cd 0${FILT_ID}_trans
+
+# split -l 200000 -a 3 ../0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.
+  split -l 20000 -a 3 ../0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2 0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.
+
+ls -1 0${FILT_ID}_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.??? | cut -d '.'  -f 9 > list
+  sed -e "s/##/0${FILT_ID}/g" -e "s/XX/${FILT_ID}/g" -e "s|\$RSC|$RSC|g" -e "s/NN/${AL}/g" $RSC/cnt_filt_mkcom_fr.awk > .tmp_fr.awk; awk -f .tmp_fr.awk list  > com.extractNoL_trans 
+  sed -e "s/##/0${FILT_ID}/g" -e "s/XX/${FILT_ID}/g" -e "s|\$RSC|$RSC|g" -e "s/NN/${AL}/g" $RSC/cnt_filt_mkcom_ff.awk > .tmp_ff.awk; awk -f .tmp_ff.awk list >> com.extractNoL_trans 
+  sed -e "s/##/0${FILT_ID}/g" -e "s/XX/${FILT_ID}/g" -e "s|\$RSC|$RSC|g" -e "s/NN/${AL}/g" $RSC/cnt_filt_mkcom_rr.awk > .tmp_rr.awk; awk -f .tmp_rr.awk list >> com.extractNoL_trans 
+echo "log: stp3b_ start extractNoL_all_trans_??.pl, now processing ..."
+echo "log: stp3b_ start extractNoL_all_trans_??.pl, now processing ..." >> $LOG
+$RSC/sp2mp.pl 50 < com.extractNoL_trans
+
+cat rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}.??? > rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}
+cat rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}.??? > rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}
+cat rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}.??? > rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}
+ls -lh rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID} | awk '{printf("log: stp3b_ extractNoL_all_trans_fr.pl, output:\t%s_0\tfile size: %s\n",$NF,$5);}' >> $LOG
+ls -lh rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID} | awk '{printf("log: stp3b_ extractNoL_all_trans_ff.pl, output:\t%s_0\tfile size: %s\n",$NF,$5);}' >> $LOG
+ls -lh rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID} | awk '{printf("log: stp3b_ extractNoL_all_trans_rr.pl, output:\t%s_0\tfile size: %s\n",$NF,$5);}' >> $LOG
+echo -e "sort and remove overlap ...\n" >> $LOG
+
+sort -t $'\t' -k3,3 -k6,6 -k7,7n -k8,8n -k10,10 -k11,11n -k12,12n rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID} | awk -f $RSC/tmp_merge_ol.awk > rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}_merge; 
+awk -F"\t" '$1/$5>0.125{print}' rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}_merge | cut -f2- > rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}_uni 
+sort -t $'\t' -k3,3 -k6,6 -k7,7n -k8,8n -k10,10 -k11,11n -k12,12n rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID} | awk -f $RSC/tmp_merge_ol.awk > rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}_merge;
+awk -F"\t" '$1/$5>0.125{print}' rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}_merge | cut -f2- > rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}_uni 
+sort -t $'\t' -k3,3 -k6,6 -k7,7n -k8,8n -k10,10 -k11,11n -k12,12n rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID} | awk -f $RSC/tmp_merge_ol.awk > rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}_merge;
+awk -F"\t" '$1/$5>0.125{print}' rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}_merge | cut -f2- > rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}_uni 
+
+cd ../
+mv 0${FILT_ID}_trans/rearrangement10.txt.translocation_??.extractNoL_all${FILT_ID}_uni 0${FILT_ID}_trans/rearrangement10.txt.translocation_??.extractNoL_all${FILT_ID}_merge .
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}_merge > rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}
+cut -f3- rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID} > .tmp.rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}
+$RSC/rm_overlap.pl rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}_uni rearrangement10.txt.translocation_fr |\
+ fgrep -f .tmp.rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID} -v - |\
+ awk '{print "0.000\t0\t"$0}' - >> rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}  &&  rm .tmp.rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID}
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}_merge > rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}
+cut -f3- rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID} > .tmp.rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}
+$RSC/rm_overlap.pl rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}_uni rearrangement10.txt.translocation_ff |\
+ fgrep -f .tmp.rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID} -v - |\
+ awk '{print "0.000\t0\t"$0}' - >> rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}  &&  rm .tmp.rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID}
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}_merge > rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}
+cut -f3- rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID} > .tmp.rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}
+$RSC/rm_overlap.pl rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}_uni rearrangement10.txt.translocation_rr |\
+ fgrep -f .tmp.rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID} -v - |\
+ awk '{print "0.000\t0\t"$0}' - >> rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}  &&  rm .tmp.rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID}
+
+ls -lh rearrangement10.txt.translocation_fr.extractNoL_all${FILT_ID} | awk '{printf("log: stp3b_ extractNoL_all_trans_fr.pl, output:\t%s\tfile size: %s\n",$NF,$5);}' >> $LOG
+ls -lh rearrangement10.txt.translocation_ff.extractNoL_all${FILT_ID} | awk '{printf("log: stp3b_ extractNoL_all_trans_ff.pl, output:\t%s\tfile size: %s\n",$NF,$5);}' >> $LOG
+ls -lh rearrangement10.txt.translocation_rr.extractNoL_all${FILT_ID} | awk '{printf("log: stp3b_ extractNoL_all_trans_rr.pl, output:\t%s\tfile size: %s\n",$NF,$5);}' >> $LOG
+
+echo "log: stp3b_ filtering junctions [translocation] successfully finished!" >> $LOG
+echo -e "\n\n" >> $LOG
+
+$SCR/__waiting_qjob-complete__.sh  jaFR,jaFF,jaRR,jaRF 
+
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.deletion.extractNoL_all${FILT_ID} 	    > .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.tandem_dup.extractNoL_all${FILT_ID}    >> .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.inversion_ff.extractNoL_all${FILT_ID}  >> .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125
+awk -F"\t" '$1/$5<=0.125{printf "%.3f\t%s\n",$1/$5,$0}' rearrangement10.txt.inversion_rr.extractNoL_all${FILT_ID}  >> .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125
+cat rearrangement10.txt.translocation_??.extractNoL_all${FILT_ID} 					  >> .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125
+sort -k4,4 -k5,5 -k6,6nr .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125 > rearrangement10.txt.extractNoL_all1_merge_all_ud0.125 && rm .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125
+
+awk -F"\t" '{print $7 FS $8 FS $9 FS $4"_"$5"_"NR; print $12 FS $13 FS $14 FS $4"_"$5"_"NR;}' rearrangement10.txt.extractNoL_all1_merge_all_ud0.125 > .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.bed
+awk -F"\t" '$4=="Simple_repeat"{print}' ${RMSK} > .simpleRep.bed
+
+${BEDTOOLS_DIR}/intersectBed  -a .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.bed  -b ./.simpleRep.bed -wao  -f 0.3 > .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.simRep.iBout  2> simRep.intersectBed.err
+if [ ! -s simRep.intersectBed.err ]; then rm ./.simpleRep.bed; fi
+
+grep Simple_repeat .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.simRep.iBout | cut -f4 | sed -e "s/tandem_dup/tandemDup/" | cut -f3 -d"_" | uniq | awk '{print "head -n "$1" rearrangement10.txt.extractNoL_all1_merge_all_ud0.125 | tail -n1"}' > .filt_simpleRep_f0.3.sh
+sh .filt_simpleRep_f0.3.sh > .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.simpleRep_f0.3
+fgrep -f .rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.simpleRep_f0.3 -v rearrangement10.txt.extractNoL_all1_merge_all_ud0.125 > rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.filtRep
+cp -p rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.filtRep  all.rearrangement_pe.filt.txt
+
+while read SID
+do
+  awk -F"\t" -v smplID=${SID} '$4==smplID{print}' rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.filtRep  > ${HDR}/PE/${SID}/tumor/rearrangement10.txt.extractNoL_ud0.125.filtRep
+  cp -p ${HDR}/PE/${SID}/tumor/rearrangement10.txt.extractNoL_ud0.125.filtRep  ${HDR}/PE/${SID}/tumor/rearrangement_pe.filt.txt
+  cp -p ${HDR}/PE/${SID}/tumor/rearrangement10new.txt  ${HDR}/PE/${SID}/tumor/rearrangement_pe.txt
+done < ${TAR_SMPLID}

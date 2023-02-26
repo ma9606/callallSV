@@ -1,0 +1,51 @@
+#$ -S /bin/sh
+#$ -cwd 
+#$ -o .mklist.out -e .mklist.err 
+#$ -l s_vmem=8G -l mem_req=8G -l mem_free=8G
+
+if [ $# -ne 2 ]; then
+  echo "Usage:  ./q.mklist_pChr [status(tumor/normal)] [insertSize_Max]"; exit 1;
+fi
+
+stat=$1
+mxis=$2
+source ../.rearrangement.conf
+RLN=`pwd | sed -e "s/\/${stat}//"`
+
+while read tardir
+do
+   cat $RLN/BWA/${stat}/${tardir}/*_SVmatch.sam >> .merged_svmatch.sam
+   cat $RLN/REF/${stat}/${tardir}/*.extlist >> .merged_refsup.extlist 
+done < $HDR/SoftClip/${SID}/${stat}/.list.seqdir
+
+
+mkdir -p  ./pChr_REFsupp/ ./pChr_SVmatch/ ./pChr_SVmatch_tr/
+echo -n "" > pChr_REFsupp/REFsupp_SE.bplist;	echo -n "" > pChr_REFsupp/REFsupp_PE.bplist
+echo -n "" > pChr_SVmatch/SVmatch_SE.bplist;	echo -n "" > pChr_SVmatch/SVmatch_PE.bplist
+echo -n "" > pChr_SVmatch_tr/SVmatch_tr_SE.bplist;	echo -n "" > pChr_SVmatch_tr/SVmatch_tr_PE.bplist
+
+
+for cID in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X Y
+do
+   awk -v N=${cID} '$1==N{print}' .merged_refsup.extlist | sort -t$'\t' -k6 -u > pChr_REFsupp/chr${cID}.extlist
+   sort -k6,6 -u pChr_REFsupp/chr${cID}.extlist > .extlist
+   awk -v buf=$mxis '$NF~"SE"{print $1, $2+buf, $4}' .extlist | sort -k2,2n | uniq -c >> pChr_REFsupp/REFsupp_SE.bplist
+   awk -v buf=$mxis '$NF~"PE"{print $1, $2+buf, $4}' .extlist | sort -k2,2n | uniq -c >> pChr_REFsupp/REFsupp_PE.bplist
+
+   awk -v N=${cID} '$3~"^BP_chr"N"_" && $3~"_chr"N"$"  && ($2==83||$2==163||$2==81||$2==161||$2==97||$2==145||$2==99||$2==147){print}' .merged_svmatch.sam | sort -k3,3 > pChr_SVmatch/chr${cID}_SVmatch_0.sam
+   awk -F"\t" '{for(i=6;i<10;i++)printf "%s\t",$i; print $10}' pChr_SVmatch/chr${cID}_SVmatch_0.sam | sort | uniq -c | awk '$1>1{print  $2"\t"$3"\t"$4"\t"$5}'  > pChr_SVmatch/chr${cID}_SVmatch_0.rd
+   fgrep -f pChr_SVmatch/chr${cID}_SVmatch_0.rd     pChr_SVmatch/chr${cID}_SVmatch_0.sam | sort -k6,10 -t$'\t' | awk '{if(f6!=$6 || f9!=$9 || f10!=$10)print; f6=$6; f9=$9; f10=$10;}'  > pChr_SVmatch/chr${cID}_SVmatch.sam
+   fgrep -f pChr_SVmatch/chr${cID}_SVmatch_0.rd  -v pChr_SVmatch/chr${cID}_SVmatch_0.sam                                                                                               >> pChr_SVmatch/chr${cID}_SVmatch.sam
+   awk '$NF!~"_R"{print $1"\t"$3}' pChr_SVmatch/chr${cID}_SVmatch.sam      | uniq | cut -f2 | sort | uniq -c >> pChr_SVmatch/SVmatch_SE.bplist
+   awk '$NF ~"_R"{print $1"\t"$3}' pChr_SVmatch/chr${cID}_SVmatch.sam      | uniq | cut -f2 | sort | uniq -c >> pChr_SVmatch/SVmatch_PE.bplist
+
+   awk -v N=${cID} '$3~"^BP_chr"N"_" && $3!~"_chr"N"$" && ($2==83||$2==163||$2==81||$2==161||$2==97||$2==145||$2==99||$2==147){print}' .merged_svmatch.sam | sort -k3,3 > pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.sam
+   awk -F"\t" '{for(i=6;i<10;i++)printf "%s\t",$i; print $10}' pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.sam | sort | uniq -c | awk '$1>1{print  $2"\t"$3"\t"$4"\t"$5}'  > pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.rd
+   fgrep -f pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.rd     pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.sam | sort -k6,10 -t$'\t' | awk '{if(f6!=$6 || f9!=$9 || f10!=$10)print; f6=$6; f9=$9; f10=$10;}'  > pChr_SVmatch_tr/chr${cID}tr_SVmatch.sam
+   fgrep -f pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.rd  -v pChr_SVmatch_tr/chr${cID}tr_SVmatch_0.sam                                                                                               >> pChr_SVmatch_tr/chr${cID}tr_SVmatch.sam
+   awk '$NF!~"_R"{print $1"\t"$3}' pChr_SVmatch_tr/chr${cID}tr_SVmatch.sam | uniq | cut -f2 | sort | uniq -c >> pChr_SVmatch_tr/SVmatch_tr_SE.bplist
+   awk '$NF ~"_R"{print $1"\t"$3}' pChr_SVmatch_tr/chr${cID}tr_SVmatch.sam | uniq | cut -f2 | sort | uniq -c >> pChr_SVmatch_tr/SVmatch_tr_PE.bplist
+
+done
+
+rm .merged_svmatch.sam .merged_refsup.extlist .extlist

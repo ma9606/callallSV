@@ -1,0 +1,117 @@
+#!/bin/sh
+#$ -S /bin/sh
+#$ -m ea
+#$ -cwd
+
+if [ $# -lt 1 ]; then
+  echo "usage: com.rearrangement.3.cluster.pbs [file.conf] (Log_file)" 1>&2
+  exit 1
+fi
+
+. $1
+LOG=$2
+READ_LEN_P1=`expr $READ_LEN + 1`
+WDIR=`pwd | rev | cut -d '/' -f1 | rev`
+
+$RSC/chFormat3_bwa.pl all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size > all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.1
+$RSC/chFormat3_bwa.pl all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size > all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size.1
+$RSC/chFormat3_bwa.pl all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size > all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size.1
+$RSC/chFormat3_bwa.pl all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size > all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.1
+$RSC/chFormat3_bwa.pl all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size > all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.1
+$RSC/chFormat3_bwa.pl all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.min2.i2.rmDup.2.size > all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.min2.i2.rmDup.2.size.1
+$RSC/chFormat3_bwa.pl all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.min2.i2.rmDup.2.size > all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.min2.i2.rmDup.2.size.1
+
+$RSC/chkFusionGene2_FR.pl $RSQ all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.1 $READ_LEN > deletion2_sco37.mis2
+$RSC/chkFusionGene2_FF.pl $RSQ all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size.1 $READ_LEN > inversion2_sco37.mis2_ff
+$RSC/chkFusionGene2_RR.pl $RSQ all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size.1 $READ_LEN > inversion2_sco37.mis2_rr
+$RSC/chkFusionGene2_RF.pl $RSQ all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.1 $READ_LEN > tandem_duplication2_sco37.mis2_rf
+$RSC/chkFusionGene2_FR_translocation.pl $RSQ all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size.1 $READ_LEN > translocation2_sco37.mis2_fr
+$RSC/chkFusionGene2_FF_translocation.pl $RSQ all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.min2.i2.rmDup.2.size.1 $READ_LEN_P1 > translocation2_sco37.mis2_ff
+$RSC/chkFusionGene2_RR_translocation.pl $RSQ all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.min2.i2.rmDup.2.size.1 $READ_LEN_P1 > translocation2_sco37.mis2_rr
+
+$RSC/extract2.pl deletion2_sco37.mis2 6 2 > deletion2_sco37.full.r2.txt
+$RSC/extract2.pl inversion2_sco37.mis2_ff 6 2 > inversion2_sco37.full_ff.r2.txt
+$RSC/extract2.pl inversion2_sco37.mis2_rr 6 2 > inversion2_sco37.full_rr.r2.txt
+$RSC/extract2.pl tandem_duplication2_sco37.mis2_rf 6 2 > tandem_duplication2_sco37.full_rf.r2.txt
+$RSC/extract2.pl translocation2_sco37.mis2_fr 6 2 > translocation2_sco37.full_fr.r2.txt
+$RSC/extract2.pl translocation2_sco37.mis2_ff 6 2 > translocation2_sco37.full_ff.r2.txt
+$RSC/extract2.pl translocation2_sco37.mis2_rr 6 2 > translocation2_sco37.full_rr.r2.txt
+
+cp -p all.sam.cla.fr_n.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size deletion_fr
+cp -p all.sam.cla.ff.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size inversion_ff
+cp -p all.sam.cla.rr.rmDup.rmMulti2.sco37.mis2.ins51.sort.clu.min2.i2.rmDup.2.size inversion_rr
+cp -p all.sam.cla.rf.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size tandem_rf
+cp -p all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.clu.min2.2.size translocation_fr
+cp -p all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.min2.i2.rmDup.2.size translocation_ff
+cp -p all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.min2.i2.rmDup.2.size translocation_rr
+
+$RSC/rmMultiCluster.pl deletion_fr > deletion_fr.0
+$RSC/rmMultiCluster2.pl  deletion_fr.0 inversion_ff     > deletion_fr.1
+$RSC/rmMultiCluster2.pl  deletion_fr.1 inversion_rr     > deletion_fr.2
+$RSC/rmMultiCluster2.pl  deletion_fr.2 tandem_rf        > deletion_fr.3
+$RSC/rmMultiCluster2.pl  deletion_fr.3 translocation_fr > deletion_fr.4
+$RSC/rmMultiCluster2.pl  deletion_fr.4 translocation_ff > deletion_fr.5
+$RSC/rmMultiCluster2.pl  deletion_fr.5 translocation_rr > deletion_fr.6
+CNT=`grep -c "^#####" deletion_fr.6`
+ls -l deletion_fr.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-1/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmMultiCluster.pl    inversion_ff > inversion_ff.0
+$RSC/rmMultiCluster2.pl   inversion_ff.0 deletion_fr      > inversion_ff.1
+$RSC/rmMultiCluster2.pl inversion_ff.1 inversion_rr     > inversion_ff.2
+$RSC/rmMultiCluster2.pl   inversion_ff.2 tandem_rf        > inversion_ff.3
+$RSC/rmMultiCluster2.pl   inversion_ff.3 translocation_fr > inversion_ff.4
+$RSC/rmMultiCluster2.pl   inversion_ff.4 translocation_ff > inversion_ff.5
+$RSC/rmMultiCluster2.pl   inversion_ff.5 translocation_rr > inversion_ff.6
+CNT=`grep -c "^#####" inversion_ff.6`
+ls -l inversion_ff.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-2/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmMultiCluster.pl    inversion_rr > inversion_rr.0
+$RSC/rmMultiCluster2.pl   inversion_rr.0 deletion_fr      > inversion_rr.1
+$RSC/rmMultiCluster2.pl inversion_rr.1 inversion_ff     > inversion_rr.2
+$RSC/rmMultiCluster2.pl   inversion_rr.2 tandem_rf        > inversion_rr.3
+$RSC/rmMultiCluster2.pl   inversion_rr.3 translocation_fr > inversion_rr.4
+$RSC/rmMultiCluster2.pl   inversion_rr.4 translocation_ff > inversion_rr.5
+$RSC/rmMultiCluster2.pl   inversion_rr.5 translocation_rr > inversion_rr.6
+CNT=`grep -c "^#####" inversion_rr.6`
+ls -l inversion_rr.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-3/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+
+$RSC/rmMultiCluster.pl tandem_rf > tandem_rf.0
+$RSC/rmMultiCluster2.pl  tandem_rf.0 deletion_fr      > tandem_rf.1
+$RSC/rmMultiCluster2.pl  tandem_rf.1 inversion_ff     > tandem_rf.2
+$RSC/rmMultiCluster2.pl  tandem_rf.2 inversion_rr     > tandem_rf.3
+$RSC/rmMultiCluster2.pl  tandem_rf.3 translocation_fr > tandem_rf.4
+$RSC/rmMultiCluster2.pl  tandem_rf.4 translocation_ff > tandem_rf.5
+$RSC/rmMultiCluster2.pl  tandem_rf.5 translocation_rr > tandem_rf.6
+CNT=`grep -c "^#####" tandem_rf.6`
+ls -l tandem_rf.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-4/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmMultiCluster.pl translocation_fr > translocation_fr.0
+$RSC/rmMultiCluster2.pl  translocation_fr.0 translocation_ff > translocation_fr.1
+$RSC/rmMultiCluster2.pl  translocation_fr.1 translocation_rr > translocation_fr.2
+$RSC/rmMultiCluster2.pl  translocation_fr.2 deletion_fr      > translocation_fr.3
+$RSC/rmMultiCluster2.pl  translocation_fr.3 inversion_ff     > translocation_fr.4
+$RSC/rmMultiCluster2.pl  translocation_fr.4 inversion_rr     > translocation_fr.5
+$RSC/rmMultiCluster2.pl  translocation_fr.5 tandem_rf        > translocation_fr.6
+CNT=`grep -c "^#####" translocation_fr.6`
+ls -l translocation_fr.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-5/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmMultiCluster.pl  translocation_ff > translocation_ff.0
+$RSC/rmMultiCluster2.pl translocation_ff.0 translocation_rr > translocation_ff.1
+$RSC/rmMultiCluster2.pl translocation_ff.1 translocation_fr > translocation_ff.2
+$RSC/rmMultiCluster2.pl translocation_ff.2 deletion_fr      > translocation_ff.3
+$RSC/rmMultiCluster2.pl translocation_ff.3 inversion_ff     > translocation_ff.4
+$RSC/rmMultiCluster2.pl translocation_ff.4 inversion_rr     > translocation_ff.5
+$RSC/rmMultiCluster2.pl translocation_ff.5 tandem_rf        > translocation_ff.6
+CNT=`grep -c "^#####" translocation_ff.6`
+ls -l translocation_ff.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-6/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG
+
+$RSC/rmMultiCluster.pl  translocation_rr > translocation_rr.0
+$RSC/rmMultiCluster2.pl translocation_rr.0 translocation_ff > translocation_rr.1
+$RSC/rmMultiCluster2.pl translocation_rr.1 translocation_fr > translocation_rr.2
+$RSC/rmMultiCluster2.pl translocation_rr.2 deletion_fr      > translocation_rr.3
+$RSC/rmMultiCluster2.pl translocation_rr.3 inversion_ff     > translocation_rr.4
+$RSC/rmMultiCluster2.pl translocation_rr.4 inversion_rr     > translocation_rr.5
+$RSC/rmMultiCluster2.pl translocation_rr.5 tandem_rf        > translocation_rr.6
+CNT=`grep -c "^#####" translocation_rr.6`
+ls -l translocation_rr.6 | awk -v c=$CNT -v wd=${WDIR}"_stp3cluster-7/7" '{print "log: "wd"\t"$10" [\t"c" cluster,\tfilesize =\t"$5" ] generated"}' >> $LOG

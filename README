@@ -79,8 +79,8 @@ composed of multiple types of read lengths.
 
 ** Quick Start on demo data **
 The demonstration data and its output example are prepared (the total size of about 
-1GB). Please e-mail me (miadachi@ncc.go.jp.) to request the dataset, named 'callallSV
-_demonetration.tar.gz'. 
+1GB). Please e-mail me (miadachi@ncc.go.jp.) to request the dataset, we will propose 
+an appropriate transmission method according to your environment.
 
 To check the callallSV pipeline runs correctly in your computer environment, we strongly 
 recommend that you first should run callallSV with the demonstration data and compare 

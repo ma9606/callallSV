@@ -176,22 +176,16 @@ rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.min2.i2.rmDup.2.size
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.min2.i2.rmDup.2.size.1
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.rm
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.rm.err
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.srt
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.err
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.rm
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.rm.err
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.srt
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.err
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.rm
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.rm.err
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.srt
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.err
@@ -205,8 +199,6 @@ rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.min2.i2.rmDup.2.size
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.min2.i2.rmDup.2.size.1
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.rm
 rm  ./all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.rm.err
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.srt
-rm  ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu
 rm  ./all.sam.cla.tr.rmMulti2
 rm  ./all.sam.cla.tr.rmMulti2.err
 rm  ./all.sam.cla.tr.rmMulti2.sco37
@@ -577,3 +569,11 @@ rm  ./translocation_rr.3
 rm  ./translocation_rr.4
 rm  ./translocation_rr.5
 rm  ./translocation_rr.6
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.srt; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.srt; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.srt; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.srt; fi
+if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu; fi

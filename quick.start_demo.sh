@@ -19,7 +19,7 @@ if [ ! -e $R_DIR/R ]; then  echo "Error: Can't find \$R_DIR/R: "$R_DIR/R; exit 1
 $SCR/SVcaller_process-1.sh demo_inFiles &> .SVcaller_process-1.stdout 
 
  echo -e "\n__Filesize check : __"  >> .SVcaller_process-1.stdout
- ls -l PE/GC???/tumor/rearrangement10new.txt  >> .SVcaller_process-1.stdout
+ ls -l PE/AN???/tumor/rearrangement10new.txt  >> .SVcaller_process-1.stdout
 
 $SCR/chk_process-aft1.sh &> .chk_process-aft1.stdout
 
@@ -29,9 +29,9 @@ $SCR/SVcaller_process-2.sh demo_inFiles &> .SVcaller_process-2.stdout
 
  echo -e "\n__Filesize check : __"  >> .SVcaller_process-2.stdout 
  ls -l PE/Filtered/rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.filtRep  >> .SVcaller_process-2.stdout
- ls -l PE/GC???/tumor/rearrangement10.txt.extractNoL_ud0.125.filtRep 		  >> .SVcaller_process-2.stdout
- ls -l SoftClip/GC???/tumor/intraBP.list_0_filtR_filt2_aNP.list 		  >> .SVcaller_process-2.stdout
- ls -l SoftClip/Realign/GC???/intraBP_tested.list				  >> .SVcaller_process-2.stdout
+ ls -l PE/AN???/tumor/rearrangement10.txt.extractNoL_ud0.125.filtRep 		  >> .SVcaller_process-2.stdout
+ ls -l SoftClip/AN???/tumor/intraBP.list_0_filtR_filt2_aNP.list 		  >> .SVcaller_process-2.stdout
+ ls -l SoftClip/Realign/AN???/intraBP_tested.list				  >> .SVcaller_process-2.stdout
 $SCR/chk_process-aft2pe.sh &> .chk_process-aft2pe.stdout 
 $SCR/chk_process-aft2sc.sh &> .chk_process-aft2sc.stdout 
 
@@ -40,9 +40,9 @@ $SCR/chk_process-aft2sc.sh &> .chk_process-aft2sc.stdout
 $SCR/SVcaller_process-3.sh demo_inFiles &>.SVcaller_process-3.stdout
 
  echo -e "\n__Filesize check : __"  >> .SVcaller_process-3.stdout
- ls -l Merge/GC???/mergePE-iBP_tested_0.list  >> .SVcaller_process-3.stdout
- ls -l Merge/GC???/merged_SV.list	      >> .SVcaller_process-3.stdout
- ls -l Merge/GC???/merged_SV.trimFmt.list     >> .SVcaller_process-3.stdout
+ ls -l Merge/AN???/mergePE-iBP_tested_0.list  >> .SVcaller_process-3.stdout
+ ls -l Merge/AN???/merged_SV.list	      >> .SVcaller_process-3.stdout
+ ls -l Merge/AN???/merged_SV.trimFmt.list     >> .SVcaller_process-3.stdout
 $SCR/chk_process-aft3.sh &> .chk_process-aft3.stdout 
 
 ##_for_Error-Report_##

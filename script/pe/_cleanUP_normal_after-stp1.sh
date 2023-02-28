@@ -274,11 +274,11 @@ rm  ./translocation_rr.3
 rm  ./translocation_rr.4
 rm  ./translocation_rr.5
 rm  ./translocation_rr.6
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.srt;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.srt;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.srt;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu;  fi
-if [ -e $1 ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.srt;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.srt ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.ff.clu.srt;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.srt ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr+.clu.srt;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.srt ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.fr-.clu.srt;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu;  fi
+if [ -e ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.srt ]; then  rm ./.tmp_all.sam.cla.tr.rmDup.rmMulti2.sco37.mis2.sort.rr.clu.srt;  fi

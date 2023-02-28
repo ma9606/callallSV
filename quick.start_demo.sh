@@ -40,8 +40,8 @@ $SCR/chk_process-aft2sc.sh &> .chk_process-aft2sc.stdout
 $SCR/SVcaller_process-3.sh demo_inFiles &>.SVcaller_process-3.stdout
 
  echo -e "\n__Filesize check : __"  >> .SVcaller_process-3.stdout
- ls -l Merge/AN???/merged_SV.list　　　　　　　　　>> .SVcaller_process-3.stdout
- ls -l Merge/AN???/merged_SV.validated_filt.list   >> .SVcaller_process-3.stdout
+ ls -l Merge/AN???/merged_SV.list  　　　>> .SVcaller_process-3.stdout
+ ls -l Merge/AN???/merged_SV.validated_filt.list　　　>> .SVcaller_process-3.stdout
 $SCR/chk_process-aft3.sh &> .chk_process-aft3.stdout 
 
 ##_for_Error-Report_##

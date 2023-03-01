@@ -80,7 +80,8 @@ do
   for stderr in .mkSVdb .list_chr? .list_chr?? SVseq_multiFa
   do
     if [ ! -s ${stderr}.err ]; then
-      rm ${stderr}.err;   if [ -e ${stderr}.out ]; then rm ${stderr}.out; fi
+      if [ -e ${stderr}.err ]; then rm ${stderr}.err; fi
+      if [ -e ${stderr}.out ]; then rm ${stderr}.out; fi
     else
       ls -l ${stderr}.err
       echo -e "\n==< "`pwd`"/"${stderr}.err" >=="

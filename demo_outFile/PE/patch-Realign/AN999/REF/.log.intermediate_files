@@ -1,0 +1,79 @@
+./tumor/230101_D00999_0001_AN0NYMXX/:
+合計 56
+-rwxrwx--- 1 madach icgc_ncc 6685  2月 28 17:57 qArray.cnt_referenceSupRead
+-rw-rw-r-- 1 madach icgc_ncc 1660  2月 28 17:57 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc 4096  2月 28 17:57 ..
+-rw-r--r-- 1 madach icgc_ncc    0  2月 28 17:57 .cntREFsup.stderr
+-rw-r--r-- 1 madach icgc_ncc    0  2月 28 17:57 .cntREFsup.out
+-rw-r----- 1 madach icgc_ncc    0  2月 28 17:57 anonymus_t_0.1M_056.extlist
+-rw-r----- 1 madach icgc_ncc  428  2月 28 17:57 anonymus_t_0.1M_058.extlist
+-rw-r----- 1 madach icgc_ncc  214  2月 28 17:57 anonymus_t_0.1M_055.extlist
+-rw-r----- 1 madach icgc_ncc  214  2月 28 17:57 anonymus_t_0.1M_051.extlist
+-rw-r----- 1 madach icgc_ncc  107  2月 28 17:57 anonymus_t_0.1M_060.extlist
+-rw-r----- 1 madach icgc_ncc  535  2月 28 17:57 anonymus_t_0.1M_054.extlist
+-rw-r----- 1 madach icgc_ncc  214  2月 28 17:57 anonymus_t_0.1M_052.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:57 anonymus_t_0.1M_059.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:57 anonymus_t_0.1M_057.extlist
+-rw-r----- 1 madach icgc_ncc  535  2月 28 17:57 anonymus_t_0.1M_053.extlist
+drwxrwxr-x 2 madach icgc_ncc 4096  2月 28 17:57 .
+
+./tumor/230101_D00999_0002_AN0NYMXX/:
+合計 40
+-rwxrwx--- 1 madach icgc_ncc 5747  2月 28 17:57 qArray.cnt_referenceSupRead
+-rw-rw-r-- 1 madach icgc_ncc  830  2月 28 17:57 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc 4096  2月 28 17:57 ..
+-rw-r--r-- 1 madach icgc_ncc    0  2月 28 17:57 .cntREFsup.stderr
+-rw-r--r-- 1 madach icgc_ncc    0  2月 28 17:57 .cntREFsup.out
+-rw-r----- 1 madach icgc_ncc  428  2月 28 17:57 anonymus_t_0.1M_071.extlist
+-rw-r----- 1 madach icgc_ncc  428  2月 28 17:57 anonymus_t_0.1M_073.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:57 anonymus_t_0.1M_075.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:57 anonymus_t_0.1M_072.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:57 anonymus_t_0.1M_074.extlist
+drwxrwxr-x 2 madach icgc_ncc 4096  2月 28 17:57 .
+
+./tumor/230101_D00999_0003_AN0NYMXX/:
+合計 44
+drwxrwxr-x 5 madach icgc_ncc 4096  2月 28 17:57 ..
+-rwxrwx--- 1 madach icgc_ncc 5747  2月 28 17:58 qArray.cnt_referenceSupRead
+-rw-rw-r-- 1 madach icgc_ncc  830  2月 28 17:58 .list.samGz
+-rw-rw-r-- 1 madach icgc_ncc  117  2月 28 17:58 .tar.jobids
+-rw-r--r-- 1 madach icgc_ncc    0  2月 28 17:58 .cntREFsup.stderr
+-rw-r--r-- 1 madach icgc_ncc    0  2月 28 17:58 .cntREFsup.out
+-rw-r----- 1 madach icgc_ncc    0  2月 28 17:58 anonymus_t_0.1M_082.extlist
+-rw-r----- 1 madach icgc_ncc  214  2月 28 17:58 anonymus_t_0.1M_085.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:58 anonymus_t_0.1M_084.extlist
+-rw-r----- 1 madach icgc_ncc  214  2月 28 17:58 anonymus_t_0.1M_081.extlist
+-rw-r----- 1 madach icgc_ncc  321  2月 28 17:58 anonymus_t_0.1M_083.extlist
+-rw-rw-r-- 1 madach icgc_ncc    6  2月 28 17:59 .tar.jobids.stat
+drwxrwxr-x 2 madach icgc_ncc 4096  2月 28 17:59 .
+
+./:
+合計 28
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr6
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr5
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr4
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr3
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr2
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr1
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr9
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr8
+-rw-rw-r-- 1 madach icgc_ncc   52  2月 28 17:57 .list_chr7
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr12
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr11
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr10
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chrY
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chrX
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr22
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr21
+-rw-rw-r-- 1 madach icgc_ncc   27  2月 28 17:57 .list_chr20
+-rw-rw-r-- 1 madach icgc_ncc  486  2月 28 17:57 .list_chr19
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr18
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr17
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr16
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr15
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:57 .list_chr14
+-rw-rw-r-- 1 madach icgc_ncc   27  2月 28 17:57 .list_chr13
+drwxrwxr-x 5 madach icgc_ncc 4096  2月 28 17:57 tumor
+drwxrwxr-x 5 madach icgc_ncc 4096  2月 28 17:59 ..
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:59 .log.intermediate_files
+drwxrwxr-x 3 madach icgc_ncc 4096  2月 28 17:59 .

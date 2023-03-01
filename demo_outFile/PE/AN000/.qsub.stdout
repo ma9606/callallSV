@@ -1,0 +1,89 @@
+要求ハードリソース
+  memory (s_vmem): 8G = 1 タスクは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
+アレイジョブのタスク
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 20
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72721092.1-20:1 ("tAN000_list") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 72721093 ("tAN000_ff") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 72721094 ("tAN000_rr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 72721095 ("tAN000_fr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721096 ("tAN000_rf") has been submitted
+要求ハードリソース
+  memory (s_vmem): 32G = ジョブは 1 スロットあたり 32G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 32G = ジョブは 32G バイトのメモリを要求します
+Your job 72721097 ("tAN000_tr_p") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721098 ("tAN000_trfr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721099 ("tAN000_trff") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721101 ("tAN000_trrr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = ジョブは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 1024M = ジョブは 1024M バイトのメモリを要求します
+Your job 72721103 ("tAN000_clust") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 72721105 ("tAN000_del") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 72721106 ("tAN000_inv") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 72721107 ("tAN000_tdm") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721108 ("tAN000_trns_fr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721109 ("tAN000_trns_ff") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 72721110 ("tAN000_trns_rr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = ジョブは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 1024M = ジョブは 1024M バイトのメモリを要求します
+Your job 72721111 ("tAN000_output") has been submitted

@@ -1,0 +1,149 @@
+./tumor/230101_D00000_0002_AN0NYMXX/:
+合計 1000
+-rwxrwx--- 1 madach icgc_ncc   3684  2月 28 17:40 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc    830  2月 28 17:40 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc   4096  2月 28 17:40 ..
+-rw-r--r-- 1 madach icgc_ncc      0  2月 28 17:40 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc      0  2月 28 17:40 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc 129607  2月 28 17:40 anonymus_t_0.1M_025_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  35906  2月 28 17:40 anonymus_t_0.1M_025_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1389  2月 28 17:40 anonymus_t_0.1M_025_PE.as_list
+-rw-r----- 1 madach icgc_ncc 155660  2月 28 17:40 anonymus_t_0.1M_024_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  44029  2月 28 17:40 anonymus_t_0.1M_024_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1989  2月 28 17:40 anonymus_t_0.1M_024_PE.as_list
+-rw-r----- 1 madach icgc_ncc   1591  2月 28 17:40 anonymus_t_0.1M_023_PE.as_list
+-rw-r----- 1 madach icgc_ncc 181816  2月 28 17:40 anonymus_t_0.1M_023_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  50702  2月 28 17:40 anonymus_t_0.1M_023_SE.as_list
+-rw-r----- 1 madach icgc_ncc 148323  2月 28 17:40 anonymus_t_0.1M_022_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  38911  2月 28 17:40 anonymus_t_0.1M_022_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2582  2月 28 17:40 anonymus_t_0.1M_022_PE.as_list
+-rw-r----- 1 madach icgc_ncc 141474  2月 28 17:40 anonymus_t_0.1M_021_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  38926  2月 28 17:40 anonymus_t_0.1M_021_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1595  2月 28 17:40 anonymus_t_0.1M_021_PE.as_list
+drwxrwxr-x 2 madach icgc_ncc   4096  2月 28 17:40 .
+
+./tumor/230101_D00000_0001_AN0NYMXX/:
+合計 2028
+-rw-rw-r-- 1 madach icgc_ncc   1660  2月 28 17:40 .list.samGz
+-rwxrwx--- 1 madach icgc_ncc   4622  2月 28 17:40 qArray.remap_onContig
+drwxrwxr-x 5 madach icgc_ncc   4096  2月 28 17:40 ..
+-rw-r--r-- 1 madach icgc_ncc      0  2月 28 17:40 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc      0  2月 28 17:40 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc 161677  2月 28 17:40 anonymus_t_0.1M_009_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  41803  2月 28 17:40 anonymus_t_0.1M_009_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2583  2月 28 17:40 anonymus_t_0.1M_009_PE.as_list
+-rw-r----- 1 madach icgc_ncc   1788  2月 28 17:40 anonymus_t_0.1M_006_PE.as_list
+-rw-r----- 1 madach icgc_ncc 156329  2月 28 17:40 anonymus_t_0.1M_005_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  39161  2月 28 17:40 anonymus_t_0.1M_005_SE.as_list
+-rw-r----- 1 madach icgc_ncc   3590  2月 28 17:40 anonymus_t_0.1M_005_PE.as_list
+-rw-r----- 1 madach icgc_ncc  43430  2月 28 17:40 anonymus_t_0.1M_002_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2093  2月 28 17:40 anonymus_t_0.1M_002_PE.as_list
+-rw-r----- 1 madach icgc_ncc 136509  2月 28 17:40 anonymus_t_0.1M_001_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  37728  2月 28 17:40 anonymus_t_0.1M_001_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1686  2月 28 17:40 anonymus_t_0.1M_001_PE.as_list
+-rw-r----- 1 madach icgc_ncc 158738  2月 28 17:40 anonymus_t_0.1M_007_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  44819  2月 28 17:40 anonymus_t_0.1M_007_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1994  2月 28 17:40 anonymus_t_0.1M_007_PE.as_list
+-rw-r----- 1 madach icgc_ncc 148530  2月 28 17:40 anonymus_t_0.1M_006_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  40785  2月 28 17:40 anonymus_t_0.1M_006_SE.as_list
+-rw-r----- 1 madach icgc_ncc  35504  2月 28 17:40 anonymus_t_0.1M_004_SE.as_list
+-rw-r----- 1 madach icgc_ncc   3283  2月 28 17:40 anonymus_t_0.1M_004_PE.as_list
+-rw-r----- 1 madach icgc_ncc 159939  2月 28 17:40 anonymus_t_0.1M_003_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  43605  2月 28 17:40 anonymus_t_0.1M_003_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1492  2月 28 17:40 anonymus_t_0.1M_003_PE.as_list
+-rw-r----- 1 madach icgc_ncc 165257  2月 28 17:40 anonymus_t_0.1M_002_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 178285  2月 28 17:40 anonymus_t_0.1M_010_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  46065  2月 28 17:40 anonymus_t_0.1M_010_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1988  2月 28 17:40 anonymus_t_0.1M_010_PE.as_list
+-rw-r----- 1 madach icgc_ncc 141158  2月 28 17:40 anonymus_t_0.1M_008_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  38917  2月 28 17:40 anonymus_t_0.1M_008_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1886  2月 28 17:40 anonymus_t_0.1M_008_PE.as_list
+-rw-r----- 1 madach icgc_ncc 146034  2月 28 17:40 anonymus_t_0.1M_004_SVmatch.sam
+drwxrwxr-x 2 madach icgc_ncc  12288  2月 28 17:40 .
+
+./tumor/230101_D00000_0003_AN0NYMXX/:
+合計 976
+-rwxrwx--- 1 madach icgc_ncc   3684  2月 28 17:40 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc    830  2月 28 17:40 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc   4096  2月 28 17:40 ..
+-rw-r--r-- 1 madach icgc_ncc      0  2月 28 17:40 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc      0  2月 28 17:40 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc   2292  2月 28 17:40 anonymus_t_0.1M_035_PE.as_list
+-rw-r----- 1 madach icgc_ncc   2184  2月 28 17:40 anonymus_t_0.1M_034_PE.as_list
+-rw-r----- 1 madach icgc_ncc  38137  2月 28 17:40 anonymus_t_0.1M_031_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2591  2月 28 17:40 anonymus_t_0.1M_031_PE.as_list
+-rw-r----- 1 madach icgc_ncc 165855  2月 28 17:40 anonymus_t_0.1M_035_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  43212  2月 28 17:40 anonymus_t_0.1M_035_SE.as_list
+-rw-r----- 1 madach icgc_ncc 144990  2月 28 17:40 anonymus_t_0.1M_032_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  38758  2月 28 17:40 anonymus_t_0.1M_032_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2586  2月 28 17:40 anonymus_t_0.1M_032_PE.as_list
+-rw-r----- 1 madach icgc_ncc 139059  2月 28 17:40 anonymus_t_0.1M_031_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 142046  2月 28 17:40 anonymus_t_0.1M_034_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  39569  2月 28 17:40 anonymus_t_0.1M_034_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2485  2月 28 17:40 anonymus_t_0.1M_033_PE.as_list
+-rw-r----- 1 madach icgc_ncc 151771  2月 28 17:40 anonymus_t_0.1M_033_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  40604  2月 28 17:40 anonymus_t_0.1M_033_SE.as_list
+drwxrwxr-x 2 madach icgc_ncc   4096  2月 28 17:40 .
+
+./normal/230101_L00000_0002_AN0NYMXX/:
+合計 220
+-rwxrwx--- 1 madach icgc_ncc  4065  2月 28 17:40 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc  1169  2月 28 17:40 .list.samGz
+drwxrwxr-x 4 madach icgc_ncc  4096  2月 28 17:40 ..
+-rw-r--r-- 1 madach icgc_ncc     0  2月 28 17:40 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc     0  2月 28 17:40 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc  3840  2月 28 17:40 anonymus_n_0.1M_122_SE.as_list
+-rw-r----- 1 madach icgc_ncc   396  2月 28 17:40 anonymus_n_0.1M_122_PE.as_list
+-rw-r----- 1 madach icgc_ncc  5044  2月 28 17:40 anonymus_n_0.1M_121_SE.as_list
+-rw-r----- 1 madach icgc_ncc   100  2月 28 17:40 anonymus_n_0.1M_121_PE.as_list
+-rw-r----- 1 madach icgc_ncc  6870  2月 28 17:40 anonymus_n_0.1M_120_SE.as_list
+-rw-r----- 1 madach icgc_ncc   492  2月 28 17:40 anonymus_n_0.1M_120_PE.as_list
+-rw-r----- 1 madach icgc_ncc 11806  2月 28 17:40 anonymus_n_0.1M_121_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 19708  2月 28 17:40 anonymus_n_0.1M_120_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 21298  2月 28 17:40 anonymus_n_0.1M_118_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  7477  2月 28 17:40 anonymus_n_0.1M_118_SE.as_list
+-rw-r----- 1 madach icgc_ncc   496  2月 28 17:40 anonymus_n_0.1M_118_PE.as_list
+-rw-r----- 1 madach icgc_ncc   298  2月 28 17:40 anonymus_n_0.1M_117_PE.as_list
+-rw-r----- 1 madach icgc_ncc 16509  2月 28 17:40 anonymus_n_0.1M_116_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  6860  2月 28 17:40 anonymus_n_0.1M_116_SE.as_list
+-rw-r----- 1 madach icgc_ncc    98  2月 28 17:40 anonymus_n_0.1M_116_PE.as_list
+-rw-r----- 1 madach icgc_ncc 10955  2月 28 17:40 anonymus_n_0.1M_117_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  6450  2月 28 17:40 anonymus_n_0.1M_117_SE.as_list
+-rw-r----- 1 madach icgc_ncc  9486  2月 28 17:40 anonymus_n_0.1M_122_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 15620  2月 28 17:40 anonymus_n_0.1M_119_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  5257  2月 28 17:40 anonymus_n_0.1M_119_SE.as_list
+-rw-r----- 1 madach icgc_ncc   198  2月 28 17:40 anonymus_n_0.1M_119_PE.as_list
+drwxrwxr-x 2 madach icgc_ncc 12288  2月 28 17:40 .
+
+./normal/230101_L00000_0001_AN0NYMXX/:
+合計 252
+-rwxrwx--- 1 madach icgc_ncc  4253  2月 28 17:40 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc  1336  2月 28 17:40 .list.samGz
+drwxrwxr-x 4 madach icgc_ncc  4096  2月 28 17:40 ..
+-rw-r--r-- 1 madach icgc_ncc     0  2月 28 17:40 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc     0  2月 28 17:40 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc   397  2月 28 17:40 anonymus_n_0.1M_108_PE.as_list
+-rw-r----- 1 madach icgc_ncc 11836  2月 28 17:40 anonymus_n_0.1M_106_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  6653  2月 28 17:40 anonymus_n_0.1M_106_SE.as_list
+-rw-r----- 1 madach icgc_ncc   399  2月 28 17:40 anonymus_n_0.1M_106_PE.as_list
+-rw-r----- 1 madach icgc_ncc   496  2月 28 17:40 anonymus_n_0.1M_104_PE.as_list
+-rw-r----- 1 madach icgc_ncc    99  2月 28 17:40 anonymus_n_0.1M_103_PE.as_list
+-rw-r----- 1 madach icgc_ncc 18928  2月 28 17:40 anonymus_n_0.1M_101_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  7271  2月 28 17:40 anonymus_n_0.1M_101_SE.as_list
+-rw-r----- 1 madach icgc_ncc   796  2月 28 17:40 anonymus_n_0.1M_101_PE.as_list
+-rw-r----- 1 madach icgc_ncc  9457  2月 28 17:40 anonymus_n_0.1M_108_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  3433  2月 28 17:40 anonymus_n_0.1M_108_SE.as_list
+-rw-r----- 1 madach icgc_ncc  4847  2月 28 17:40 anonymus_n_0.1M_107_SE.as_list
+-rw-r----- 1 madach icgc_ncc   399  2月 28 17:40 anonymus_n_0.1M_107_PE.as_list
+-rw-r----- 1 madach icgc_ncc 14751  2月 28 17:40 anonymus_n_0.1M_104_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  5449  2月 28 17:40 anonymus_n_0.1M_104_SE.as_list
+-rw-r----- 1 madach icgc_ncc 13364  2月 28 17:40 anonymus_n_0.1M_103_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  6462  2月 28 17:40 anonymus_n_0.1M_103_SE.as_list
+-rw-r----- 1 madach icgc_ncc 11056  2月 28 17:40 anonymus_n_0.1M_107_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 17300  2月 28 17:40 anonymus_n_0.1M_102_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  6461  2月 28 17:40 anonymus_n_0.1M_102_SE.as_list
+-rw-r----- 1 madach icgc_ncc   398  2月 28 17:40 anonymus_n_0.1M_102_PE.as_list
+-rw-r----- 1 madach icgc_ncc 23501  2月 28 17:40 anonymus_n_0.1M_105_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  8089  2月 28 17:40 anonymus_n_0.1M_105_SE.as_list
+-rw-r----- 1 madach icgc_ncc   399  2月 28 17:40 anonymus_n_0.1M_105_PE.as_list
+drwxrwxr-x 2 madach icgc_ncc 12288  2月 28 17:40 .

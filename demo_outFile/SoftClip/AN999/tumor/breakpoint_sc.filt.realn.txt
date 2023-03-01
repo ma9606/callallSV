@@ -1,0 +1,156 @@
+chr19	 28873233 <==	 28873130	|	 28876244	==>  28876345	 chr19	89	inversion_rr	-	89,60,60	0,39,81	8	98	9	2	0	0	0.00779	4.86
+chr19	 28873264 ==>	 28873362	|	 29319750	==>  29319853	 chr19	81	deletion	interruption: GAC	81,60,60	0,72,74	3	68	3	3	0	0	0.000309	8.08
+chr19	 28947032 ==>	 28947136	|	 29835173	==>  29835279	 chr19	71	deletion	overlap: GG	71,60,60	0,104,85	10	109	3	1	0	0	0.0917	2.39
+chr19	 21615840 ==>	 21615945	|	 23965032	==>  23965138	 chr19	70	deletion	-	70,60,60	0,61,74	7	90	6	5	0	0	9.51e-06	11.6
+chr19	 31323700 ==>	 31323807	|	 20724099	==>  20724207	 chr19	58	tandem_dup	overlap: AC	58,60,60	0,107,88	12	73	3	2	0	0	0.0243	3.72
+chr19	 24090679 ==>	 24090775	|	 21603579	==>  21603685	 chr19	50	tandem_dup	overlap: A	50,60,60	0,87,79	3	66	6	0	0	0	1	0
+chr19	 29474795 ==>	 29474879	|	 30411292	<==  30411209	 chr19	50	inversion_ff	interruption: TCTGAACATCAATGCAATCAGT	50,60,60	0,84,83	5	95	14	3	0	0	0.000317	8.06
+chr19	 20854183 ==>	 20854288	|	 29749574	==>  29749679	 chr19	47	deletion	overlap: T	47,60,60	15,67,105	5	65	6	1	0	0	0.0845	2.47
+chr19	 24078135 ==>	 24078241	|	 23927798	==>  23927898	 chr19	45	tandem_dup	overlap: AG	45,48,60	0,27,81	14	65	10	4	0	0	0.00167	6.4
+chr19	 23984498 ==>	 23984605	|	 30379739	<==  30379631	 chr19	42	inversion_ff	overlap: GG	42,60,60	0,107,89	22	56	6	2	0	0	0.0873	2.44
+chr19	 30331913 <==	 30331810	|	 31141379	==>  31141484	 chr19	34	inversion_rr	overlap: CTT	34,60,60	23,103,88	40	42	1	2	0	0	0.494	0.705
+chr19	 31255420 ==>	 31255526	|	 31260120	==>  31260218	 chr19	30	deletion	-	30,60,60	0,87,98	14	40	3	3	0	0	0.0232	3.76
+chr19	 30259248 ==>	 30259336	|	 30257179	==>  30257278	 chr19	28	tandem_dup	interruption: GAGCCCA	28,60,60	25,86,99	31	13	0	1	0	0	1	0
+chr6	151777215 ==>	151777323	|	 29855781	==>  29855825	 chr19	28	translocation_fr	overlap: TG	28,0,0	0,2,44	10	120	1	2	13	0	0.359	1.02
+chr19	 30731129 ==>	 30731231	|	 23978240	==>  23978321	 chr19	27	tandem_dup	-	27,60,60	0,38,81	19	42	1	1	0	0	0.323	1.13
+chr19	 30828828 ==>	 30828932	|	 51469539	<==  51469441	 chr19	27	inversion_ff	interruption: T	27,60,60	0,73,98	9	40	5	1	0	0	0.2	1.61
+chr17	 38035926 ==>	 38036030	|	 31139897	<==  31139795	 chr19	26	translocation_ff	overlap: CAG	26,60,60	0,104,83	10	37	4	2	0	0	0.0561	2.88
+chr17	 79413270 <==	 79413163	|	 23944344	==>  23944448	 chr19	26	translocation_rr	overlap: T	26,60,60	0,88,85	2	30	3	2	0	0	0.0107	4.54
+chr19	 28871794 <==	 28871688	|	 30702938	==>  30703046	 chr19	26	inversion_rr	overlap: CAGT	26,60,60	0,86,88	17	24	4	2	0	0	0.189	1.66
+chr19	 31121897 ==>	 31122001	|	 31122206	<==  31122103	 chr19	26	inversion_ff	-	26,60,60	0,104,60	3	21	-	0	0	-	1	0
+chr17	 37795765 ==>	 37795869	|	 30583069	==>  30583178	 chr19	25	translocation_fr	overlap: GAGGC	25,60,60	0,84,104	7	29	0	0	0	0	1	0
+chr17	 38037187 <==	 38037089	|	 30007532	==>  30007633	 chr19	25	translocation_rr	interruption: CT	25,60,60	0,98,82	2	32	0	1	0	0	0.0857	2.46
+chr19	 29909082 ==>	 29909192	|	 31046872	<==  31046763	 chr19	25	inversion_ff	overlap: GCAG	25,60,60	12,86,109	19	34	4	2	0	0	0.141	1.96
+chr19	 23944260 <==	 23944154	|	 24049318	==>  24049419	 chr19	23	inversion_rr	-	23,60,60	0,61,91	5	39	4	4	0	0	0.000648	7.34
+chr19	 28151317 ==>	 28151408	|	 28842945	<==  28842843	 chr19	23	inversion_ff	overlap: CAG	23,60,60	0,71,102	3	24	1	3	0	0	0.00493	5.31
+chr19	 29850592 ==>	 29850694	|	 30351661	==>  30351763	 chr19	23	deletion	overlap: A	23,60,60	0,82,83	30	33	0	4	0	0	0.114	2.17
+chr19	 30393103 ==>	 30393193	|	 30310504	==>  30310598	 chr19	23	tandem_dup	overlap: TCC	23,60,60	0,56,75	21	22	0	3	0	0	0.235	1.45
+chr19	 31082800 <==	 31082697	|	 31128969	==>  31129074	 chr19	23	inversion_rr	overlap: T	23,60,60	22,103,105	22	31	1	6	0	0	0.00836	4.78
+chr17	 37678863 <==	 37678757	|	 30571636	==>  30571735	 chr19	22	translocation_rr	overlap: TT	22,60,60	0,65,97	15	37	2	3	0	0	0.0311	3.47
+chr19	 30294384 ==>	 30294443	|	 51489522	<==  51489461	 chr19	22	inversion_ff	interruption: CACATGTCTGCCAAATTGTGACAGTTTGTGCTGTCAGGTCAGC	22,60,60	0,39,42	18	55	7	4	0	0	0.00541	5.22
+chr19	 23969080 ==>	 23969178	|	 30347448	<==  30347357	 chr19	21	inversion_ff	overlap: GCC	21,60,60	0,35,91	41	28	1	0	0	0	1	0
+chr19	 29983885 ==>	 29983980	|	 51503863	<==  51503760	 chr19	20	inversion_ff	overlap: CAA	20,60,60	15,90,103	2	22	0	2	0	0	0.0185	3.99
+chr19	 30296551 <==	 30296459	|	 30733583	==>  30733675	 chr19	20	inversion_rr	interruption: CCACGTG	20,60,60	20,92,92	38	25	0	1	0	0	1	0
+chr19	 30700265 ==>	 30700372	|	 28240661	==>  28240766	 chr19	20	tandem_dup	overlap: AATT	20,60,60	0,88,35	17	32	2	1	0	0	0.36	1.02
+chr19	 31122098 <==	 31122001	|	 51456968	==>  51457063	 chr19	20	inversion_rr	interruption: CCTGGTAT	20,60,60	16,97,86	8	11	2	0	0	0	1	0
+chr19	 51388434 ==>	 51388539	|	 30373568	==>  30373673	 chr19	20	tandem_dup	-	20,60,60	0,86,100	29	29	1	3	0	0	0.239	1.43
+chr19	 28535655 ==>	 28535743	|	 28855793	<==  28855692	 chr19	19	inversion_ff	overlap: AG	19,60,60	0,65,82	3	28	3	6	0	0	3.61e-05	10.2
+chr19	 23930296 <==	 23930197	|	 31247382	==>  31247464	 chr19	18	inversion_rr	overlap: A	18,59,60	0,23,62	5	31	5	0	0	0	1	0
+chr19	 24066966 ==>	 24067052	|	 37845919	==>  37846022	 chr17	18	translocation_fr	overlap: G	18,60,50	0,86,20	12	31	8	2	0	0	0.0919	2.39
+chr17	 79412455 ==>	 79412536	|	 30333796	==>  30333890	 chr19	17	translocation_fr	interruption: ACTGGCA	17,60,60	8,78,94	28	30	1	1	0	0	0.492	0.71
+chr19	 23940854 ==>	 23940950	|	 51454697	<==  51454608	 chr19	17	inversion_ff	-	17,60,60	0,76,39	6	26	0	2	0	0	0.0499	3
+chr19	 30023768 ==>	 30023834	|	 29913511	==>  29913587	 chr19	17	tandem_dup	interruption: TTCAAGCAGGAGTGCGCTCATGACCTTCCT	17,60,60	0,66,47	11	41	9	4	0	0	0.00372	5.59
+chr19	 30579285 ==>	 30579386	|	 51392801	==>  51392900	 chr19	17	deletion	overlap: C	17,60,60	0,101,76	21	26	2	9	0	0	0.0023	6.07
+chr19	 31081349 ==>	 31081453	|	 29858298	==>  29858401	 chr19	17	tandem_dup	-	17,60,60	0,85,103	17	23	1	3	0	0	0.0924	2.38
+chr19	 20775586 <==	 20775484	|	 20775852	==>  20775958	 chr19	16	inversion_rr	overlap: GCTGAG	16,60,39	0,63,15	16	31	-	3	0	-	0.0494	3.01
+chr19	 23940945 ==>	 23941027	|	 31075892	==>  31075991	 chr19	16	deletion	overlap: T	16,60,60	0,82,59	11	34	2	1	0	0	0.261	1.34
+chr19	 31215424 ==>	 31215528	|	 79452028	==>  79452127	 chr17	16	translocation_fr	interruption: C	16,60,60	12,104,99	7	25	5	1	0	0	0.242	1.42
+chr19	 31232571 ==>	 31232670	|	 57498494	==>  57498596	 chr19	16	deletion	-	16,60,60	0,78,72	13	20	0	3	0	0	0.0784	2.55
+chr19	 28877371 <==	 28877263	|	 31025294	==>  31025397	 chr19	15	inversion_rr	overlap: CATGTCTT	15,60,60	0,84,103	19	23	5	4	0	0	0.109	2.22
+chr19	 30003385 ==>	 30003479	|	 30372411	<==  30372339	 chr19	15	inversion_ff	interruption: ATTCAC	15,50,60	0,19,53	33	19	0	1	0	0	1	0
+chr1	 66946564 <==	 66946538	|	 29887283	==>  29887378	 chr19	14	translocation_rr	interruption: CATAGGTGTC	14,6,60	4,20,95	3	33	0	2	2	0	0.069	2.67
+chr19	 28872644 <==	 28872544	|	 28872626	==>  28872715	 chr19	14	inversion_rr	-	14,60,60	0,42,81	0	1	-	0	0	-	1	0
+chr19	 30104954 ==>	 30105014	|	 51269230	==>  51269314	 chr19	14	deletion	interruption: CTCTGT	14,60,60	0,60,38	14	33	7	1	0	0	0.312	1.16
+chr19	 30406640 ==>	 30406737	|	 30286414	==>  30286471	 chr19	14	tandem_dup	overlap: CA	14,7,7	0,5,52	61	21	5	3	0	0	0.571	0.56
+chr9	 37638065 <==	 37637968	|	 29881984	==>  29882063	 chr19	14	translocation_rr	overlap: AGAAAGAAAGAAAGAAAGAAAGA	14,0,46	0,3,64	4	10	0	0	2	0	1	0
+chr19	 30259334 <==	 30259248	|	 30259330	==>  30259437	 chr19	13	inversion_rr	overlap: TGGCC	13,60,60	0,67,107	19	11	-	0	0	-	1	0
+chr19	 28872698 ==>	 28872782	|	 30726929	==>  30727025	 chr19	12	deletion	-	12,60,60	0,63,81	8	10	2	2	0	0	0.474	0.747
+chr19	 30195134 <==	 30195027	|	 30304259	==>  30304364	 chr19	12	inversion_rr	overlap: AGAG	12,60,60	0,87,85	41	14	2	5	0	0	0.329	1.11
+chr19	 30703579 ==>	 30703662	|	 28872735	==>  28872835	 chr19	12	tandem_dup	overlap: AGC	12,60,60	0,64,100	10	11	2	1	0	0	1	0
+chr19	 30093415 ==>	 30093519	|	 30470635	==>  30470739	 chr19	11	deletion	overlap: A	11,60,60	0,104,68	28	13	0	5	0	0	0.301	1.2
+chr19	 21390081 <==	 21389973	|	 21391837	==>  21391949	 chr19	10	inversion_rr	overlap: TTTTGG	10,60,60	4,108,112	1	13	0	2	0	0	0.025	3.69
+chr19	 21390531 ==>	 21390626	|	 21391210	==>  21391315	 chr19	10	deletion	overlap: TACT	10,60,60	0,95,86	0	9	-	0	0	-	1	0
+chr19	 24011259 ==>	 24011301	|	  8999183	==>   8999282	 chr11	10	translocation_fr	-	10,0,0	0,26,0	0	141	45	0	21	8	1	0
+chr19	 28056617 ==>	 28056712	|	 28056814	==>  28056897	 chr19	10	deletion	-	10,60,60	0,36,83	5	16	-	3	2	-	0.281	1.27
+chr19	 30304241 ==>	 30304307	|	 51357285	==>  51357362	 chr19	10	deletion	interruption: TTGCTTATAAACACCCAGGAA	10,60,60	0,61,39	19	28	3	4	0	0	0.0354	3.34
+chr19	 30794683 ==>	 30794767	|	 31010128	==>  31010224	 chr19	10	deletion	interruption: CCCAGAG	10,60,60	0,65,67	9	24	2	3	0	0	0.0308	3.48
+chr19	 31116058 ==>	 31116117	|	 30040648	==>  30040759	 chr19	10	tandem_dup	overlap: TGCCC	10,60,60	0,59,91	26	14	0	4	0	0	0.29	1.24
+chr19	 57513523 ==>	 57513604	|	 28041622	==>  28041712	 chr19	10	tandem_dup	overlap: G	10,60,60	0,81,52	1	14	0	2	0	0	0.0221	3.81
+chr7	 46447195 ==>	 46447299	|	 29410570	==>  29410661	 chr19	10	translocation_fr	overlap: TT	10,60,60	2,99,67	3	11	0	0	0	0	1	0
+chr1	236088215 ==>	236088288	|	 31013168	==>  31013268	 chr19	9	translocation_fr	overlap: ACATATATATATACATATATATA	9,60,60	0,48,38	5	13	0	1	5	0	1	1.11e-16
+chr19	 30288856 ==>	 30288960	|	 29331746	==>  29331827	 chr19	9	tandem_dup	interruption: TA	9,60,60	3,104,50	35	11	3	6	0	0	0.322	1.13
+chr19	 30304384 <==	 30304350	|	 51357285	==>  51357390	 chr19	9	inversion_rr	-	9,60,60	0,15,67	17	6	0	3	0	0	1	1.11e-16
+chr12	126067440 ==>	126067554	|	 29476070	==>  29476168	 chr19	8	translocation_fr	overlap: GCAGGACA	8,60,60	4,114,98	5	1	0	1	0	0	1	0
+chr19	 21273084 ==>	 21273171	|	 94892096	==>  94892206	 chr7	8	translocation_fr	overlap: CTTAA	8,60,60	4,87,110	1	9	1	2	0	0	0.0455	3.09
+chr19	 23955771 ==>	 23955885	|	153116146	==> 153116171	 chr3	8	translocation_fr	overlap: CTGTGTGTAT	8,60,0	0,70,0	0	8	0	0	1	0	1	0
+chr19	 28844274 <==	 28844170	|	 30714316	==>  30714397	 chr19	8	inversion_rr	overlap: TT	8,60,60	0,82,22	8	11	0	4	0	0	0.0932	2.37
+chr19	 29600453 ==>	 29600556	|	 30471330	<==  30471239	 chr19	8	inversion_ff	overlap: TG	8,60,60	0,103,72	13	11	1	2	0	0	0.492	0.709
+chr19	 31116117 <==	 31116054	|	 31116107	==>  31116215	 chr19	8	inversion_rr	overlap: AGCTCTGGCC	8,60,60	0,63,82	9	14	-	2	0	-	0.183	1.7
+chr7	123542967 <==	123542937	|	 23998194	==>  23998303	 chr19	8	translocation_rr	overlap: TGGT	8,6,60	0,2,39	6	17	0	0	4	0	0.545	0.606
+chr10	 18724261 ==>	 18724323	|	 29183801	<==  29183699	 chr19	7	translocation_ff	overlap: CA	7,60,60	0,62,54	5	8	0	2	0	0	0.2	1.61
+chr19	 24248393 ==>	 24248435	|	 30347448	<==  30347339	 chr19	7	inversion_ff	overlap: GCC	7,16,60	1,19,104	43	3	0	1	0	0	1	0
+chr19	 28041635 ==>	 28041712	|	 28040766	==>  28040863	 chr19	7	tandem_dup	overlap: A	7,60,60	0,56,82	0	5	-	1	0	-	0.167	1.79
+chr19	 30714348 ==>	 30714403	|	 30750082	<==  30749987	 chr19	7	inversion_ff	interruption: T	7,29,60	0,6,95	13	4	0	0	0	0	1	0
+chr15	 55218228 ==>	 55218280	|	 66451372	==>  66451463	 chr12	6	translocation_fr	overlap: ATTTTTTTTTTTTTT	6,60,60	0,13,27	0	23	0	0	7	0	1	0
+chr15	 95087897 <==	 95087872	|	 28876244	==>  28876357	 chr19	6	translocation_rr	overlap: AAAATAA	6,24,60	0,23,93	7	3	0	1	0	0	1	0
+chr19	 21317112 <==	 21317029	|	 21346409	==>  21346516	 chr19	6	inversion_rr	overlap: CTGC	6,60,60	0,23,27	2	10	1	3	0	0	0.022	3.82
+chr19	 30140512 <==	 30140415	|	 31248698	==>  31248804	 chr19	6	inversion_rr	overlap: AGC	6,60,60	0,78,106	21	8	1	3	0	0	0.555	0.589
+chr19	 42323907 ==>	 42324007	|	  5809530	==>   5809564	 chr10	6	translocation_fr	overlap: CTCCTGCCT	6,60,60	0,36,34	0	2	0	0	0	0	1	0
+chr19	 54553992 ==>	 54554016	|	113830765	==> 113830867	 chr13	6	translocation_fr	interruption: CCCG	6,12,60	0,21,46	1	18	0	1	2	0	0.26	1.35
+chr2	 97126551 <==	 97126520	|	 24027922	==>  24028025	 chr19	6	translocation_rr	overlap: CAT	6,1,60	0,2,79	0	46	0	0	6	0	1	0
+chrY	  5354715 ==>	  5354788	|	 31013176	<==  31013080	 chr19	6	translocation_ff	overlap: ATATATATATATATAT	6,27,60	0,10,63	6	3	0	1	0	0	1	1.11e-16
+chr15	 77910942 <==	 77910867	|	 28940401	==>  28940475	 chr19	5	translocation_rr	overlap: AAGAAT	5,3,60	0,2,25	1	17	0	2	1	0	0.0414	3.19
+chr19	 21362595 ==>	 21362668	|	 21391475	<==  21391377	 chr19	5	inversion_ff	overlap: TT	5,47,60	0,16,79	3	5	2	0	0	0	1	0
+chr19	 23944633 ==>	 23944705	|	145805114	==> 145805181	 chr2	5	translocation_fr	overlap: TAAT	5,60,0	0,72,2	0	28	0	0	2	0	1	0
+chr19	 24033081 ==>	 24033185	|	 50131602	==>  50131626	 chr1	5	translocation_fr	overlap: TTT	5,60,0	0,78,1	0	25	0	0	2	0	1	0
+chr19	 28871865 ==>	 28871899	|	 28842601	==>  28842675	 chr19	5	tandem_dup	interruption: TTAACACTCAACTGTTTTTCCTGTGCTCTCC	5,30,42	0,34,15	3	6	0	0	0	0	1	0
+chr19	 29183037 ==>	 29183146	|	 18724120	==>  18724174	 chr10	5	translocation_fr	overlap: CCC	5,60,60	0,86,54	1	4	1	1	0	0	0.333	1.1
+chr19	 30481187 ==>	 30481288	|	 47426805	==>  47426900	 chr7	5	translocation_fr	overlap: GCAG	5,60,60	2,101,95	11	10	3	3	0	0	0.239	1.43
+chr19	 31057213 ==>	 31057309	|	 30470670	==>  30470754	 chr19	5	tandem_dup	overlap: T	5,60,60	0,72,63	12	7	0	2	0	0	0.533	0.629
+chr2	202970000 <==	202969971	|	 31307134	==>  31307240	 chr19	5	translocation_rr	overlap: CCTCC	5,9,60	0,2,57	0	10	0	0	1	0	1	0
+chr5	 95909958 ==>	 95910067	|	 31690685	<==  31690624	 chr19	5	translocation_ff	overlap: TCATTT	5,0,0	0,0,41	0	12	1	1	3	2	0.25	1.39
+chr7	 66834831 ==>	 66834878	|	 29881462	<==  29881368	 chr19	5	translocation_ff	overlap: TCCTTCCTTCCTT	5,23,25	0,47,10	1	2	0	0	0	0	1	0
+chr7	 94887982 <==	 94887939	|	 21293063	==>  21293121	 chr19	5	translocation_rr	interruption: CCTGCCACATACGATTTGGAATTTTTGTGAACAGGCAACATGTA	5,60,60	0,43,22	2	20	6	1	0	0	0.13	2.04
+chr7	 94960479 ==>	 94960552	|	 21274581	<==  21274479	 chr19	5	translocation_ff	overlap: CAG	5,60,9	0,73,5	3	7	0	10	0	0	0.0031	5.78
+chr9	 84477098 <==	 84477071	|	 23951408	==>  23951521	 chr19	5	translocation_rr	overlap: GAGAAAGAGTC	5,0,60	0,0,93	0	10	0	0	3	0	1	0
+chrX	 86362146 ==>	 86362211	|	 31013160	==>  31013253	 chr19	5	translocation_fr	overlap: ATATATATACATATATAT	5,9,60	0,5,37	5	9	0	1	3	0	1	0
+chr10	  5366278 ==>	  5366320	|	 29881483	==>  29881588	 chr19	4	translocation_fr	overlap: AGGAAGGAAGGAAGAAAG	4,48,48	0,38,24	1	5	0	0	0	0	1	0
+chr13	113588967 <==	113588870	|	 46273462	==>  46273529	 chr19	4	translocation_rr	overlap: CCAGCAGCAGCAGCAGCAGCAGCAGCA	4,60,0	0,85,1	0	12	0	2	1	0	0.0286	3.56
+chr15	 98586042 <==	 98585993	|	 56749336	==>  56749439	 chr19	4	translocation_rr	overlap: ACACACGGACACACACACAT	4,10,60	0,3,101	0	9	0	0	0	0	1	0
+chr17	  5766436 <==	  5766335	|	 56443089	==>  56443140	 chr19	4	translocation_rr	overlap: AAAGAAAGAAAGAAAGAAAGAAA	4,0,0	0,1,51	0	7	0	0	1	0	1	0
+chr19	 14132079 ==>	 14132108	|	120138321	==> 120138433	 chr11	4	translocation_fr	overlap: TGTTTA	4,0,60	0,2,107	1	4	0	2	2	0	0.524	0.647
+chr19	 14706786 ==>	 14706836	|	 76903872	==>  76903948	 chr11	4	translocation_fr	interruption: TTGGGAGTGATGA	4,37,60	0,8,25	0	16	0	1	5	0	0.273	1.3
+chr19	 14885470 ==>	 14885502	|	 34248511	<==  34248402	 chr19	4	inversion_ff	overlap: TCTTTCTTTCTTT	4,0,0	0,30,1	2	12	5	0	2	1	1	0
+chr19	 21272619 <==	 21272530	|	 21292704	==>  21292803	 chr19	4	inversion_rr	overlap: TCTCTGT	4,60,60	0,17,79	1	4	0	3	0	0	0.143	1.95
+chr19	 21273525 ==>	 21273608	|	 94892432	==>  94892530	 chr7	4	translocation_fr	overlap: GGGCT	4,60,60	2,83,98	1	4	0	0	0	0	1	0
+chr19	 23955780 ==>	 23955885	|	 51008392	==>  51008424	 chr3	4	translocation_fr	overlap: TGTGTGTAT	4,60,0	0,58,2	0	16	0	0	1	0	1	0
+chr19	 29881908 ==>	 29881999	|	152740628	==> 152740698	 chr3	4	translocation_fr	overlap: AGGAAGAAAGAGAGAGAAAGAAAGAAAGAAAGA	4,23,23	0,10,67	2	13	0	0	3	0	1	1.11e-16
+chr19	 30003584 ==>	 30003625	|	 30372411	<==  30372318	 chr19	4	inversion_ff	interruption: TCAC	4,9,60	0,2,74	33	4	1	1	0	0	1	0
+chr19	 30151247 ==>	 30151302	|	 30151315	<==  30151213	 chr19	4	inversion_ff	overlap: CCACT	4,60,60	0,31,102	6	2	-	0	0	-	1	0
+chr19	 30497257 <==	 30497156	|	 30520501	==>  30520586	 chr19	4	inversion_rr	overlap: TG	4,60,60	1,82,85	29	5	0	4	0	0	1	0
+chr19	 32576041 <==	 32575955	|	 47038986	==>  47039069	 chr22	4	translocation_rr	overlap: ATCCATCCATCCATCCATCCATCCATCCATCCAT	4,60,25	0,76,10	0	9	0	0	2	0	1	0
+chr19	 36998472 <==	 36998368	|	 36998381	==>  36998405	 chr19	4	inversion_rr	overlap: TA	4,60,0	0,30,1	1	2	-	1	0	-	1	0
+chr19	 37675236 ==>	 37675322	|	 38458729	<==  38458643	 chr19	4	inversion_ff	overlap: AAAGAAAGAAAGAAAGAAAGAAAGAGA	4,0,60	0,2,86	0	4	0	0	3	0	1	0
+chr19	 37917738 <==	 37917632	|	 40442329	==>  40442434	 chr20	4	translocation_rr	overlap: CACAGA	4,60,60	4,106,105	1	4	1	0	0	0	1	0
+chr19	 37930846 <==	 37930758	|	 40174132	==>  40174190	 chr20	4	translocation_rr	overlap: GTT	4,60,60	3,86,58	4	5	0	3	0	0	0.205	1.59
+chr19	 43720558 ==>	 43720657	|	 43721116	==>  43721163	 chr19	4	deletion	overlap: ATATGGAAAAAG	4,60,60	0,90,18	0	2	-	1	0	-	0.333	1.1
+chr2	 33141578 ==>	 33141625	|	 29935267	<==  29935169	 chr19	4	translocation_ff	overlap: GGGGGGGGGGGGGGA	4,0,60	0,0,56	8	4	0	1	2	0	0.525	0.644
+chr5	 95562637 ==>	 95562703	|	 30071395	==>  30071486	 chr19	4	translocation_fr	-	4,60,60	0,66,72	3	6	0	0	0	0	1	0
+chr5	 95562694 <==	 95562637	|	 30072101	==>  30072187	 chr19	4	translocation_rr	interruption: TTCTAGTTCTGTGGAAAAT	4,60,60	0,38,45	14	7	0	0	0	0	1	0
+chr6	165823097 ==>	165823144	|	 15677903	<==  15677806	 chr19	4	translocation_ff	overlap: AAG	4,0,60	0,0,44	0	6	0	0	4	0	1	0
+chr6	 97779108 <==	 97779035	|	 39043058	==>  39043155	 chr19	4	translocation_rr	overlap: TAATTTTTGTATTTTTAGTAGAGA	4,52,52	0,47,20	2	1	0	0	0	0	1	0
+chr7	 57467084 ==>	 57467179	|	 30480832	==>  30480930	 chr19	4	translocation_fr	overlap: CA	4,60,60	0,90,98	13	10	2	2	0	0	0.5	0.693
+chr7	 64289865 ==>	 64289938	|	 21129585	==>  21129625	 chr19	4	translocation_fr	interruption: TTGACCTCTTCTGCCCTTGTCTTGTTAATATTC	4,60,0	0,39,1	1	11	0	0	10	2	1	0
+chr7	 94887804 <==	 94887777	|	 21293063	==>  21293162	 chr19	4	translocation_rr	interruption: ATGTA	4,48,60	0,27,77	2	1	0	1	0	0	1	1.11e-16
+chr7	 94887863 ==>	 94887928	|	 21389699	<==  21389593	 chr19	4	translocation_ff	overlap: AA	4,60,60	4,65,106	0	2	0	2	0	0	0.333	1.1
+chr8	120586246 <==	120586176	|	  7121079	==>   7121189	 chr19	4	translocation_rr	overlap: GCTCA	4,60,60	0,42,52	0	1	0	1	0	0	1	0
+chr19	 20636957 ==>	 20637036	|	 20979062	==>  20979096	 chr19	3	deletion	interruption: GGGGATATGAATGTAG	3,60,60	0,79,34	5	11	0	3	5	0	1	0
+chr19	 21082141 ==>	 21082179	|	 21073215	==>  21073315	 chr19	3	tandem_dup	overlap: CACAGT	3,60,60	0,36,48	3	7	0	2	4	0	1	1.11e-16
+chr19	 21273696 <==	 21273624	|	 21404780	==>  21404867	 chr19	3	inversion_rr	overlap: CATA	3,36,49	0,12,54	3	4	0	1	0	0	1	0
+chr19	 28890592 ==>	 28890694	|	 28890670	==>  28890705	 chr19	3	tandem_dup	overlap: CACACACA	3,60,60	0,47,35	0	81	-	0	10	-	1	0
+chr19	 28964504 <==	 28964404	|	 28964531	==>  28964612	 chr19	3	inversion_rr	overlap: GTG	3,60,60	0,86,50	5	4	-	0	0	-	1	0
+chr19	  3003494 ==>	  3003602	|	  3003775	==>   3003843	 chr19	3	deletion	overlap: CCACTGCA	3,60,60	0,34,29	0	5	-	1	2	-	0.375	0.981
+chr19	 30434966 ==>	 30435069	|	 30435080	==>  30435152	 chr19	3	deletion	overlap: ATATATATATATATATATATA	3,60,60	1,74,43	0	24	-	0	1	-	1	0
+chr19	 38081915 ==>	 38081985	|	 40442410	==>  40442486	 chr20	3	translocation_fr	-	3,60,60	0,49,76	4	5	1	0	0	0	1	0
+chr19	 42150154 ==>	 42150241	|	 48252063	==>  48252146	 chr3	3	translocation_fr	overlap: AG	3,60,0	0,67,0	0	11	1	1	7	1	0.421	0.865
+chr19	 51271368 ==>	 51271435	|	 23982994	==>  23983069	 chr19	3	tandem_dup	interruption: G	3,60,14	0,27,7	1	18	0	2	1	0	0.0377	3.28
+chr19	 58617717 ==>	 58617789	|	 58618101	==>  58618185	 chr19	3	deletion	overlap: AAAGAAAAAAAGACATCTG	3,60,60	0,31,43	0	9	-	0	3	-	1	0
+chr7	 57385370 ==>	 57385477	|	 31402161	<==  31402091	 chr19	3	translocation_ff	overlap: AA	3,60,60	0,56,70	4	5	1	2	0	0	0.455	0.788
+chr13	 59253320 ==>	 59253401	|	 59253381	==>  59253451	 chr13	2	tandem_dup	interruption: CACACATATATATG	2,60,60	0,76,70	0	13	-	0	2	-	1	0
+chr19	 15570037 ==>	 15570075	|	 15570051	==>  15570142	 chr19	2	tandem_dup	overlap: TATT	2,60,60	0,38,32	0	5	-	0	1	-	1	0
+chr19	 28041630 ==>	 28041707	|	 28040766	==>  28040845	 chr19	2	tandem_dup	interruption: TTTT	2,60,60	0,48,57	0	4	-	1	0	-	0.2	1.61
+chr19	 29998840 <==	 29998768	|	 30854769	==>  30854842	 chr19	2	inversion_rr	interruption: TT	2,60,60	0,72,54	23	6	2	2	0	0	1	0
+chr19	 30503144 ==>	 30503226	|	 30505981	==>  30506042	 chr19	2	deletion	overlap: TGTC	2,60,60	2,82,61	27	4	0	5	0	0	1	0
+chr19	 40954425 ==>	 40954525	|	 40954549	==>  40954579	 chr19	2	deletion	interruption: AATGC	2,60,60	2,100,30	0	6	-	0	2	-	1	0
+chr19	 49955159 ==>	 49955259	|	 49955224	==>  49955322	 chr19	2	tandem_dup	overlap: GCCACACTTCC	2,60,60	1,76,98	1	4	-	1	0	-	0.333	1.1
+chr19	 51406319 ==>	 51406350	|	 51406324	==>  51406424	 chr19	2	tandem_dup	overlap: G	2,60,60	0,31,54	0	11	-	0	0	-	1	0

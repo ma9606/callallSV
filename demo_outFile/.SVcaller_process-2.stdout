@@ -1,0 +1,131 @@
+
+-------
+1st Step : Prepare NORMAL [mapped reads].sam ...
+
+-------
+2nd Step : Prepare TUMOR [junction list].txt ...
+
+-------
+3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ...
+extractNoL_all_fr
+要求ハードリソース
+  memory (s_vmem): 2G = ジョブは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 2G = ジョブは 2G バイトのメモリを要求します
+Your job 72721305 ("jaFR") has been submitted
+
+3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ...
+
+
+extractNoL_all_ff
+要求ハードリソース
+  memory (s_vmem): 2G = ジョブは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 2G = ジョブは 2G バイトのメモリを要求します
+Your job 72721306 ("jaFF") has been submitted
+
+3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ...
+
+
+extractNoL_all_rr
+要求ハードリソース
+  memory (s_vmem): 2G = ジョブは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 2G = ジョブは 2G バイトのメモリを要求します
+Your job 72721307 ("jaRR") has been submitted
+
+3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ...
+
+
+extractNoL_all_ff
+要求ハードリソース
+  memory (s_vmem): 2G = ジョブは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 2G = ジョブは 2G バイトのメモリを要求します
+Your job 72721309 ("jaRF") has been submitted
+
+3rd Step(a) : Filter out junction which already exist in NORMAL (deletion/tandem_duplication/inversion[ff/rr]) ...
+
+
+
+-------
+3rd Step(b) : Filter out junction which already exist in NORMAL(translocation[ff/rr/fr])...
+log: stp3b_ start extractNoL_all_trans_??.pl, now processing ...
+Task 1 (pid=57890) is generated...
+Task 2 (pid=57891) is generated...
+Task 1 is starting...
+Task 2 is starting...
+Task 3 (pid=57892) is generated...
+Task 3 is starting...
+Task 2 is finished...
+Task 1 is finished...
+Task 3 is finished...
+awk: コマンドライン:1: (FILENAME=rearrangement10.txt.translocation_ff.extractNoL_all1_merge FNR=1) 致命的: ゼロによる除算が試みられました
+awk: コマンドライン:1: (FILENAME=rearrangement10.txt.translocation_ff.extractNoL_all1_merge FNR=1) 致命的: ゼロによる除算が試みられました
+要求ハードリソース
+  memory (s_vmem): 8G = 1 タスクは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
+  Resource list: mem_free=8G
+アレイジョブのタスク
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 2
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72721319.1-2:1 ("qA.mkBP1n") has been submitted
+要求ハードリソース
+  memory (s_vmem): 8G = 1 タスクは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
+  Resource list: mem_free=8G
+アレイジョブのタスク
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 2
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72721320.1-2:1 ("qA.mkBP1t") has been submitted
+要求ハードリソース
+  memory (s_vmem): 8G = 1 タスクは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
+  Resource list: mem_free=8G
+アレイジョブのタスク
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 2
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72721323.1-2:1 ("qA.mkBP2t") has been submitted
+要求ハードリソース
+  memory (s_vmem): 24G = ジョブは 1 スロットあたり 24G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 24G = ジョブは 24G バイトのメモリを要求します
+  Resource list: mem_free=24G
+Your job 72721324 ("q.mkNP") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = ジョブは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 2G = ジョブは 2G バイトのメモリを要求します
+  Resource list: mem_free=2G
+Your job 72721396 ("q.mkBT") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = 1 タスクは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 1024M = 1 タスクは 1024M バイトのメモリを要求します
+  Resource list: mem_free=1G
+アレイジョブのタスク
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 144
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72721420.1-144:1 ("allNP") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = ジョブは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 1024M = ジョブは 1024M バイトのメモリを要求します
+  Resource list: mem_free=1G
+Your job 72721421 ("redist_aftNP") has been submitted
+
+__Filesize check : __
+-rw-rw-r-- 1 madach icgc_ncc 24754  2月 28 17:29 PE/Filtered/rearrangement10.txt.extractNoL_all1_merge_all_ud0.125.filtRep
+-rw-rw-r-- 1 madach icgc_ncc 13126  2月 28 17:29 PE/AN000/tumor/rearrangement10.txt.extractNoL_ud0.125.filtRep
+-rw-rw-r-- 1 madach icgc_ncc 11628  2月 28 17:30 PE/AN999/tumor/rearrangement10.txt.extractNoL_ud0.125.filtRep
+-rw-r----- 1 madach icgc_ncc 33493  2月 28 17:36 SoftClip/AN000/tumor/intraBP.list_0_filtR_filt2_aNP.list
+-rw-r----- 1 madach icgc_ncc 34537  2月 28 17:36 SoftClip/AN999/tumor/intraBP.list_0_filtR_filt2_aNP.list
+-rw-r----- 1 madach icgc_ncc 21154  2月 28 17:44 SoftClip/Realign/AN000/intraBP_tested.list
+-rw-r----- 1 madach icgc_ncc 20888  2月 28 17:49 SoftClip/Realign/AN999/intraBP_tested.list

@@ -1,0 +1,9 @@
+合計 28
+-rw-rw-r-- 1 madach icgc_ncc   33  2月 28 17:48 .tar.jobids
+drwxr-x--- 2 madach icgc_ncc 4096  2月 28 17:48 pChr_SVmatch
+drwxr-x--- 2 madach icgc_ncc 4096  2月 28 17:48 pChr_REFsupp
+drwxr-x--- 2 madach icgc_ncc 4096  2月 28 17:48 pChr_SVmatch_tr
+-rw-rw-r-- 1 madach icgc_ncc    4  2月 28 17:49 .tar.jobids.stat
+drwxrwxr-x 7 madach icgc_ncc 4096  2月 28 17:49 ..
+-rw-rw-r-- 1 madach icgc_ncc    0  2月 28 17:51 .log.intermediate_files
+drwxrwxr-x 5 madach icgc_ncc 4096  2月 28 17:51 .

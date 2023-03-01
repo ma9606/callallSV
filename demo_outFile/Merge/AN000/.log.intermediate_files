@@ -1,0 +1,24 @@
+合計 168
+lrwxrwxrwx 1 madach icgc_ncc    72  2月 28 17:52 .rearrangement.conf -> /home/icgc/WORK/adachi/TOOL/callallSV/PE/AN000/tumor/.rearrangement.conf
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .inversion_ff_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 22982  2月 28 17:52 .deletion_fr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .deletion_fr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .translocation_ff_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 22119  2月 28 17:52 .tandem_dup_rf_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .tandem_dup_rf_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 17674  2月 28 17:52 .inversion_rr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .inversion_rr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 15670  2月 28 17:52 .inversion_ff_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 mergePE-iBP_tested_0.err
+-rw-rw-r-- 1 madach icgc_ncc  3078  2月 28 17:52 .translocation_rr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .translocation_rr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc  6365  2月 28 17:52 .translocation_fr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:52 .translocation_fr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc  1510  2月 28 17:52 .translocation_ff_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc 23398  2月 28 17:52 merged_SV.list
+-rw-rw-r-- 1 madach icgc_ncc   126  2月 28 17:52 .tmp.id_16040
+drwxrwxr-x 4 madach icgc_ncc  4096  2月 28 17:52 ..
+-rw-rw-r-- 1 madach icgc_ncc 11798  2月 28 17:55 merged_SV.validated_filt.list
+-rw-rw-r-- 1 madach icgc_ncc 14238  2月 28 17:55 .merged_SV.validated_filt.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  2月 28 17:59 .log.intermediate_files
+drwxrwxr-x 2 madach icgc_ncc  4096  2月 28 17:59 .

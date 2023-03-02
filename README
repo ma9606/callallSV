@@ -94,7 +94,7 @@ the result with the output example:
 generate two directory : demo_inFile/ and  demo_output_examples/
 	$ tar xvfz  callallSV_demonetration.tar.gz  	
 	$ chmod 770 ./quick.start_demo.sh 
-	$ ./quick.start_demo.sh &> quick.start_demo.stdout &
+	$ ./quick.start_demo.sh demo_inFile &> quick.start_demo.stdout &
 
 
 It takes about an hour or more to output the results of the demo calculation. 

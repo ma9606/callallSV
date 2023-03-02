@@ -1,7 +1,7 @@
   ---------------------
   Now, detectGR Start!!
 
-All process log of the program are stored in [/home/icgc/WORK/adachi/TOOL/callallSV/PE/AN000/detectGR_20230228_17-08-00.log] file.
+All process log of the program are stored in [/home/_your_directory_/callallSV/PE/AN000/detectGR_20230228_17-08-00.log] file.
 It take 6-12 hours to output rearrangement list [./tumor/rearrangement10new.txt].
 
 
@@ -131,7 +131,7 @@ Your job-array 72721162.1-15:1 ("jAN000_rmRd_normal") has been submitted
   ---------------------
   Now, detectGR Start!!
 
-All process log of the program are stored in [/home/icgc/WORK/adachi/TOOL/callallSV/PE/AN999/detectGR_20230228_17-20-12.log] file.
+All process log of the program are stored in [/home/_your_directory_/callallSV/PE/AN999/detectGR_20230228_17-20-12.log] file.
 It take 6-12 hours to output rearrangement list [./tumor/rearrangement10new.txt].
 
 

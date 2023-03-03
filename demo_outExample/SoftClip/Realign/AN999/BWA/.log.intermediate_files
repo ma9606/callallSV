@@ -1,0 +1,149 @@
+./normal/230101_L00999_0002_AN0NYMXX/:
+total 540
+-rw-rw-r-- 1 madach icgc_ncc  1169 Mar  3 12:30 .list.samGz
+drwxrwxr-x 4 madach icgc_ncc  4096 Mar  3 12:30 ..
+-rwxrwx--- 1 madach icgc_ncc  4065 Mar  3 12:30 qArray.remap_onContig
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:30 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:30 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc 42525 Mar  3 12:30 anonymus_n_0.1M_162_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 18124 Mar  3 12:30 anonymus_n_0.1M_162_SE.as_list
+-rw-r----- 1 madach icgc_ncc    99 Mar  3 12:30 anonymus_n_0.1M_162_PE.as_list
+-rw-r----- 1 madach icgc_ncc    98 Mar  3 12:30 anonymus_n_0.1M_161_PE.as_list
+-rw-r----- 1 madach icgc_ncc 44039 Mar  3 12:30 anonymus_n_0.1M_158_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 17509 Mar  3 12:30 anonymus_n_0.1M_158_SE.as_list
+-rw-r----- 1 madach icgc_ncc   200 Mar  3 12:30 anonymus_n_0.1M_158_PE.as_list
+-rw-r----- 1 madach icgc_ncc   493 Mar  3 12:30 anonymus_n_0.1M_157_PE.as_list
+-rw-r----- 1 madach icgc_ncc 50012 Mar  3 12:30 anonymus_n_0.1M_156_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 20331 Mar  3 12:30 anonymus_n_0.1M_156_SE.as_list
+-rw-r----- 1 madach icgc_ncc   400 Mar  3 12:30 anonymus_n_0.1M_156_PE.as_list
+-rw-r----- 1 madach icgc_ncc 55782 Mar  3 12:30 anonymus_n_0.1M_160_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 20531 Mar  3 12:30 anonymus_n_0.1M_160_SE.as_list
+-rw-r----- 1 madach icgc_ncc   400 Mar  3 12:30 anonymus_n_0.1M_160_PE.as_list
+-rw-r----- 1 madach icgc_ncc 18531 Mar  3 12:30 anonymus_n_0.1M_159_SE.as_list
+-rw-r----- 1 madach icgc_ncc    98 Mar  3 12:30 anonymus_n_0.1M_159_PE.as_list
+-rw-r----- 1 madach icgc_ncc 47639 Mar  3 12:30 anonymus_n_0.1M_157_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 16112 Mar  3 12:30 anonymus_n_0.1M_157_SE.as_list
+-rw-r----- 1 madach icgc_ncc 53950 Mar  3 12:30 anonymus_n_0.1M_161_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 20535 Mar  3 12:30 anonymus_n_0.1M_161_SE.as_list
+-rw-r----- 1 madach icgc_ncc 42625 Mar  3 12:30 anonymus_n_0.1M_159_SVmatch.sam
+drwxrwxr-x 2 madach icgc_ncc 12288 Mar  3 12:30 .
+
+./tumor/230101_D00999_0002_AN0NYMXX/:
+total 1336
+-rwxrwx--- 1 madach icgc_ncc   3674 Mar  3 12:30 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc    825 Mar  3 12:30 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc   4096 Mar  3 12:30 ..
+-rw-r--r-- 1 madach icgc_ncc      0 Mar  3 12:30 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc      0 Mar  3 12:30 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc   2491 Mar  3 12:30 anonymus_t_0.1M_74_PE.as_list
+-rw-r----- 1 madach icgc_ncc 205673 Mar  3 12:30 anonymus_t_0.1M_72_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  57910 Mar  3 12:30 anonymus_t_0.1M_72_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2190 Mar  3 12:30 anonymus_t_0.1M_72_PE.as_list
+-rw-r----- 1 madach icgc_ncc   1694 Mar  3 12:30 anonymus_t_0.1M_71_PE.as_list
+-rw-r----- 1 madach icgc_ncc   2389 Mar  3 12:30 anonymus_t_0.1M_75_PE.as_list
+-rw-r----- 1 madach icgc_ncc 213085 Mar  3 12:30 anonymus_t_0.1M_74_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  59113 Mar  3 12:30 anonymus_t_0.1M_74_SE.as_list
+-rw-r----- 1 madach icgc_ncc 203654 Mar  3 12:30 anonymus_t_0.1M_73_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  60303 Mar  3 12:30 anonymus_t_0.1M_73_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2592 Mar  3 12:30 anonymus_t_0.1M_73_PE.as_list
+-rw-r----- 1 madach icgc_ncc 191802 Mar  3 12:30 anonymus_t_0.1M_71_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  56266 Mar  3 12:30 anonymus_t_0.1M_71_SE.as_list
+-rw-r----- 1 madach icgc_ncc 202285 Mar  3 12:30 anonymus_t_0.1M_75_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  58071 Mar  3 12:30 anonymus_t_0.1M_75_SE.as_list
+drwxrwxr-x 2 madach icgc_ncc   4096 Mar  3 12:30 .
+
+./tumor/230101_D00999_0001_AN0NYMXX/:
+total 2668
+-rwxrwx--- 1 madach icgc_ncc   4602 Mar  3 12:30 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc   1650 Mar  3 12:30 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc   4096 Mar  3 12:30 ..
+-rw-r--r-- 1 madach icgc_ncc      0 Mar  3 12:30 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc      0 Mar  3 12:30 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc   2291 Mar  3 12:30 anonymus_t_0.1M_59_PE.as_list
+-rw-r----- 1 madach icgc_ncc  56708 Mar  3 12:30 anonymus_t_0.1M_56_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2393 Mar  3 12:30 anonymus_t_0.1M_56_PE.as_list
+-rw-r----- 1 madach icgc_ncc 196830 Mar  3 12:30 anonymus_t_0.1M_54_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  57313 Mar  3 12:30 anonymus_t_0.1M_54_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1792 Mar  3 12:30 anonymus_t_0.1M_54_PE.as_list
+-rw-r----- 1 madach icgc_ncc   1992 Mar  3 12:30 anonymus_t_0.1M_51_PE.as_list
+-rw-r----- 1 madach icgc_ncc 203611 Mar  3 12:30 anonymus_t_0.1M_60_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  59954 Mar  3 12:30 anonymus_t_0.1M_60_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1792 Mar  3 12:30 anonymus_t_0.1M_60_PE.as_list
+-rw-r----- 1 madach icgc_ncc 193948 Mar  3 12:30 anonymus_t_0.1M_59_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  55089 Mar  3 12:30 anonymus_t_0.1M_59_SE.as_list
+-rw-r----- 1 madach icgc_ncc 232122 Mar  3 12:30 anonymus_t_0.1M_58_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  64781 Mar  3 12:30 anonymus_t_0.1M_58_SE.as_list
+-rw-r----- 1 madach icgc_ncc   3481 Mar  3 12:30 anonymus_t_0.1M_58_PE.as_list
+-rw-r----- 1 madach icgc_ncc 213785 Mar  3 12:30 anonymus_t_0.1M_57_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  62151 Mar  3 12:30 anonymus_t_0.1M_57_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2294 Mar  3 12:30 anonymus_t_0.1M_57_PE.as_list
+-rw-r----- 1 madach icgc_ncc 199544 Mar  3 12:30 anonymus_t_0.1M_56_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc   2886 Mar  3 12:30 anonymus_t_0.1M_55_PE.as_list
+-rw-r----- 1 madach icgc_ncc   1686 Mar  3 12:30 anonymus_t_0.1M_52_PE.as_list
+-rw-r----- 1 madach icgc_ncc 201996 Mar  3 12:30 anonymus_t_0.1M_51_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  61314 Mar  3 12:30 anonymus_t_0.1M_51_SE.as_list
+-rw-r----- 1 madach icgc_ncc 196607 Mar  3 12:30 anonymus_t_0.1M_53_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  56304 Mar  3 12:30 anonymus_t_0.1M_53_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1789 Mar  3 12:30 anonymus_t_0.1M_53_PE.as_list
+-rw-r----- 1 madach icgc_ncc 195649 Mar  3 12:30 anonymus_t_0.1M_52_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  57498 Mar  3 12:30 anonymus_t_0.1M_52_SE.as_list
+-rw-r----- 1 madach icgc_ncc 203039 Mar  3 12:30 anonymus_t_0.1M_55_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  58701 Mar  3 12:30 anonymus_t_0.1M_55_SE.as_list
+drwxrwxr-x 2 madach icgc_ncc  12288 Mar  3 12:30 .
+
+./tumor/230101_D00999_0003_AN0NYMXX/:
+total 1332
+-rwxrwx--- 1 madach icgc_ncc   3674 Mar  3 12:30 qArray.remap_onContig
+-rw-rw-r-- 1 madach icgc_ncc    825 Mar  3 12:30 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc   4096 Mar  3 12:30 ..
+-rw-r--r-- 1 madach icgc_ncc      0 Mar  3 12:30 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc      0 Mar  3 12:30 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc   2689 Mar  3 12:30 anonymus_t_0.1M_85_PE.as_list
+-rw-r----- 1 madach icgc_ncc 202015 Mar  3 12:30 anonymus_t_0.1M_81_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  58485 Mar  3 12:30 anonymus_t_0.1M_81_SE.as_list
+-rw-r----- 1 madach icgc_ncc   2491 Mar  3 12:30 anonymus_t_0.1M_81_PE.as_list
+-rw-r----- 1 madach icgc_ncc 217110 Mar  3 12:30 anonymus_t_0.1M_85_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  59746 Mar  3 12:30 anonymus_t_0.1M_85_SE.as_list
+-rw-r----- 1 madach icgc_ncc 206894 Mar  3 12:30 anonymus_t_0.1M_84_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  59910 Mar  3 12:30 anonymus_t_0.1M_84_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1994 Mar  3 12:30 anonymus_t_0.1M_84_PE.as_list
+-rw-r----- 1 madach icgc_ncc   1492 Mar  3 12:30 anonymus_t_0.1M_83_PE.as_list
+-rw-r----- 1 madach icgc_ncc 200799 Mar  3 12:30 anonymus_t_0.1M_83_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  59295 Mar  3 12:30 anonymus_t_0.1M_83_SE.as_list
+-rw-r----- 1 madach icgc_ncc   1792 Mar  3 12:30 anonymus_t_0.1M_82_PE.as_list
+-rw-r----- 1 madach icgc_ncc 182500 Mar  3 12:30 anonymus_t_0.1M_82_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc  54676 Mar  3 12:30 anonymus_t_0.1M_82_SE.as_list
+drwxrwxr-x 2 madach icgc_ncc   4096 Mar  3 12:30 .
+
+./normal/230101_L00999_0001_AN0NYMXX/:
+total 644
+-rw-rw-r-- 1 madach icgc_ncc  1336 Mar  3 12:30 .list.samGz
+-rwxrwx--- 1 madach icgc_ncc  4253 Mar  3 12:30 qArray.remap_onContig
+drwxrwxr-x 4 madach icgc_ncc  4096 Mar  3 12:30 ..
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:30 .remapCtg.out
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:30 .remapCtg.err
+-rw-r----- 1 madach icgc_ncc   298 Mar  3 12:30 anonymus_n_0.1M_148_PE.as_list
+-rw-r----- 1 madach icgc_ncc 59244 Mar  3 12:30 anonymus_n_0.1M_145_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 22950 Mar  3 12:30 anonymus_n_0.1M_145_SE.as_list
+-rw-r----- 1 madach icgc_ncc   400 Mar  3 12:30 anonymus_n_0.1M_145_PE.as_list
+-rw-r----- 1 madach icgc_ncc 51940 Mar  3 12:30 anonymus_n_0.1M_148_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 18528 Mar  3 12:30 anonymus_n_0.1M_148_SE.as_list
+-rw-r----- 1 madach icgc_ncc   493 Mar  3 12:30 anonymus_n_0.1M_146_PE.as_list
+-rw-r----- 1 madach icgc_ncc 20942 Mar  3 12:30 anonymus_n_0.1M_144_SE.as_list
+-rw-r----- 1 madach icgc_ncc   300 Mar  3 12:30 anonymus_n_0.1M_144_PE.as_list
+-rw-r----- 1 madach icgc_ncc 57470 Mar  3 12:30 anonymus_n_0.1M_143_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 21538 Mar  3 12:30 anonymus_n_0.1M_143_SE.as_list
+-rw-r----- 1 madach icgc_ncc   397 Mar  3 12:30 anonymus_n_0.1M_143_PE.as_list
+-rw-r----- 1 madach icgc_ncc 49130 Mar  3 12:30 anonymus_n_0.1M_144_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 57870 Mar  3 12:30 anonymus_n_0.1M_141_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 22334 Mar  3 12:30 anonymus_n_0.1M_141_SE.as_list
+-rw-r----- 1 madach icgc_ncc   394 Mar  3 12:30 anonymus_n_0.1M_141_PE.as_list
+-rw-r----- 1 madach icgc_ncc 48292 Mar  3 12:30 anonymus_n_0.1M_146_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 17116 Mar  3 12:30 anonymus_n_0.1M_146_SE.as_list
+-rw-r----- 1 madach icgc_ncc 52982 Mar  3 12:30 anonymus_n_0.1M_142_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 23144 Mar  3 12:30 anonymus_n_0.1M_142_SE.as_list
+-rw-r----- 1 madach icgc_ncc   299 Mar  3 12:30 anonymus_n_0.1M_142_PE.as_list
+-rw-r----- 1 madach icgc_ncc 34886 Mar  3 12:30 anonymus_n_0.1M_147_SVmatch.sam
+-rw-r----- 1 madach icgc_ncc 16303 Mar  3 12:30 anonymus_n_0.1M_147_SE.as_list
+-rw-r----- 1 madach icgc_ncc   200 Mar  3 12:30 anonymus_n_0.1M_147_PE.as_list
+drwxrwxr-x 2 madach icgc_ncc  4096 Mar  3 12:30 .

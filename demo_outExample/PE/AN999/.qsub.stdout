@@ -1,0 +1,89 @@
+requested Hard Resources
+  memory (s_vmem): 8G = A task requires 8GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 20
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968503.1-20:1 ("tAN999_list") has been submitted
+requested Hard Resources
+  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 5G = The job requires 5GB of memory.
+Your job 72968504 ("tAN999_ff") has been submitted
+requested Hard Resources
+  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 5G = The job requires 5GB of memory.
+Your job 72968505 ("tAN999_rr") has been submitted
+requested Hard Resources
+  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 5G = The job requires 5GB of memory.
+Your job 72968506 ("tAN999_fr") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968507 ("tAN999_rf") has been submitted
+requested Hard Resources
+  memory (s_vmem): 32G = The job requires 32GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 32G = The job requires 32GB of memory.
+Your job 72968508 ("tAN999_tr_p") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968509 ("tAN999_trfr") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968510 ("tAN999_trff") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968511 ("tAN999_trrr") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 1024M = The job requires 1024MB of memory.
+Your job 72968512 ("tAN999_clust") has been submitted
+requested Hard Resources
+  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 5G = The job requires 5GB of memory.
+Your job 72968516 ("tAN999_del") has been submitted
+requested Hard Resources
+  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 5G = The job requires 5GB of memory.
+Your job 72968517 ("tAN999_inv") has been submitted
+requested Hard Resources
+  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 5G = The job requires 5GB of memory.
+Your job 72968518 ("tAN999_tdm") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968519 ("tAN999_trns_fr") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968520 ("tAN999_trns_ff") has been submitted
+requested Hard Resources
+  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 16G = The job requires 16GB of memory.
+Your job 72968521 ("tAN999_trns_rr") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 1024M = The job requires 1024MB of memory.
+Your job 72968522 ("tAN999_output") has been submitted

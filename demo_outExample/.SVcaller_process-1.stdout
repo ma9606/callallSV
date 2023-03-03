@@ -1,0 +1,264 @@
+  ---------------------
+  Now, detectGR Start!!
+
+All process log of the program are stored in [/home/${__your_directory__}/callallSV/PE/AN000/detectGR_20230303_11-48-28.log] file.
+It take 6-12 hours to output rearrangement list [./tumor/rearrangement10new.txt].
+
+
+Your job-array 72967740.1-15:1 ("nAN000_list") has been submitted
+Your job 72967742 ("nAN000_ff") has been submitted
+Your job 72967743 ("nAN000_rr") has been submitted
+Your job 72967744 ("nAN000_fr") has been submitted
+Your job 72967745 ("nAN000_rf") has been submitted
+Your job 72967746 ("nAN000_tr_p") has been submitted
+Your job 72967747 ("nAN000_trfr") has been submitted
+Your job 72967748 ("nAN000_trff") has been submitted
+Your job 72967749 ("nAN000_trrr") has been submitted
+Your job 72967750 ("nAN000_clust") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 1024M = The job requires 1024MB of memory.
+Your job 72967751 ("nAN000_rm") has been submitted
+Your job-array 72967752.1-20:1 ("tAN000_list") has been submitted
+Your job 72967760 ("tAN000_ff") has been submitted
+Your job 72967762 ("tAN000_rr") has been submitted
+Your job 72967764 ("tAN000_fr") has been submitted
+Your job 72967766 ("tAN000_rf") has been submitted
+Your job 72967768 ("tAN000_tr_p") has been submitted
+Your job 72967770 ("tAN000_trfr") has been submitted
+Your job 72967773 ("tAN000_trff") has been submitted
+Your job 72967775 ("tAN000_trrr") has been submitted
+Your job 72967777 ("tAN000_clust") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 1024M = The job requires 1024MB of memory.
+Your job 72967779 ("tAN000_rm") has been submitted
+Your job 72967785 ("tAN000_del") has been submitted
+Your job 72967787 ("tAN000_inv") has been submitted
+Your job 72967789 ("tAN000_tdm") has been submitted
+Your job 72967791 ("tAN000_trns_fr") has been submitted
+Your job 72967793 ("tAN000_trns_ff") has been submitted
+Your job 72967795 ("tAN000_trns_rr") has been submitted
+Your job 72967798 ("tAN000_output") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 10
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72967800.1-10:1 ("jAN000_1") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72967804.1-5:1 ("jAN000_2") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72967807.1-5:1 ("jAN000_3") has been submitted
+requested Hard Resources
+  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 8G = The job requires 8GB of memory.
+  Resource list: mem_free=8G
+Your job 72968151 ("jAN000_extRd_tumor") has been submitted
+grep: Invalid regular expression
+requested Hard Resources
+  memory (s_vmem): 8G = A task requires 8GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=8G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 20
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968284.1-20:1 ("jAN000_rmRd_tumor") has been submitted
+
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 8
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968365.1-8:1 ("jAN000_4") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 7
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968371.1-7:1 ("jAN000_5") has been submitted
+requested Hard Resources
+  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 8G = The job requires 8GB of memory.
+  Resource list: mem_free=8G
+Your job 72968456 ("jAN000_extRd_normal") has been submitted
+grep: Invalid regular expression
+requested Hard Resources
+  memory (s_vmem): 8G = A task requires 8GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=8G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 15
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968483.1-15:1 ("jAN000_rmRd_normal") has been submitted
+
+  ---------------------
+  Now, detectGR Start!!
+
+All process log of the program are stored in [/home/${__your_diretocry__}/callallSV/PE/AN999/detectGR_20230303_11-59-13.log] file.
+It take 6-12 hours to output rearrangement list [./tumor/rearrangement10new.txt].
+
+
+Your job-array 72968492.1-15:1 ("nAN999_list") has been submitted
+Your job 72968493 ("nAN999_ff") has been submitted
+Your job 72968494 ("nAN999_rr") has been submitted
+Your job 72968495 ("nAN999_fr") has been submitted
+Your job 72968496 ("nAN999_rf") has been submitted
+Your job 72968497 ("nAN999_tr_p") has been submitted
+Your job 72968498 ("nAN999_trfr") has been submitted
+Your job 72968499 ("nAN999_trff") has been submitted
+Your job 72968500 ("nAN999_trrr") has been submitted
+Your job 72968501 ("nAN999_clust") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 1024M = The job requires 1024MB of memory.
+Your job 72968502 ("nAN999_rm") has been submitted
+Your job-array 72968503.1-20:1 ("tAN999_list") has been submitted
+Your job 72968504 ("tAN999_ff") has been submitted
+Your job 72968505 ("tAN999_rr") has been submitted
+Your job 72968506 ("tAN999_fr") has been submitted
+Your job 72968507 ("tAN999_rf") has been submitted
+Your job 72968508 ("tAN999_tr_p") has been submitted
+Your job 72968509 ("tAN999_trfr") has been submitted
+Your job 72968510 ("tAN999_trff") has been submitted
+Your job 72968511 ("tAN999_trrr") has been submitted
+Your job 72968512 ("tAN999_clust") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 1024M = The job requires 1024MB of memory.
+Your job 72968513 ("tAN999_rm") has been submitted
+Your job 72968516 ("tAN999_del") has been submitted
+Your job 72968517 ("tAN999_inv") has been submitted
+Your job 72968518 ("tAN999_tdm") has been submitted
+Your job 72968519 ("tAN999_trns_fr") has been submitted
+Your job 72968520 ("tAN999_trns_ff") has been submitted
+Your job 72968521 ("tAN999_trns_rr") has been submitted
+Your job 72968522 ("tAN999_output") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 10
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968524.1-10:1 ("jAN999_6") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968525.1-5:1 ("jAN999_7") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968526.1-5:1 ("jAN999_8") has been submitted
+requested Hard Resources
+  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 8G = The job requires 8GB of memory.
+  Resource list: mem_free=8G
+Your job 72968560 ("jAN999_extRd_tumor") has been submitted
+grep: Invalid regular expression
+requested Hard Resources
+  memory (s_vmem): 8G = A task requires 8GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=8G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 20
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968641.1-20:1 ("jAN999_rmRd_tumor") has been submitted
+
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 8
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968653.1-8:1 ("jAN999_9") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 7
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968654.1-7:1 ("jAN999_10") has been submitted
+requested Hard Resources
+  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 8G = The job requires 8GB of memory.
+  Resource list: mem_free=8G
+Your job 72968657 ("jAN999_extRd_normal") has been submitted
+grep: Invalid regular expression
+requested Hard Resources
+  memory (s_vmem): 8G = A task requires 8GB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=8G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 15
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968665.1-15:1 ("jAN999_rmRd_normal") has been submitted
+
+
+__Filesize check : __
+-rw-r----- 1 madach icgc_ncc 13232 Mar  3 11:54 PE/AN000/tumor/rearrangement10new.txt
+-rw-r----- 1 madach icgc_ncc 13691 Mar  3 12:02 PE/AN999/tumor/rearrangement10new.txt

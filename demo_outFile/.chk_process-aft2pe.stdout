@@ -1,5 +1,0 @@
-log: stp1_summarizing NORMAL [mapped_reads].sam successfully finished!
-log: stp2_summarizing TUMOR [junctions].list successfully finished!
-log: stp3a_ filtering junctions [deletion/tandem_duplication/inversion] successfully finished!
-log: stp3b_ extractNoL_all_trans_ff.pl, output:	rearrangement10.txt.translocation_ff.extractNoL_all1_0	file size: 0
-log: stp3b_ filtering junctions [translocation] successfully finished!

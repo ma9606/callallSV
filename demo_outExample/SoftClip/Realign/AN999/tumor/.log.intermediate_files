@@ -1,0 +1,7 @@
+total 20
+drwxr-x--- 2 madach icgc_ncc 4096 Mar  3 12:32 pChr_SVmatch
+drwxr-x--- 2 madach icgc_ncc 4096 Mar  3 12:32 pChr_REFsupp
+drwxr-x--- 2 madach icgc_ncc 4096 Mar  3 12:32 pChr_SVmatch_tr
+drwxrwxr-x 7 madach icgc_ncc 4096 Mar  3 12:33 ..
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:37 .log.intermediate_files
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:37 .

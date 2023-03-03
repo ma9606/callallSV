@@ -1,0 +1,79 @@
+./tumor/230101_D00999_0001_AN0NYMXX/:
+total 56
+-rwxrwx--- 1 madach icgc_ncc 6665 Mar  3 12:42 qArray.cnt_referenceSupRead
+-rw-rw-r-- 1 madach icgc_ncc 1650 Mar  3 12:42 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:42 ..
+-rw-r--r-- 1 madach icgc_ncc    0 Mar  3 12:43 .cntREFsup.stderr
+-rw-r--r-- 1 madach icgc_ncc    0 Mar  3 12:43 .cntREFsup.out
+-rw-r----- 1 madach icgc_ncc    0 Mar  3 12:43 anonymus_t_0.1M_60.extlist
+-rw-r----- 1 madach icgc_ncc  535 Mar  3 12:43 anonymus_t_0.1M_53.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_59.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_58.extlist
+-rw-r----- 1 madach icgc_ncc  107 Mar  3 12:43 anonymus_t_0.1M_56.extlist
+-rw-r----- 1 madach icgc_ncc  321 Mar  3 12:43 anonymus_t_0.1M_54.extlist
+-rw-r----- 1 madach icgc_ncc  107 Mar  3 12:43 anonymus_t_0.1M_51.extlist
+-rw-r----- 1 madach icgc_ncc  321 Mar  3 12:43 anonymus_t_0.1M_57.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_55.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_52.extlist
+drwxrwxr-x 2 madach icgc_ncc 4096 Mar  3 12:43 .
+
+./tumor/230101_D00999_0003_AN0NYMXX/:
+total 44
+-rwxrwx--- 1 madach icgc_ncc 5737 Mar  3 12:42 qArray.cnt_referenceSupRead
+-rw-rw-r-- 1 madach icgc_ncc  825 Mar  3 12:42 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:42 ..
+-rw-rw-r-- 1 madach icgc_ncc  117 Mar  3 12:42 .tar.jobids
+-rw-r--r-- 1 madach icgc_ncc    0 Mar  3 12:43 .cntREFsup.stderr
+-rw-r--r-- 1 madach icgc_ncc    0 Mar  3 12:43 .cntREFsup.out
+-rw-r----- 1 madach icgc_ncc    0 Mar  3 12:43 anonymus_t_0.1M_82.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_84.extlist
+-rw-r----- 1 madach icgc_ncc  107 Mar  3 12:43 anonymus_t_0.1M_81.extlist
+-rw-r----- 1 madach icgc_ncc  428 Mar  3 12:43 anonymus_t_0.1M_85.extlist
+-rw-r----- 1 madach icgc_ncc  321 Mar  3 12:43 anonymus_t_0.1M_83.extlist
+drwxrwxr-x 2 madach icgc_ncc 4096 Mar  3 12:43 .
+-rw-rw-r-- 1 madach icgc_ncc    6 Mar  3 12:43 .tar.jobids.stat
+
+./tumor/230101_D00999_0002_AN0NYMXX/:
+total 40
+-rwxrwx--- 1 madach icgc_ncc 5737 Mar  3 12:42 qArray.cnt_referenceSupRead
+-rw-rw-r-- 1 madach icgc_ncc  825 Mar  3 12:42 .list.samGz
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:42 ..
+-rw-r--r-- 1 madach icgc_ncc    0 Mar  3 12:43 .cntREFsup.stderr
+-rw-r--r-- 1 madach icgc_ncc    0 Mar  3 12:43 .cntREFsup.out
+-rw-r----- 1 madach icgc_ncc  428 Mar  3 12:43 anonymus_t_0.1M_71.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_75.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_74.extlist
+-rw-r----- 1 madach icgc_ncc  214 Mar  3 12:43 anonymus_t_0.1M_72.extlist
+-rw-r----- 1 madach icgc_ncc  428 Mar  3 12:43 anonymus_t_0.1M_73.extlist
+drwxrwxr-x 2 madach icgc_ncc 4096 Mar  3 12:43 .
+
+./:
+total 28
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr6
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr5
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr4
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr3
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr2
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr1
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr9
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr8
+-rw-rw-r-- 1 madach icgc_ncc   52 Mar  3 12:42 .list_chr7
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr14
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr13
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr12
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr11
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr10
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chrY
+-rw-rw-r-- 1 madach icgc_ncc   28 Mar  3 12:42 .list_chrX
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr22
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr21
+-rw-rw-r-- 1 madach icgc_ncc   27 Mar  3 12:42 .list_chr20
+-rw-rw-r-- 1 madach icgc_ncc  486 Mar  3 12:42 .list_chr19
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr18
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr17
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr16
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:42 .list_chr15
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:42 tumor
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:44 ..
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:44 .log.intermediate_files
+drwxrwxr-x 3 madach icgc_ncc 4096 Mar  3 12:44 .

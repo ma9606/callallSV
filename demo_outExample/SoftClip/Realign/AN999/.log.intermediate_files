@@ -1,0 +1,22 @@
+total 136
+-rw-rw-r-- 1 madach icgc_ncc   787 Mar  3 12:27 .rearrangement.conf
+lrwxrwxrwx 1 madach icgc_ncc    94 Mar  3 12:27 intraBP.list -> /home/icgc/WORK/adachi/TOOL/callallSV/SoftClip/AN999/tumor/intraBP.list_0_filtR_filt2_aNP.list
+drwxrwxr-x 4 madach icgc_ncc  4096 Mar  3 12:27 ..
+-rwxrwx--- 1 madach icgc_ncc   359 Mar  3 12:32 qArray.split_addCnt
+-rw-rw-r-- 1 madach icgc_ncc    27 Mar  3 12:32 .tar.jobids
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:33 .addCnt.out
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:33 .addCnt.err
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:33 .Ftest.out
+-rw-r--r-- 1 madach icgc_ncc     0 Mar  3 12:33 .Ftest.err
+-rw-r----- 1 madach icgc_ncc 20467 Mar  3 12:33 intraBP_addCnt.list_0
+-rw-r----- 1 madach icgc_ncc 20467 Mar  3 12:33 intraBP_addCnt.list
+-rw-r----- 1 madach icgc_ncc 21828 Mar  3 12:33 intraBP_tested.list
+-rw-r----- 1 madach icgc_ncc 21507 Mar  3 12:33 intraBP_tested_0.list
+-rw-rw-r-- 1 madach icgc_ncc     4 Mar  3 12:34 .tar.jobids.stat
+drwxrwxr-x 2 madach icgc_ncc  4096 Mar  3 12:36 SVseq
+drwxrwxr-x 2 madach icgc_ncc  4096 Mar  3 12:36 BWA
+drwxrwxr-x 2 madach icgc_ncc  4096 Mar  3 12:36 REF
+drwxrwxr-x 2 madach icgc_ncc  4096 Mar  3 12:37 tumor
+drwxrwxr-x 2 madach icgc_ncc  4096 Mar  3 12:37 normal
+-rw-rw-r-- 1 madach icgc_ncc     0 Mar  3 12:37 .log.intermediate_files
+drwxrwxr-x 7 madach icgc_ncc  4096 Mar  3 12:37 .

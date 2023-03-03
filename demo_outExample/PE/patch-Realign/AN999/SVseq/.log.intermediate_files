@@ -1,0 +1,131 @@
+total 248
+-rw-rw-r--  1 madach icgc_ncc    22 Mar  3 12:41 .tar.jobids
+-rw-r--r--  1 madach icgc_ncc     0 Mar  3 12:41 .mkSVdb.out
+-rw-r--r--  1 madach icgc_ncc     0 Mar  3 12:41 .mkSVdb.err
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr9
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr8
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr7.err
+-rw-r-----  1 madach icgc_ncc    42 Mar  3 12:41 .list_chr7
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr6
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr5
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr4
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr3
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr22
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr21
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr20.err
+-rw-r-----  1 madach icgc_ncc    21 Mar  3 12:41 .list_chr20
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr2
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr19.err
+-rw-r-----  1 madach icgc_ncc   378 Mar  3 12:41 .list_chr19
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr18
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr17
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr16
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr15
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr14
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr13
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr12
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr11
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr10
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chr1
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr9
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr8
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr6
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr5
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr4
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr3
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr22
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr21
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr2
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr18
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr17
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr16
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr15
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr14
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr13
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr12
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr11
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr10
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr1
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chrY
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:41 .list_chrX.err
+-rw-r-----  1 madach icgc_ncc    23 Mar  3 12:41 .list_chrX
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chrY
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr7
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chrX
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr20
+drwxr-x---  2 madach icgc_ncc  4096 Mar  3 12:41 chr19
+-rw-r--r--  1 madach icgc_ncc     0 Mar  3 12:42 .Joint_AddIdx.out
+-rw-r-----  1 madach icgc_ncc 16664 Mar  3 12:42 SVseq_multiFa.fa.sa
+-rw-r-----  1 madach icgc_ncc  8307 Mar  3 12:42 SVseq_multiFa.fa.pac
+-rw-r-----  1 madach icgc_ncc 33324 Mar  3 12:42 SVseq_multiFa.fa.bwt
+-rw-r-----  1 madach icgc_ncc   608 Mar  3 12:42 SVseq_multiFa.fa.ann
+-rw-r-----  1 madach icgc_ncc    11 Mar  3 12:42 SVseq_multiFa.fa.amb
+-rw-r-----  1 madach icgc_ncc 34231 Mar  3 12:42 SVseq_multiFa.fa
+-rw-r-----  1 madach icgc_ncc     0 Mar  3 12:42 SVseq_multiFa.err
+-rw-r--r--  1 madach icgc_ncc   409 Mar  3 12:42 .Joint_AddIdx.stderr
+lrwxrwxrwx  1 madach icgc_ncc    69 Mar  3 12:42 .invert_nucSq.pl -> /home/icgc/WORK/adachi/TOOL/callallSV/script/resource/invert_nucSq.pl
+-rw-rw-r--  1 madach icgc_ncc     4 Mar  3 12:42 .tar.jobids.stat
+drwxrwxr-x  5 madach icgc_ncc  4096 Mar  3 12:44 ..
+-rw-rw-r--  1 madach icgc_ncc     0 Mar  3 12:44 .log.intermediate_files
+drwxrwxr-x 26 madach icgc_ncc  4096 Mar  3 12:44 .
+chr1:
+total 0
+chr10:
+total 0
+chr11:
+total 0
+chr12:
+total 0
+chr13:
+total 0
+chr14:
+total 0
+chr15:
+total 0
+chr16:
+total 0
+chr17:
+total 0
+chr18:
+total 0
+chr19:
+total 72
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_21273202-21274711_#-
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_21403540-21405049_-#
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_21901466-21902975_-#
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_21905568-21907077_#-
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_30071781-30073290_#-
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_30315465-30316974_-#
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_30470659-30472168_-#
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_30871021-30872530_#-
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr19_30968891-30970400_-#
+chr2:
+total 0
+chr20:
+total 4
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr20_40658548-40660057_-#
+chr21:
+total 0
+chr22:
+total 0
+chr3:
+total 0
+chr4:
+total 0
+chr5:
+total 0
+chr6:
+total 0
+chr7:
+total 8
+-rw-r----- 1 madach icgc_ncc 1563 Mar  3 12:41 chr7_94890027-94891536_-#
+-rw-r----- 1 madach icgc_ncc 1564 Mar  3 12:41 chr7_94900073-94901582_-#
+chr8:
+total 0
+chr9:
+total 0
+chrX:
+total 4
+-rw-r----- 1 madach icgc_ncc 1566 Mar  3 12:41 chrX_155212553-155214062_#-
+chrY:
+total 0

@@ -78,28 +78,32 @@ composed of multiple types of read lengths.
 
 
 ** Quick Start on demo data **
-The demonstration data and its output example are prepared (the total size of about 
-1GB). Please e-mail us (miadachi@ncc.go.jp.) to request the dataset, we will propose 
-an appropriate transmission method according to your environment.
+The input dataset for demonstration are prepared. In addition to the TN paired-sam.gz 
+files for the two cases, the data set includes a set of lists required for the callallSV 
+run (list.insertSize_MX, list.readLen, and list.smplID) and two trimmed reference files 
+(refFlat_chr19.txt and rmsk_chr19.bed) modified for the demo sample. 
+
+Please e-mail us [miadachi@ncc.go.jp.] to request the dataset (the total size of about 
+1GB), we will propose an appropriate transmission method according to your environment.
 
 To check the callallSV pipeline runs correctly in your computer environment, we strongly 
 recommend that you first should run callallSV with the demonstration data and compare 
-the result with the output example:
+the result with files on ${HDR}/demo_outExample/.
 
 ## The demonstration data and its output example are prepared in our server 	##
 ## (https://data.server/callallsv/demo/).     <-Sorry, now in preparation...   	##
 ##	$ cd callallSV/								##
-##	$ rsync  https://ncc.data.server/callallSV_demonetration.tar.gz  .	##
+##	$ rsync  https://ncc.data.server/demo_inFiles.tar.gz  .			##
 
-generate two directory : demo_inFile/ and  demo_output_examples/
-	$ tar xvfz  callallSV_demonetration.tar.gz  	
+Getting "demo_inFiles.tar.gz", please extract the tar.gz file at ${HDR} as following: 
+	$ mv ./demo_inFiles.tar.gz ${HDR}/;  cd ${HDR}/
+	$ tar xvfz  ./demo_inFiles.tar.gz  	
 	$ chmod 770 ./quick.start_demo.sh 
-	$ ./quick.start_demo.sh demo_inFile &> quick.start_demo.stdout &
+	$ ./quick.start_demo.sh demo_inFiles &> quick.start_demo.stdout &
 
-
-It takes about an hour or more to output the results of the demo calculation. 
-Output example of the demonstration run is placed in demo_output_examples/. 
-For the format of each output file, refer to the "Output" section described below.
+It takes about an hour or more to output the results of the demo calculation and creates
+three directories: PE/, SoftClip/, and Merge/. For the format of each output data, refer 
+to the "Output" section described below.
 
 
 ** Instruction **

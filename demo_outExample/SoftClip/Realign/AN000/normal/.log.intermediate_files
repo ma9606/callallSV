@@ -1,0 +1,9 @@
+total 28
+-rw-rw-r-- 1 madach icgc_ncc   33 Mar  3 12:24 .tar.jobids
+drwxr-x--- 2 madach icgc_ncc 4096 Mar  3 12:25 pChr_SVmatch_tr
+drwxr-x--- 2 madach icgc_ncc 4096 Mar  3 12:25 pChr_SVmatch
+drwxr-x--- 2 madach icgc_ncc 4096 Mar  3 12:25 pChr_REFsupp
+-rw-rw-r-- 1 madach icgc_ncc    4 Mar  3 12:26 .tar.jobids.stat
+drwxrwxr-x 7 madach icgc_ncc 4096 Mar  3 12:27 ..
+-rw-rw-r-- 1 madach icgc_ncc    0 Mar  3 12:36 .log.intermediate_files
+drwxrwxr-x 5 madach icgc_ncc 4096 Mar  3 12:36 .

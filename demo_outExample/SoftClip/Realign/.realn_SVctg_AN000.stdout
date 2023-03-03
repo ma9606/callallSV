@@ -1,0 +1,144 @@
+requested Hard Resources
+  memory (s_vmem): 1024M = A task requires 1024MB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 1024M = A task requires 1024MB of memory.
+  Resource list: mem_free=1G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 24
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968871.1-24:1 ("jAN000_SVdb") has been submitted
+requested Hard Resources
+  memory (s_vmem): 12G = The job requires 12GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 12G = The job requires 12GB of memory.
+  Resource list: mem_free=12G
+Your job 72968875 ("qIdxAN000") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 10
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968923.1-10:1 ("jAN000_bwa_230101_D00000_0001_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968924.1-5:1 ("jAN000_bwa_230101_D00000_0002_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968925.1-5:1 ("jAN000_bwa_230101_D00000_0003_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 8
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968926.1-8:1 ("jAN000_bwa_230101_L00000_0001_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 8G = A task requires 8GB of memory.
+  Resource list: mem_free=4G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 7
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968928.1-7:1 ("jAN000_bwa_230101_L00000_0002_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=2G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 10
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968941.1-10:1 ("jAN000_ref_230101_D00000_0001_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=2G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968942.1-5:1 ("jAN000_ref_230101_D00000_0002_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=2G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 5
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968944.1-5:1 ("jAN000_ref_230101_D00000_0003_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=2G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 8
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968946.1-8:1 ("jAN000_ref_230101_L00000_0001_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
+  slots (def_slot): 2 = A task requires 200% of CPU.
+  total memory: 4G = A task requires 4GB of memory.
+  Resource list: mem_free=2G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 7
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72968947.1-7:1 ("jAN000_ref_230101_L00000_0002_AN0NYMXX") has been submitted
+requested Hard Resources
+  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 8G = The job requires 8GB of memory.
+  Resource list: mem_free=8G
+Your job 72968990 ("jAN000_ls_tumor") has been submitted
+requested Hard Resources
+  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 8G = The job requires 8GB of memory.
+  Resource list: mem_free=8G
+Your job 72968991 ("jAN000_ls_normal") has been submitted
+requested Hard Resources
+  memory (s_vmem): 1024M = A task requires 1024MB of memory per slot.
+  slots (def_slot): 1 = A task requires 100% of CPU.
+  total memory: 1024M = A task requires 1024MB of memory.
+  Resource list: mem_free=1G
+array job tasks
+  SGE_TASK_FIRST: 1
+  SGE_TASK_LAST: 3
+  SGE_TASK_STEPSIZE: 1
+Your job-array 72969001.1-3:1 ("jAN000_addCnt") has been submitted
+requested Hard Resources
+  memory (s_vmem): 2G = The job requires 2GB of memory per slot.
+  slots (def_slot): 1 = The job requires 100% of CPU.
+  total memory: 2G = The job requires 2GB of memory.
+  Resource list: mem_free=2G
+Your job 72969002 ("jAN000_Ftest") has been submitted

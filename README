@@ -38,7 +38,10 @@ your environment. The top directory of callallSV must be declared as ${HDR}. Cal
 requires BWA, SAMtools, BEDtools, R, and reference files. 
 Please edit the paths for these tools and reference files in your environment.
 
-	$ tar xvzf callallSV-package.v.1.0.tar.gz
+	$ git clone https://github.com/ma9606/callallSV
+	 -- or --
+	$ tar xvzf callallSV-latest.tar.gz
+	
 	$ cd ./callallSV		
 	$ vi ./callallsv.cfg	
 	$ source ./callallsv.cfg
@@ -65,6 +68,7 @@ delimited format of refFlat.txt and RepeatMask track data from UCSC Genome Table
 callallSV.cfg.
 
 For the RepeatMask track data, please re-format it as below.
+
 	$ zcat ./RepeatMask.txt.gz  |  awk -F"\t" '{print $6 FS $7 FS $8 FS $12 FS $13" ["$11"]",$10}'  > rmsk_all.bed
 	$ grep rmsk_all.bed ${HDR}/callallsv.cfg
 	RMSK=${HDR}/ref/rmsk_all.bed
@@ -96,6 +100,7 @@ the result with files on ${HDR}/demo_outExample/.
 ##	$ rsync  https://ncc.data.server/demo_inFiles.tar.gz  .			##
 
 Getting "demo_inFiles.tar.gz", please extract the tar.gz file at ${HDR} as following: 
+
 	$ mv ./demo_inFiles.tar.gz ${HDR}/;  cd ${HDR}/
 	$ tar xvfz  ./demo_inFiles.tar.gz  	
 	$ chmod 770 ./quick.start_demo.sh 

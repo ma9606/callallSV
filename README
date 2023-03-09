@@ -106,9 +106,9 @@ Getting "demo_inFiles.tar.gz", please extract the tar.gz file at ${HDR} as follo
 	$ chmod 770 ./quick.start_demo.sh 
 	$ ./quick.start_demo.sh demo_inFiles &> quick.start_demo.stdout &
 
-It takes about an hour or more to output the results of the demo calculation and creates
-three directories: PE/, SoftClip/, and Merge/. For the format of each output data, refer 
-to the "Output" section described below.
+It takes about half an hour or more to output the results of the demo calculation and 
+creates three directories: PE/, SoftClip/, and Merge/. For the format of each output 
+data, refer to the "Output" section described below.
 
 
 ** Instruction **

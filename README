@@ -88,7 +88,7 @@ run (list.insertSize_MX, list.readLen, and list.smplID) and two trimmed referenc
 (refFlat_chr19.txt and rmsk_chr19.bed) modified for the demo sample. 
 
 Please e-mail us [miadachi@ncc.go.jp.] to request the dataset (the total size of about 
-1GB), we will propose an appropriate transmission method according to your environment.
+110 Mb), we will propose an appropriate transmission method according to your environment.
 
 To check the callallSV pipeline runs correctly in your computer environment, we strongly 
 recommend that you first should run callallSV with the demonstration data and compare 

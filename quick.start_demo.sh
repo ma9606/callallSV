@@ -45,4 +45,4 @@ $SCR/SVcaller_process-3.sh demo_inFiles &>.SVcaller_process-3.stdout
 $SCR/chk_process-aft3.sh &> .chk_process-aft3.stdout 
 
 ##_for_Error-Report_##
-tar cvf result.tar .SVcaller_process-?.stdout .chk_process-aft*.stdout PE SoftClip Merge 
+# tar cvf result.tar .SVcaller_process-?.stdout .chk_process-aft*.stdout PE SoftClip Merge 

@@ -1,6 +1,6 @@
 # Junction list detected from TUMOR samples
-TUMOR	/home/icgc/WORK/adachi/TOOL/callallSV/PE/AN000/tumor/rearrangement10new.txt
-TUMOR	/home/icgc/WORK/adachi/TOOL/callallSV/PE/AN999/tumor/rearrangement10new.txt
+TUMOR	/home/__User_Directory__/callallSV/PE/AN000/tumor/rearrangement10new.txt
+TUMOR	/home/__User_Directory__/callallSV/PE/AN999/tumor/rearrangement10new.txt
 # NORMAL sample (as filter)
-NORMAL	/home/icgc/WORK/adachi/TOOL/callallSV/PE/AN000/normal/all.sam.cla.??
-NORMAL	/home/icgc/WORK/adachi/TOOL/callallSV/PE/AN999/normal/all.sam.cla.??
+NORMAL	/home/__User_Directory__/callallSV/PE/AN000/normal/all.sam.cla.??
+NORMAL	/home/__User_Directory__/callallSV/PE/AN999/normal/all.sam.cla.??

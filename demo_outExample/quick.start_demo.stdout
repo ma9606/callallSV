@@ -1,7 +1,7 @@
-As reference genome, the system used '/home/${__your_directory__}/callallSV/ref/genome.fa'
-As reference genome index, the system used '/home/${__your_directory__}/callallSV/ref/genome.fa.fai'
+As reference genome, the system used '/home/__User_Directory__/callallSV/ref/genome.fa'
+As reference genome index, the system used '/home/__User_Directory__/callallSV/ref/genome.fa.fai'
 The following items are used in the system, please check their version:
-  /home/${__your_directory__}/bin/bwa-0.7.8/bwa
+  /home/__User_Directory__/bin/bwa-0.7.8/bwa
   /usr/local/samtools/1.9/bin/samtools
   /usr/local/bedtools/2.30.0/bin/intersectBed
   /usr/local/r/current3.6/bin/R

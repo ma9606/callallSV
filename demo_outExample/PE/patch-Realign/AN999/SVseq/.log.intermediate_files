@@ -1,140 +1,184 @@
-total 356
--rw-rw-r--  1 madach icgc_ncc    22 Mar  9 15:58 .tar.jobids
--rw-r--r--  1 madach icgc_ncc     0 Mar  9 15:59 .mkSVdb.out
--rw-r--r--  1 madach icgc_ncc     0 Mar  9 15:59 .mkSVdb.err
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr9
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr8
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr7.err
--rw-r-----  1 madach icgc_ncc   126 Mar  9 15:59 .list_chr7
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr6
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr5
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr4
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr3
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr21
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr2
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr1.err
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr17.err
--rw-r-----  1 madach icgc_ncc    21 Mar  9 15:59 .list_chr17
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr16
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr15
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr14
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr13.err
--rw-r-----  1 madach icgc_ncc    21 Mar  9 15:59 .list_chr13
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr12
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr11
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr10
--rw-r-----  1 madach icgc_ncc    23 Mar  9 15:59 .list_chr1
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr9
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr8
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr6
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr5
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr4
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr3
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr21
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr2
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr16
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr15
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr14
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr12
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr11
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr10
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chrX
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr20.err
--rw-r-----  1 madach icgc_ncc    42 Mar  9 15:59 .list_chr20
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr19.err
--rw-r-----  1 madach icgc_ncc   773 Mar  9 15:59 .list_chr19
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr18
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chrX
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr18
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr13
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chrY
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 .list_chr22
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chrY
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr7
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr22
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr17
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr1
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr20
-drwxr-x---  2 madach icgc_ncc  4096 Mar  9 15:59 chr19
--rw-r-----  1 madach icgc_ncc     0 Mar  9 15:59 SVseq_multiFa.err
--rw-r--r--  1 madach icgc_ncc     0 Mar  9 15:59 .Joint_AddIdx.out
-lrwxrwxrwx  1 madach icgc_ncc    80 Mar  9 15:59 .invert_nucSq.pl -> /home/__User_Directory__/callallSV/script/resource/invert_nucSq.pl
--rw-r-----  1 madach icgc_ncc 74675 Mar  9 15:59 SVseq_multiFa.fa
--rw-r-----  1 madach icgc_ncc 72568 Mar  9 15:59 SVseq_multiFa.fa.bwt
--rw-r-----  1 madach icgc_ncc 18122 Mar  9 16:00 SVseq_multiFa.fa.pac
--rw-r-----  1 madach icgc_ncc 36296 Mar  9 16:00 SVseq_multiFa.fa.sa
--rw-r-----  1 madach icgc_ncc  1317 Mar  9 16:00 SVseq_multiFa.fa.ann
--rw-r-----  1 madach icgc_ncc    11 Mar  9 16:00 SVseq_multiFa.fa.amb
--rw-r--r--  1 madach icgc_ncc   410 Mar  9 16:00 .Joint_AddIdx.stderr
--rw-rw-r--  1 madach icgc_ncc     4 Mar  9 16:00 .tar.jobids.stat
-drwxrwxr-x  5 madach icgc_ncc  4096 Mar  9 16:02 ..
--rw-rw-r--  1 madach icgc_ncc     0 Mar  9 16:02 .log.intermediate_files
-drwxrwxr-x 26 madach icgc_ncc  4096 Mar  9 16:02 .
+合計 420
+-rw-rw-r--  1 madach icgc_ncc    22  5月 24 20:29 .tar.jobids
+-rw-r--r--  1 madach icgc_ncc     0  5月 24 20:29 .mkSVdb.out
+-rw-r--r--  1 madach icgc_ncc     0  5月 24 20:29 .mkSVdb.err
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr5
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr21
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr18
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr9.err
+-rw-r-----  1 madach icgc_ncc    84  5月 24 20:29 .list_chr9
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr8.err
+-rw-r-----  1 madach icgc_ncc   128  5月 24 20:29 .list_chr8
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr7.err
+-rw-r-----  1 madach icgc_ncc    86  5月 24 20:29 .list_chr7
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr6.err
+-rw-r-----  1 madach icgc_ncc    90  5月 24 20:29 .list_chr6
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr5
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr4.err
+-rw-r-----  1 madach icgc_ncc    23  5月 24 20:29 .list_chr4
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr3.err
+-rw-r-----  1 madach icgc_ncc    23  5月 24 20:29 .list_chr3
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr21
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr20.err
+-rw-r-----  1 madach icgc_ncc    42  5月 24 20:29 .list_chr20
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr2.err
+-rw-r-----  1 madach icgc_ncc    69  5月 24 20:29 .list_chr2
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr19.err
+-rw-r-----  1 madach icgc_ncc   187  5月 24 20:29 .list_chr19
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr18
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr17.err
+-rw-r-----  1 madach icgc_ncc    21  5月 24 20:29 .list_chr17
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr16.err
+-rw-r-----  1 madach icgc_ncc    42  5月 24 20:29 .list_chr16
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr15.err
+-rw-r-----  1 madach icgc_ncc    42  5月 24 20:29 .list_chr15
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr14.err
+-rw-r-----  1 madach icgc_ncc    21  5月 24 20:29 .list_chr14
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr13.err
+-rw-r-----  1 madach icgc_ncc    46  5月 24 20:29 .list_chr13
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr12.err
+-rw-r-----  1 madach icgc_ncc    63  5月 24 20:29 .list_chr12
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr11.err
+-rw-r-----  1 madach icgc_ncc    44  5月 24 20:29 .list_chr11
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr1.err
+-rw-r-----  1 madach icgc_ncc    88  5月 24 20:29 .list_chr1
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chrY
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chrX
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr22
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr17
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chrY
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chrX
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr22
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr7
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr4
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr16
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr15
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr14
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr13
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr12
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr11
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr9
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr8
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr6
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr3
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr2
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr1
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:29 .list_chr10.err
+-rw-r-----  1 madach icgc_ncc    23  5月 24 20:29 .list_chr10
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr10
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr19
+drwxr-x---  2 madach icgc_ncc  4096  5月 24 20:29 chr20
+-rw-r--r--  1 madach icgc_ncc     0  5月 24 20:30 .Joint_AddIdx.out
+-rw-r-----  1 madach icgc_ncc     0  5月 24 20:30 SVseq_multiFa.err
+lrwxrwxrwx  1 madach icgc_ncc    90  5月 24 20:30 .invert_nucSq.pl -> /home/icgc/WORK/adachi/TOOL/revisePckg/clone0308_callallSV/script/resource/invert_nucSq.pl
+-rw-r-----  1 madach icgc_ncc 39312  5月 24 20:30 SVseq_multiFa.fa.sa
+-rw-r-----  1 madach icgc_ncc 19632  5月 24 20:30 SVseq_multiFa.fa.pac
+-rw-r-----  1 madach icgc_ncc 78596  5月 24 20:30 SVseq_multiFa.fa.bwt
+-rw-r-----  1 madach icgc_ncc  1423  5月 24 20:30 SVseq_multiFa.fa.ann
+-rw-r-----  1 madach icgc_ncc    11  5月 24 20:30 SVseq_multiFa.fa.amb
+-rw-r-----  1 madach icgc_ncc 80915  5月 24 20:30 SVseq_multiFa.fa
+-rw-r--r--  1 madach icgc_ncc   409  5月 24 20:30 .Joint_AddIdx.stderr
+-rw-rw-r--  1 madach icgc_ncc     4  5月 24 20:30 .tar.jobids.stat
+drwxrwxr-x  5 madach icgc_ncc  4096  5月 24 20:32 ..
+-rw-rw-r--  1 madach icgc_ncc     0  5月 24 20:32 .log.intermediate_files
+drwxrwxr-x 26 madach icgc_ncc  4096  5月 24 20:32 .
 chr1:
-total 4
--rw-r----- 1 madach icgc_ncc 1565 Mar  9 15:59 chr1_168024103-168025612_-#
+合計 16
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr1_100609219-100610728_#-
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr1_154176270-154177779_#-
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr1_246583439-246584948_#-
+-rw-r----- 1 madach icgc_ncc 1561  5月 24 20:29 chr1_9141328-9142837_#-
 chr10:
-total 0
+合計 4
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr10_115090900-115092409_-#
 chr11:
-total 0
+合計 8
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr11_123557014-123558523_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr11_85003752-85005261_#-
 chr12:
-total 0
+合計 12
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr12_58398080-58399589_#-
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr12_66451373-66452882_#-
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr12_96038039-96039548_#-
 chr13:
-total 4
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr13_54033322-54034831_-#
+合計 8
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr13_110694514-110696023_-#
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr13_110694517-110696026_-#
 chr14:
-total 0
+合計 4
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr14_99885877-99887386_-#
 chr15:
-total 0
+合計 8
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr15_41718891-41720400_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr15_90307488-90308997_-#
 chr16:
-total 0
+合計 8
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr16_54613366-54614875_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr16_89662720-89664229_-#
 chr17:
-total 4
--rw-r----- 1 madach icgc_ncc 1565 Mar  9 15:59 chr17_79480852-79482361_-#
+合計 4
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr17_48782852-48784361_-#
 chr18:
-total 0
+合計 0
 chr19:
-total 148
--rw-r----- 1 madach icgc_ncc 1565 Mar  9 15:59 chr19_13735679-13737188_#-
--rw-r----- 1 madach icgc_ncc 1562 Mar  9 15:59 chr19_1948785-1950294_-#
--rw-r----- 1 madach icgc_ncc 1562 Mar  9 15:59 chr19_1951808-1953317_#-
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr19_21293063-21294572_#-
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr19_21317029-21318538_#-
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr19_21346409-21347918_#-
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr19_21390787-21392296_-#
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr19_21403535-21405044_-#
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr19_23982994-23984503_#-
+合計 36
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr19_10681736-10683245_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr19_15085162-15086671_-#
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr19_1860897-1862406_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr19_21273207-21274716_#-
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr19_21342720-21344229_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr19_28902739-28904248_-#
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr19_31278463-31279972_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr19_40361419-40362928_#-
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr19_57768761-57770270_-#
 chr2:
-total 0
+合計 12
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr2_178944525-178946034_#-
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr2_198196038-198197547_-#
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr2_214990716-214992225_#-
 chr20:
-total 8
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr20_40658548-40660057_-#
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr20_40667197-40668706_-#
+合計 8
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr20_42924305-42925814_-#
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr20_55526024-55527533_#-
 chr21:
-total 0
+合計 0
 chr22:
-total 0
+合計 0
 chr3:
-total 0
+合計 4
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr3_166388783-166390292_-#
 chr4:
-total 0
+合計 4
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr4_129775586-129777095_-#
 chr5:
-total 0
+合計 0
 chr6:
-total 0
+合計 16
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr6_107673657-107675166_-#
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr6_121053731-121055240_-#
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr6_149058540-149060049_-#
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr6_99214022-99215531_-#
 chr7:
-total 24
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr7_46428416-46429925_#-
--rw-r----- 1 madach icgc_ncc 1563 Mar  9 15:59 chr7_46673666-46675175_#-
--rw-r----- 1 madach icgc_ncc 1563 Mar  9 15:59 chr7_47426825-47428334_#-
--rw-r----- 1 madach icgc_ncc 1563 Mar  9 15:59 chr7_94887787-94889296_-#
--rw-r----- 1 madach icgc_ncc 1563 Mar  9 15:59 chr7_94887939-94889448_#-
--rw-r----- 1 madach icgc_ncc 1564 Mar  9 15:59 chr7_94900073-94901582_-#
+合計 16
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr7_107366467-107367976_-#
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr7_89570079-89571588_-#
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr7_94887939-94889448_#-
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr7_94890069-94891578_-#
 chr8:
-total 0
+合計 24
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr8_11224310-11225819_-#
+-rw-r----- 1 madach icgc_ncc 1566  5月 24 20:29 chr8_136679755-136681264_-#
+-rw-r----- 1 madach icgc_ncc 1564  5月 24 20:29 chr8_20887856-20889365_#-
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr8_57162135-57163644_#-
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr8_88605486-88606995_#-
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr8_96264456-96265965_-#
 chr9:
-total 0
+合計 16
+-rw-r----- 1 madach icgc_ncc 1565  5月 24 20:29 chr9_138550990-138552499_-#
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr9_23503606-23505115_-#
+-rw-r----- 1 madach icgc_ncc 1561  5月 24 20:29 chr9_3201997-3203506_-#
+-rw-r----- 1 madach icgc_ncc 1563  5月 24 20:29 chr9_92097939-92099448_-#
 chrX:
-total 0
+合計 0
 chrY:
-total 0
+合計 0

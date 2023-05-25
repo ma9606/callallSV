@@ -1,22 +1,22 @@
-total 128
--rw-rw-r-- 1 madach icgc_ncc   764 Mar  9 15:43 .rearrangement.conf
-lrwxrwxrwx 1 madach icgc_ncc   105 Mar  9 15:43 intraBP.list -> /home/__User_Directory__/callallSV/SoftClip/AN000/tumor/intraBP.list_0_filtR_filt2_aNP.list
--rwxrwx--- 1 madach icgc_ncc   309 Mar  9 15:46 qArray.split_addCnt
--rw-rw-r-- 1 madach icgc_ncc    27 Mar  9 15:46 .tar.jobids
--rw-r--r-- 1 madach icgc_ncc     0 Mar  9 15:47 .addCnt.out
--rw-r--r-- 1 madach icgc_ncc     0 Mar  9 15:47 .addCnt.err
--rw-r--r-- 1 madach icgc_ncc     0 Mar  9 15:47 .Ftest.out
--rw-r--r-- 1 madach icgc_ncc     0 Mar  9 15:47 .Ftest.err
--rw-r----- 1 madach icgc_ncc 18105 Mar  9 15:47 intraBP_addCnt.list_0
--rw-r----- 1 madach icgc_ncc 18105 Mar  9 15:47 intraBP_addCnt.list
--rw-r----- 1 madach icgc_ncc 18999 Mar  9 15:47 intraBP_tested.list
--rw-r----- 1 madach icgc_ncc 18710 Mar  9 15:47 intraBP_tested_0.list
--rw-rw-r-- 1 madach icgc_ncc     4 Mar  9 15:48 .tar.jobids.stat
-drwxrwxr-x 4 madach icgc_ncc  4096 Mar  9 15:48 ..
-drwxrwxr-x 2 madach icgc_ncc  4096 Mar  9 15:54 SVseq
-drwxrwxr-x 2 madach icgc_ncc  4096 Mar  9 15:54 BWA
-drwxrwxr-x 2 madach icgc_ncc  4096 Mar  9 15:54 REF
-drwxrwxr-x 2 madach icgc_ncc  4096 Mar  9 15:54 tumor
-drwxrwxr-x 2 madach icgc_ncc  4096 Mar  9 15:54 normal
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .log.intermediate_files
-drwxrwxr-x 7 madach icgc_ncc  4096 Mar  9 15:54 .
+合計 80
+lrwxrwxrwx 1 madach icgc_ncc  115  5月 24 20:15 intraBP.list -> /home/icgc/WORK/adachi/TOOL/revisePckg/clone0308_callallSV/SoftClip/AN000/tumor/intraBP.list_0_filtR_filt2_aNP.list
+-rw-rw-r-- 1 madach icgc_ncc  859  5月 24 20:15 .rearrangement.conf
+-rwxrwx--- 1 madach icgc_ncc  284  5月 24 20:19 qArray.split_addCnt
+-rw-rw-r-- 1 madach icgc_ncc   27  5月 24 20:19 .tar.jobids
+-rw-r--r-- 1 madach icgc_ncc    0  5月 24 20:20 .addCnt.out
+-rw-r--r-- 1 madach icgc_ncc    0  5月 24 20:20 .addCnt.err
+-rw-r--r-- 1 madach icgc_ncc    0  5月 24 20:20 .Ftest.out
+-rw-r--r-- 1 madach icgc_ncc    0  5月 24 20:20 .Ftest.err
+-rw-r----- 1 madach icgc_ncc 5672  5月 24 20:20 intraBP_tested_0.list
+-rw-r----- 1 madach icgc_ncc 5758  5月 24 20:20 intraBP_tested.list
+-rw-r----- 1 madach icgc_ncc 5489  5月 24 20:20 intraBP_addCnt.list_0
+-rw-r----- 1 madach icgc_ncc 5489  5月 24 20:20 intraBP_addCnt.list
+-rw-rw-r-- 1 madach icgc_ncc    4  5月 24 20:20 .tar.jobids.stat
+drwxrwxr-x 4 madach icgc_ncc 4096  5月 24 20:20 ..
+drwxrwxr-x 2 madach icgc_ncc 4096  5月 24 20:26 SVseq
+drwxrwxr-x 2 madach icgc_ncc 4096  5月 24 20:26 BWA
+drwxrwxr-x 2 madach icgc_ncc 4096  5月 24 20:26 tumor
+drwxrwxr-x 2 madach icgc_ncc 4096  5月 24 20:26 normal
+drwxrwxr-x 2 madach icgc_ncc 4096  5月 24 20:26 REF
+-rw-rw-r-- 1 madach icgc_ncc    0  5月 24 20:26 .log.intermediate_files
+drwxrwxr-x 7 madach icgc_ncc 4096  5月 24 20:26 .

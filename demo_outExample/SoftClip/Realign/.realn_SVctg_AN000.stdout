@@ -1,144 +1,144 @@
-requested Hard Resources
-  memory (s_vmem): 1024M = A task requires 1024MB of memory per slot.
-  slots (def_slot): 1 = A task requires 100% of CPU.
-  total memory: 1024M = A task requires 1024MB of memory.
+要求ハードリソース
+  memory (s_vmem): 1024M = 1 タスクは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 1024M = 1 タスクは 1024M バイトのメモリを要求します
   Resource list: mem_free=1G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
   SGE_TASK_LAST: 24
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173549.1-24:1 ("jAN000_SVdb") has been submitted
-requested Hard Resources
-  memory (s_vmem): 12G = The job requires 12GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 12G = The job requires 12GB of memory.
+Your job-array 75994214.1-24:1 ("jAN000_SVdb") has been submitted
+要求ハードリソース
+  memory (s_vmem): 12G = ジョブは 1 スロットあたり 12G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 12G = ジョブは 12G バイトのメモリを要求します
   Resource list: mem_free=12G
-Your job 73173551 ("qIdxAN000") has been submitted
-requested Hard Resources
-  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 8G = A task requires 8GB of memory.
+Your job 75994215 ("qIdxAN000") has been submitted
+要求ハードリソース
+  memory (s_vmem): 4G = 1 タスクは 1 スロットあたり 4G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
   Resource list: mem_free=4G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 20
+  SGE_TASK_LAST: 4
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173632.1-20:1 ("jAN000_bwa_230101_D00000_0001_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 8G = A task requires 8GB of memory.
+Your job-array 75994237.1-4:1 ("jAN000_bwa_230101_D00000_0001_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 4G = 1 タスクは 1 スロットあたり 4G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
   Resource list: mem_free=4G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 10
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173634.1-10:1 ("jAN000_bwa_230101_D00000_0002_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 8G = A task requires 8GB of memory.
+Your job-array 75994239.1-3:1 ("jAN000_bwa_230101_D00000_0002_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 4G = 1 タスクは 1 スロットあたり 4G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
   Resource list: mem_free=4G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 10
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173637.1-10:1 ("jAN000_bwa_230101_D00000_0003_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 8G = A task requires 8GB of memory.
+Your job-array 75994240.1-3:1 ("jAN000_bwa_230101_D00000_0003_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 4G = 1 タスクは 1 スロットあたり 4G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
   Resource list: mem_free=4G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 15
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173639.1-15:1 ("jAN000_bwa_230101_L00000_0001_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 4G = A task requires 4GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 8G = A task requires 8GB of memory.
+Your job-array 75994241.1-3:1 ("jAN000_bwa_230101_L00000_0001_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 4G = 1 タスクは 1 スロットあたり 4G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
   Resource list: mem_free=4G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 15
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173640.1-15:1 ("jAN000_bwa_230101_L00000_0002_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 4G = A task requires 4GB of memory.
+Your job-array 75994243.1-3:1 ("jAN000_bwa_230101_L00000_0002_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = 1 タスクは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 4G = 1 タスクは 4G バイトのメモリを要求します
   Resource list: mem_free=2G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 20
+  SGE_TASK_LAST: 4
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173644.1-20:1 ("jAN000_ref_230101_D00000_0001_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 4G = A task requires 4GB of memory.
+Your job-array 75994244.1-4:1 ("jAN000_ref_230101_D00000_0001_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = 1 タスクは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 4G = 1 タスクは 4G バイトのメモリを要求します
   Resource list: mem_free=2G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 10
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173646.1-10:1 ("jAN000_ref_230101_D00000_0002_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 4G = A task requires 4GB of memory.
+Your job-array 75994245.1-3:1 ("jAN000_ref_230101_D00000_0002_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = 1 タスクは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 4G = 1 タスクは 4G バイトのメモリを要求します
   Resource list: mem_free=2G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 10
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173647.1-10:1 ("jAN000_ref_230101_D00000_0003_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 4G = A task requires 4GB of memory.
+Your job-array 75994246.1-3:1 ("jAN000_ref_230101_D00000_0003_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = 1 タスクは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 4G = 1 タスクは 4G バイトのメモリを要求します
   Resource list: mem_free=2G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 15
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173651.1-15:1 ("jAN000_ref_230101_L00000_0001_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 2G = A task requires 2GB of memory per slot.
-  slots (def_slot): 2 = A task requires 200% of CPU.
-  total memory: 4G = A task requires 4GB of memory.
+Your job-array 75994247.1-3:1 ("jAN000_ref_230101_L00000_0001_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = 1 タスクは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 2 = 1 タスクは 200% の CPU を要求します
+  total memory: 4G = 1 タスクは 4G バイトのメモリを要求します
   Resource list: mem_free=2G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 15
+  SGE_TASK_LAST: 3
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173707.1-15:1 ("jAN000_ref_230101_L00000_0002_AN0NYMXX") has been submitted
-requested Hard Resources
-  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 8G = The job requires 8GB of memory.
+Your job-array 75994249.1-3:1 ("jAN000_ref_230101_L00000_0002_AN0NYMXX") has been submitted
+要求ハードリソース
+  memory (s_vmem): 8G = ジョブは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 8G = ジョブは 8G バイトのメモリを要求します
   Resource list: mem_free=8G
-Your job 73173784 ("jAN000_ls_tumor") has been submitted
-requested Hard Resources
-  memory (s_vmem): 8G = The job requires 8GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 8G = The job requires 8GB of memory.
+Your job 75994268 ("jAN000_ls_tumor") has been submitted
+要求ハードリソース
+  memory (s_vmem): 8G = ジョブは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 8G = ジョブは 8G バイトのメモリを要求します
   Resource list: mem_free=8G
-Your job 73173785 ("jAN000_ls_normal") has been submitted
-requested Hard Resources
-  memory (s_vmem): 1024M = A task requires 1024MB of memory per slot.
-  slots (def_slot): 1 = A task requires 100% of CPU.
-  total memory: 1024M = A task requires 1024MB of memory.
+Your job 75994270 ("jAN000_ls_normal") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = 1 タスクは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 1024M = 1 タスクは 1024M バイトのメモリを要求します
   Resource list: mem_free=1G
-array job tasks
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 2
+  SGE_TASK_LAST: 1
   SGE_TASK_STEPSIZE: 1
-Your job-array 73173807.1-2:1 ("jAN000_addCnt") has been submitted
-requested Hard Resources
-  memory (s_vmem): 2G = The job requires 2GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 2G = The job requires 2GB of memory.
+Your job-array 75994284.1-1:1 ("jAN000_addCnt") has been submitted
+要求ハードリソース
+  memory (s_vmem): 2G = ジョブは 1 スロットあたり 2G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 2G = ジョブは 2G バイトのメモリを要求します
   Resource list: mem_free=2G
-Your job 73173808 ("jAN000_Ftest") has been submitted
+Your job 75994286 ("jAN000_Ftest") has been submitted

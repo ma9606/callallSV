@@ -144,7 +144,7 @@ do
     flg=0;
     for sqid in `ls -d [0-9][0-9][0-9][0-9][0-9][0-9]_*`
     do
-      awk '$0!~"[samopen]"{print}' $sqid/.cntREFsup.stderr > $sqid/.cntREFsup.err
+      awk '$0!~"[samopen]" && length($0)>0{print}' $sqid/.cntREFsup.stderr > $sqid/.cntREFsup.err
       if [ ! -s $sqid/.cntREFsup.err ]; then
         rm $sqid/.cntREFsup.stderr $sqid/.cntREFsup.err $sqid/.cntREFsup.out
       else

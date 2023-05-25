@@ -1,24 +1,24 @@
-total 208
--rw-rw-r-- 1 madach icgc_ncc  5826 Mar  9 15:54 .translocation_rr_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .translocation_rr_cluster.err
--rw-rw-r-- 1 madach icgc_ncc 11311 Mar  9 15:54 .translocation_fr_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .translocation_fr_cluster.err
--rw-rw-r-- 1 madach icgc_ncc  2791 Mar  9 15:54 .translocation_ff_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .translocation_ff_cluster.err
--rw-rw-r-- 1 madach icgc_ncc 28018 Mar  9 15:54 .tandem_dup_rf_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .tandem_dup_rf_cluster.err
-lrwxrwxrwx 1 madach icgc_ncc    83 Mar  9 15:54 .rearrangement.conf -> /home/__User_Directory__/callallSV/PE/AN000/tumor/.rearrangement.conf
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 mergePE-iBP_tested_0.err
--rw-rw-r-- 1 madach icgc_ncc 24942 Mar  9 15:54 .inversion_rr_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .inversion_rr_cluster.err
--rw-rw-r-- 1 madach icgc_ncc 22174 Mar  9 15:54 .inversion_ff_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .inversion_ff_cluster.err
--rw-rw-r-- 1 madach icgc_ncc 31739 Mar  9 15:54 .deletion_fr_cluster.txt
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 15:54 .deletion_fr_cluster.err
--rw-rw-r-- 1 madach icgc_ncc   126 Mar  9 15:54 .tmp.id_30996
--rw-rw-r-- 1 madach icgc_ncc 23912 Mar  9 15:54 merged_SV.list
-drwxrwxr-x 4 madach icgc_ncc  4096 Mar  9 15:54 ..
--rw-rw-r-- 1 madach icgc_ncc 16221 Mar  9 15:58 .merged_SV.validated_filt.txt
--rw-rw-r-- 1 madach icgc_ncc 13372 Mar  9 15:58 merged_SV.validated_filt.list
--rw-rw-r-- 1 madach icgc_ncc     0 Mar  9 16:02 .log.intermediate_files
-drwxrwxr-x 2 madach icgc_ncc  4096 Mar  9 16:02 .
+合計 232
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .translocation_rr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 37972  5月 24 20:26 .translocation_fr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .translocation_fr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 32581  5月 24 20:26 .translocation_ff_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .translocation_ff_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 12617  5月 24 20:26 .tandem_dup_rf_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .tandem_dup_rf_cluster.err
+lrwxrwxrwx 1 madach icgc_ncc    93  5月 24 20:26 .rearrangement.conf -> /home/icgc/WORK/adachi/TOOL/revisePckg/clone0308_callallSV/PE/AN000/tumor/.rearrangement.conf
+-rw-rw-r-- 1 madach icgc_ncc 22615  5月 24 20:26 .inversion_rr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .inversion_rr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 17695  5月 24 20:26 .inversion_ff_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .inversion_ff_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc 15876  5月 24 20:26 .deletion_fr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 .deletion_fr_cluster.err
+-rw-rw-r-- 1 madach icgc_ncc  9733  5月 24 20:26 merged_SV.list
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:26 mergePE-iBP_tested_0.err
+-rw-rw-r-- 1 madach icgc_ncc 29096  5月 24 20:26 .translocation_rr_cluster.txt
+-rw-rw-r-- 1 madach icgc_ncc   252  5月 24 20:26 .tmp.id_18944
+drwxrwxr-x 4 madach icgc_ncc  4096  5月 24 20:26 ..
+-rw-rw-r-- 1 madach icgc_ncc  8496  5月 24 20:29 merged_SV.validated_filt.list
+-rw-rw-r-- 1 madach icgc_ncc 10494  5月 24 20:29 .merged_SV.validated_filt.txt
+-rw-rw-r-- 1 madach icgc_ncc     0  5月 24 20:32 .log.intermediate_files
+drwxrwxr-x 2 madach icgc_ncc  4096  5月 24 20:32 .

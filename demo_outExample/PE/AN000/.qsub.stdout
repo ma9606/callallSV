@@ -1,89 +1,89 @@
-requested Hard Resources
-  memory (s_vmem): 8G = A task requires 8GB of memory per slot.
-  slots (def_slot): 1 = A task requires 100% of CPU.
-  total memory: 8G = A task requires 8GB of memory.
-array job tasks
+要求ハードリソース
+  memory (s_vmem): 8G = 1 タスクは 1 スロットあたり 8G バイトのメモリを要求します
+  slots (def_slot): 1 = 1 タスクは 100% の CPU を要求します
+  total memory: 8G = 1 タスクは 8G バイトのメモリを要求します
+アレイジョブのタスク
   SGE_TASK_FIRST: 1
-  SGE_TASK_LAST: 40
+  SGE_TASK_LAST: 10
   SGE_TASK_STEPSIZE: 1
-Your job-array 73172337.1-40:1 ("tAN000_list") has been submitted
-requested Hard Resources
-  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 5G = The job requires 5GB of memory.
-Your job 73172339 ("tAN000_ff") has been submitted
-requested Hard Resources
-  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 5G = The job requires 5GB of memory.
-Your job 73172341 ("tAN000_rr") has been submitted
-requested Hard Resources
-  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 5G = The job requires 5GB of memory.
-Your job 73172345 ("tAN000_fr") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172347 ("tAN000_rf") has been submitted
-requested Hard Resources
-  memory (s_vmem): 32G = The job requires 32GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 32G = The job requires 32GB of memory.
-Your job 73172349 ("tAN000_tr_p") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172351 ("tAN000_trfr") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172352 ("tAN000_trff") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172355 ("tAN000_trrr") has been submitted
-requested Hard Resources
-  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 1024M = The job requires 1024MB of memory.
-Your job 73172357 ("tAN000_clust") has been submitted
-requested Hard Resources
-  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 5G = The job requires 5GB of memory.
-Your job 73172360 ("tAN000_del") has been submitted
-requested Hard Resources
-  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 5G = The job requires 5GB of memory.
-Your job 73172363 ("tAN000_inv") has been submitted
-requested Hard Resources
-  memory (s_vmem): 5G = The job requires 5GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 5G = The job requires 5GB of memory.
-Your job 73172365 ("tAN000_tdm") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172366 ("tAN000_trns_fr") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172368 ("tAN000_trns_ff") has been submitted
-requested Hard Resources
-  memory (s_vmem): 16G = The job requires 16GB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 16G = The job requires 16GB of memory.
-Your job 73172370 ("tAN000_trns_rr") has been submitted
-requested Hard Resources
-  memory (s_vmem): 1024M = The job requires 1024MB of memory per slot.
-  slots (def_slot): 1 = The job requires 100% of CPU.
-  total memory: 1024M = The job requires 1024MB of memory.
-Your job 73172371 ("tAN000_output") has been submitted
+Your job-array 75993614.1-10:1 ("tAN000_list") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 75993616 ("tAN000_ff") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 75993617 ("tAN000_rr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 75993619 ("tAN000_fr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993620 ("tAN000_rf") has been submitted
+要求ハードリソース
+  memory (s_vmem): 32G = ジョブは 1 スロットあたり 32G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 32G = ジョブは 32G バイトのメモリを要求します
+Your job 75993621 ("tAN000_tr_p") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993622 ("tAN000_trfr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993623 ("tAN000_trff") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993624 ("tAN000_trrr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = ジョブは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 1024M = ジョブは 1024M バイトのメモリを要求します
+Your job 75993625 ("tAN000_clust") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 75993628 ("tAN000_del") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 75993629 ("tAN000_inv") has been submitted
+要求ハードリソース
+  memory (s_vmem): 5G = ジョブは 1 スロットあたり 5G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 5G = ジョブは 5G バイトのメモリを要求します
+Your job 75993631 ("tAN000_tdm") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993632 ("tAN000_trns_fr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993633 ("tAN000_trns_ff") has been submitted
+要求ハードリソース
+  memory (s_vmem): 16G = ジョブは 1 スロットあたり 16G バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 16G = ジョブは 16G バイトのメモリを要求します
+Your job 75993635 ("tAN000_trns_rr") has been submitted
+要求ハードリソース
+  memory (s_vmem): 1024M = ジョブは 1 スロットあたり 1024M バイトのメモリを要求します
+  slots (def_slot): 1 = ジョブは 100% の CPU を要求します
+  total memory: 1024M = ジョブは 1024M バイトのメモリを要求します
+Your job 75993637 ("tAN000_output") has been submitted

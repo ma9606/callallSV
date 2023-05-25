@@ -1,7 +1,7 @@
-total 20
-drwxr-x--- 2 madach icgc_ncc 4096 Mar  9 15:52 pChr_SVmatch_tr
-drwxr-x--- 2 madach icgc_ncc 4096 Mar  9 15:52 pChr_SVmatch
-drwxr-x--- 2 madach icgc_ncc 4096 Mar  9 15:52 pChr_REFsupp
-drwxrwxr-x 7 madach icgc_ncc 4096 Mar  9 15:53 ..
--rw-rw-r-- 1 madach icgc_ncc    0 Mar  9 15:54 .log.intermediate_files
-drwxrwxr-x 5 madach icgc_ncc 4096 Mar  9 15:54 .
+合計 20
+drwxr-x--- 2 madach icgc_ncc 4096  5月 24 20:23 pChr_SVmatch_tr
+drwxr-x--- 2 madach icgc_ncc 4096  5月 24 20:23 pChr_SVmatch
+drwxr-x--- 2 madach icgc_ncc 4096  5月 24 20:23 pChr_REFsupp
+drwxrwxr-x 7 madach icgc_ncc 4096  5月 24 20:25 ..
+-rw-rw-r-- 1 madach icgc_ncc    0  5月 24 20:26 .log.intermediate_files
+drwxrwxr-x 5 madach icgc_ncc 4096  5月 24 20:26 .

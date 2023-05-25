@@ -128,8 +128,8 @@ ls -lh rearrangement10.txt.inversion_ff | awk '{print "log: stp2_ "$9"\tfile siz
 ls -lh rearrangement10.txt.inversion_rr | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
 ls -lh rearrangement10.txt.tandem_dup | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
 ls -lh rearrangement10.txt.translocation_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
-ls -lh rearrangement10.txt.translocation_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
-ls -lh rearrangement10.txt.translocation_ff | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.translocation_fr | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
+ls -lh rearrangement10.txt.translocation_rr | awk '{print "log: stp2_ "$9"\tfile size: "$5}' >> $LOG
 echo "log: stp2_summarizing TUMOR [junctions].list successfully finished!" >> $LOG
 echo -e "\n\n" >> $LOG
 

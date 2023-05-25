@@ -28,10 +28,10 @@ while [ $CNT -lt $LOOP_MAX ];do
 
 done
 
-if [ $# -eq 2 ]; then
-  RLEN=$2
-  grep -v "^[" rmPCRDup_${RLEN}bp/.rmDup_fr.err > .rmDup_fr.err
-  if [ ! -s .extPCRDup.err -a ! -s .rmDup_fr.err ]; then
-    rm rmPCRDup_${RLEN}bp/all.SA.sam.cla.*
-  fi
-fi
+# if [ $# -eq 2 ]; then
+#   RLEN=$2
+#   grep -v "^[" rmPCRDup_${RLEN}bp/.rmDup_fr.err > .rmDup_fr.err
+#   if [ ! -s .extPCRDup.err -a ! -s .rmDup_fr.err ]; then
+#     rm rmPCRDup_${RLEN}bp/all.SA.sam.cla.*
+#   fi
+# fi

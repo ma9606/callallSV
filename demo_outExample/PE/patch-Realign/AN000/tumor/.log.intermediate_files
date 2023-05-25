@@ -1,41 +1,41 @@
 ./pChr_REFsupp/:
-total 20
--rw-r----- 1 madach icgc_ncc  276 Mar  9 15:57 REFsupp_SE.bplist
--rw-r----- 1 madach icgc_ncc  138 Mar  9 15:57 REFsupp_PE.bplist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chrY.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chrX.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr9.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr8.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr7.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr6.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr5.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr4.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr3.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr2.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr22.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr21.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr20.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr1.extlist
--rw-r----- 1 madach icgc_ncc 2681 Mar  9 15:57 chr19.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr18.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr17.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr16.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr15.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr14.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr13.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr12.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr11.extlist
--rw-r----- 1 madach icgc_ncc    0 Mar  9 15:57 chr10.extlist
-drwxr-x--- 2 madach icgc_ncc 4096 Mar  9 15:57 .
-drwxrwxr-x 3 madach icgc_ncc 4096 Mar  9 16:02 ..
+合計 40
+-rw-r----- 1 madach icgc_ncc   541  5月 24 20:29 chr9.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr8.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr7.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr6.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr5.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr4.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr3.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr2.extlist
+-rw-r----- 1 madach icgc_ncc  2996  5月 24 20:29 chr10.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr1.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chrY.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chrX.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr22.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr21.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr20.extlist
+-rw-r----- 1 madach icgc_ncc 11014  5月 24 20:29 chr19.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr18.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr17.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr16.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr15.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr14.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr13.extlist
+-rw-r----- 1 madach icgc_ncc     0  5月 24 20:29 chr12.extlist
+-rw-r----- 1 madach icgc_ncc   223  5月 24 20:29 chr11.extlist
+-rw-r----- 1 madach icgc_ncc   183  5月 24 20:29 REFsupp_SE.bplist
+-rw-r----- 1 madach icgc_ncc    68  5月 24 20:29 REFsupp_PE.bplist
+drwxr-x--- 2 madach icgc_ncc  4096  5月 24 20:29 .
+drwxrwxr-x 3 madach icgc_ncc  4096  5月 24 20:32 ..
 
 ./:
-total 12
--rw-rw-r-- 1 madach icgc_ncc    0 Mar  9 15:57 .tar.jobids
--rw-r--r-- 1 madach icgc_ncc    0 Mar  9 15:57 .mklist.out
--rw-r--r-- 1 madach icgc_ncc    0 Mar  9 15:57 .mklist.err
--rw-rw-r-- 1 madach icgc_ncc    0 Mar  9 15:57 .tar.jobids.stat
-drwxr-x--- 2 madach icgc_ncc 4096 Mar  9 15:57 pChr_REFsupp
-drwxrwxr-x 5 madach icgc_ncc 4096 Mar  9 15:58 ..
--rw-rw-r-- 1 madach icgc_ncc    0 Mar  9 16:02 .log.intermediate_files
-drwxrwxr-x 3 madach icgc_ncc 4096 Mar  9 16:02 .
+合計 12
+-rw-rw-r-- 1 madach icgc_ncc    0  5月 24 20:28 .tar.jobids
+-rw-r--r-- 1 madach icgc_ncc    0  5月 24 20:29 .mklist.out
+-rw-r--r-- 1 madach icgc_ncc    0  5月 24 20:29 .mklist.err
+drwxr-x--- 2 madach icgc_ncc 4096  5月 24 20:29 pChr_REFsupp
+-rw-rw-r-- 1 madach icgc_ncc    0  5月 24 20:29 .tar.jobids.stat
+drwxrwxr-x 5 madach icgc_ncc 4096  5月 24 20:29 ..
+-rw-rw-r-- 1 madach icgc_ncc    0  5月 24 20:32 .log.intermediate_files
+drwxrwxr-x 3 madach icgc_ncc 4096  5月 24 20:32 .
